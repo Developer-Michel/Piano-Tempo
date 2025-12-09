@@ -81,10 +81,16 @@ export default {
           busy: "rgb(239 68 68)",
           offline: "rgb(156 163 175)",
         },
+        gold: {
+          DEFAULT: "#D4AF37",
+          light: "#E5C35C",
+          dark: "#B8941F",
+        },
       },
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        serif: ["var(--font-serif)"],
+        sans: ["Lato", "Open Sans", "var(--font-sans)"],
+        serif: ["Playfair Display", "var(--font-serif)"],
+        display: ["Cinzel", "Playfair Display", "serif"],
         mono: ["var(--font-mono)"],
       },
       keyframes: {
