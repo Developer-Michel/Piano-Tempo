@@ -7,7 +7,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card } from '@/components/ui/card';
-import { MapPin, Phone, Mail, Clock, CheckCircle, Loader2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -30,6 +31,7 @@ export function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+  const { toast } = useToast();
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -52,6 +54,15 @@ export function Contact() {
         setIsSubmitted(false);
         form.reset();
       }, 5000);
+    },
+    onError: (error: Error) => {
+      toast({
+        variant: "destructive",
+        title: language === 'en' ? 'Error' : 'Erreur',
+        description: language === 'en' 
+          ? 'There was a problem sending your message. Please try again.' 
+          : 'Un problème est survenu lors de l\'envoi de votre message. Veuillez réessayer.',
+      });
     },
   });
 

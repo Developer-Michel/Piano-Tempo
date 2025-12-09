@@ -28,6 +28,13 @@ export function Header() {
     { key: 'contact', href: '/#contact', isSection: true },
   ];
 
+  const additionalNavItems = [
+    { key: 'policy', href: '/policy' },
+    { key: 'information', href: '/faq' },
+  ];
+
+  const [, navigate] = useLocation();
+
   const handleNavClick = (href: string, isSection: boolean) => {
     setIsMobileMenuOpen(false);
     if (isSection && location === '/') {
@@ -37,7 +44,16 @@ export function Header() {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else if (isSection) {
-      window.location.href = href;
+      navigate('/');
+      setTimeout(() => {
+        const sectionId = href.replace('/#', '');
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      navigate(href);
     }
   };
 
@@ -74,6 +90,16 @@ export function Header() {
                 href={item.href}
                 isScrolled={isScrolled}
                 onClick={() => handleNavClick(item.href, item.isSection)}
+                testId={`nav-${item.key}`}
+              />
+            ))}
+            {additionalNavItems.map((item) => (
+              <NavLink
+                key={item.key}
+                label={translations.nav[item.key as keyof typeof translations.nav][language]}
+                href={item.href}
+                isScrolled={isScrolled}
+                onClick={() => handleNavClick(item.href, false)}
                 testId={`nav-${item.key}`}
               />
             ))}
@@ -134,6 +160,16 @@ export function Header() {
                 <button
                   key={item.key}
                   onClick={() => handleNavClick(item.href, item.isSection)}
+                  className="py-3 text-left font-sans text-lg text-black hover:text-gold transition-colors"
+                  data-testid={`nav-mobile-${item.key}`}
+                >
+                  {translations.nav[item.key as keyof typeof translations.nav][language]}
+                </button>
+              ))}
+              {additionalNavItems.map((item) => (
+                <button
+                  key={item.key}
+                  onClick={() => handleNavClick(item.href, false)}
                   className="py-3 text-left font-sans text-lg text-black hover:text-gold transition-colors"
                   data-testid={`nav-mobile-${item.key}`}
                 >
