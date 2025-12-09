@@ -1,37 +1,43 @@
-import { useLanguage } from '@/lib/language-context';
-import { translations } from '@/lib/translations';
-import { Link } from 'wouter';
-import { SiFacebook, SiInstagram, SiYoutube } from 'react-icons/si';
-import { motion } from 'framer-motion';
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
+import { Link } from "wouter";
+import { SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
+import { motion } from "framer-motion";
 
 export function Footer() {
   const { language } = useLanguage();
 
   const quickLinks = [
-    { key: 'home', href: '/' },
-    { key: 'about', href: '/#about' },
-    { key: 'teachers', href: '/#teachers' },
-    { key: 'programs', href: '/#programs' },
-    { key: 'contact', href: '/#contact' },
+    { key: "home", href: "/" },
+    { key: "about", href: "/#about" },
+    { key: "teachers", href: "/#teachers" },
+    { key: "programs", href: "/#programs" },
+    { key: "contact", href: "/#contact" },
   ];
 
   const additionalLinks = [
-    { key: 'policy', href: '/policy' },
-    { key: 'information', href: '/faq' },
-    { key: 'gallery', href: '/gallery' },
-    { key: 'resources', href: '/resources' },
+    { key: "policy", href: "/policy" },
+    { key: "information", href: "/faq" },
+    { key: "gallery", href: "/gallery" },
+    { key: "resources", href: "/resources" },
   ];
 
   const programLinks = [
-    { label: translations.programs.private.title[language], href: '/#programs' },
-    { label: translations.programs.group7to9.title[language], href: '/#programs' },
-    { label: translations.programs.adult.title[language], href: '/#programs' },
+    {
+      label: translations.programs.private.title[language],
+      href: "/#programs",
+    },
+    {
+      label: translations.programs.group7to9.title[language],
+      href: "/#programs",
+    },
+    { label: translations.programs.adult.title[language], href: "/#programs" },
   ];
 
   const socialLinks = [
-    { icon: SiFacebook, href: '#', label: 'Facebook' },
-    { icon: SiInstagram, href: '#', label: 'Instagram' },
-    { icon: SiYoutube, href: '#', label: 'YouTube' },
+    { icon: SiFacebook, href: "#", label: "Facebook" },
+    { icon: SiInstagram, href: "#", label: "Instagram" },
+    { icon: SiYoutube, href: "#", label: "YouTube" },
   ];
 
   return (
@@ -40,9 +46,14 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="mb-6">
-              <span className="font-display text-2xl">Piano <span className="text-gold">à Tempo</span></span>
+              <span className="font-serif text-2xl">
+                Piano <span className="text-gold">à Tempo</span>
+              </span>
             </div>
-            <p className="font-sans text-white/70 mb-6" data-testid="text-footer-tagline">
+            <p
+              className="font-sans text-white/70 mb-6"
+              data-testid="text-footer-tagline"
+            >
               {translations.footer.tagline[language]}
             </p>
             <div className="flex gap-4">
@@ -63,15 +74,22 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-lg text-gold mb-6">
+            <h3 className="font-serif text-lg text-gold mb-6">
               {translations.footer.quickLinks[language]}
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.key}>
                   <Link href={link.href}>
-                    <span className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer" data-testid={`link-footer-${link.key}`}>
-                      {translations.nav[link.key as keyof typeof translations.nav][language]}
+                    <span
+                      className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer"
+                      data-testid={`link-footer-${link.key}`}
+                    >
+                      {
+                        translations.nav[
+                          link.key as keyof typeof translations.nav
+                        ][language]
+                      }
                     </span>
                   </Link>
                 </li>
@@ -79,8 +97,15 @@ export function Footer() {
               {additionalLinks.map((link) => (
                 <li key={link.key}>
                   <Link href={link.href}>
-                    <span className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer" data-testid={`link-footer-${link.key}`}>
-                      {translations.nav[link.key as keyof typeof translations.nav][language]}
+                    <span
+                      className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer"
+                      data-testid={`link-footer-${link.key}`}
+                    >
+                      {
+                        translations.nav[
+                          link.key as keyof typeof translations.nav
+                        ][language]
+                      }
                     </span>
                   </Link>
                 </li>
@@ -89,14 +114,17 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-lg text-gold mb-6">
+            <h3 className="font-serif text-lg text-gold mb-6">
               {translations.footer.programs[language]}
             </h3>
             <ul className="space-y-3">
               {programLinks.map((link, index) => (
                 <li key={index}>
                   <Link href={link.href}>
-                    <span className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer" data-testid={`link-footer-program-${index}`}>
+                    <span
+                      className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer"
+                      data-testid={`link-footer-program-${index}`}
+                    >
                       {link.label}
                     </span>
                   </Link>
@@ -106,7 +134,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-lg text-gold mb-6">
+            <h3 className="font-serif text-lg text-gold mb-6">
               {translations.footer.contactInfo[language]}
             </h3>
             <ul className="space-y-3 font-sans text-white/70">
@@ -119,7 +147,10 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8">
-          <p className="font-sans text-white/50 text-center text-sm" data-testid="text-copyright">
+          <p
+            className="font-sans text-white/50 text-center text-sm"
+            data-testid="text-copyright"
+          >
             {translations.footer.copyright[language]}
           </p>
         </div>

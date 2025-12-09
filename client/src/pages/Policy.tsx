@@ -1,11 +1,11 @@
-import { useRef } from 'react';
-import { useLanguage } from '@/lib/language-context';
-import { translations } from '@/lib/translations';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { motion, useInView } from 'framer-motion';
-import { Card } from '@/components/ui/card';
-import { FileText, XCircle, CreditCard } from 'lucide-react';
+import { useRef } from "react";
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { motion, useInView } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { FileText, XCircle, CreditCard } from "lucide-react";
 
 export default function Policy() {
   const { language } = useLanguage();
@@ -41,7 +41,10 @@ export default function Policy() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="font-display text-4xl md:text-5xl text-black mb-4" data-testid="text-policy-title">
+            <h1
+              className="font-serif text-4xl md:text-5xl text-black mb-4"
+              data-testid="text-policy-title"
+            >
               {translations.policy.title[language]}
             </h1>
             <div className="w-24 h-1 bg-gold mx-auto" />
@@ -61,10 +64,16 @@ export default function Policy() {
                       <policy.icon className="w-6 h-6 text-gold" />
                     </div>
                     <div>
-                      <h2 className="font-display text-xl text-black mb-3" data-testid={`text-policy-title-${index}`}>
+                      <h2
+                        className="font-serif text-xl text-black mb-3"
+                        data-testid={`text-policy-title-${index}`}
+                      >
                         {policy.title}
                       </h2>
-                      <p className="font-sans text-gray-700 leading-relaxed" data-testid={`text-policy-content-${index}`}>
+                      <p
+                        className="font-sans text-gray-700 leading-relaxed"
+                        data-testid={`text-policy-content-${index}`}
+                      >
                         {policy.content}
                       </p>
                     </div>

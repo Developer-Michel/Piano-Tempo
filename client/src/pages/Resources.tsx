@@ -1,11 +1,11 @@
-import { useRef } from 'react';
-import { useLanguage } from '@/lib/language-context';
-import { translations } from '@/lib/translations';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { motion, useInView } from 'framer-motion';
-import { Card } from '@/components/ui/card';
-import { FileText, BookOpen, Music, Download } from 'lucide-react';
+import { useRef } from "react";
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { motion, useInView } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { FileText, BookOpen, Music, Download } from "lucide-react";
 
 export default function Resources() {
   const { language } = useLanguage();
@@ -15,24 +15,27 @@ export default function Resources() {
   const resourceCategories = [
     {
       icon: FileText,
-      title: language === 'en' ? 'Practice Sheets' : 'Feuilles de pratique',
-      description: language === 'en' 
-        ? 'Weekly practice logs and assignment trackers for students'
-        : 'Journaux de pratique hebdomadaires et suivis de devoirs pour les élèves',
+      title: language === "en" ? "Practice Sheets" : "Feuilles de pratique",
+      description:
+        language === "en"
+          ? "Weekly practice logs and assignment trackers for students"
+          : "Journaux de pratique hebdomadaires et suivis de devoirs pour les élèves",
     },
     {
       icon: BookOpen,
-      title: language === 'en' ? 'Theory Guides' : 'Guides de théorie',
-      description: language === 'en'
-        ? 'Music theory fundamentals from beginner to advanced levels'
-        : 'Fondamentaux de la théorie musicale du niveau débutant au niveau avancé',
+      title: language === "en" ? "Theory Guides" : "Guides de théorie",
+      description:
+        language === "en"
+          ? "Music theory fundamentals from beginner to advanced levels"
+          : "Fondamentaux de la théorie musicale du niveau débutant au niveau avancé",
     },
     {
       icon: Music,
-      title: language === 'en' ? 'Sheet Music' : 'Partitions',
-      description: language === 'en'
-        ? 'Curated selection of pieces for various skill levels'
-        : 'Sélection de pièces pour différents niveaux',
+      title: language === "en" ? "Sheet Music" : "Partitions",
+      description:
+        language === "en"
+          ? "Curated selection of pieces for various skill levels"
+          : "Sélection de pièces pour différents niveaux",
     },
   ];
 
@@ -47,10 +50,16 @@ export default function Resources() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="font-display text-4xl md:text-5xl text-black mb-4" data-testid="text-resources-title">
+            <h1
+              className="font-serif text-4xl md:text-5xl text-black mb-4"
+              data-testid="text-resources-title"
+            >
               {translations.resources.title[language]}
             </h1>
-            <p className="font-serif text-xl text-gold italic mb-4" data-testid="text-resources-subtitle">
+            <p
+              className="font-serif text-xl text-gold italic mb-4"
+              data-testid="text-resources-subtitle"
+            >
               {translations.resources.subtitle[language]}
             </p>
             <div className="w-24 h-1 bg-gold mx-auto" />
@@ -62,7 +71,10 @@ export default function Resources() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center mb-12"
           >
-            <p className="font-sans text-gray-600 max-w-2xl mx-auto" data-testid="text-resources-coming-soon">
+            <p
+              className="font-sans text-gray-600 max-w-2xl mx-auto"
+              data-testid="text-resources-coming-soon"
+            >
               {translations.resources.comingSoon[language]}
             </p>
           </motion.div>
@@ -84,10 +96,16 @@ export default function Resources() {
                       <resource.icon className="w-7 h-7 text-gold" />
                     </div>
                     <div className="flex-1">
-                      <h2 className="font-display text-xl text-black mb-1" data-testid={`text-resource-title-${index}`}>
+                      <h2
+                        className="font-serif text-xl text-black mb-1"
+                        data-testid={`text-resource-title-${index}`}
+                      >
                         {resource.title}
                       </h2>
-                      <p className="font-sans text-gray-600 text-sm" data-testid={`text-resource-desc-${index}`}>
+                      <p
+                        className="font-sans text-gray-600 text-sm"
+                        data-testid={`text-resource-desc-${index}`}
+                      >
                         {resource.description}
                       </p>
                     </div>

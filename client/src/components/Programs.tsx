@@ -1,9 +1,9 @@
-import { useRef } from 'react';
-import { useLanguage } from '@/lib/language-context';
-import { translations } from '@/lib/translations';
-import { motion, useInView } from 'framer-motion';
-import { Card } from '@/components/ui/card';
-import { User, Users, GraduationCap, Briefcase, Sun } from 'lucide-react';
+import { useRef } from "react";
+import { useLanguage } from "@/lib/language-context";
+import { translations } from "@/lib/translations";
+import { motion, useInView } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { User, Users, GraduationCap, Briefcase, Sun } from "lucide-react";
 
 export function Programs() {
   const { language } = useLanguage();
@@ -12,39 +12,44 @@ export function Programs() {
 
   const programs = [
     {
-      key: 'private',
+      key: "private",
       icon: User,
       ...translations.programs.private,
     },
     {
-      key: 'group7to9',
+      key: "group7to9",
       icon: Users,
       ...translations.programs.group7to9,
     },
     {
-      key: 'group10to13',
+      key: "group10to13",
       icon: Users,
       ...translations.programs.group10to13,
     },
     {
-      key: 'group13to17',
+      key: "group13to17",
       icon: GraduationCap,
       ...translations.programs.group13to17,
     },
     {
-      key: 'adult',
+      key: "adult",
       icon: Briefcase,
       ...translations.programs.adult,
     },
     {
-      key: 'retired',
+      key: "retired",
       icon: Sun,
       ...translations.programs.retired,
     },
   ];
 
   return (
-    <section id="programs" ref={sectionRef} className="py-24 bg-white" data-testid="section-programs">
+    <section
+      id="programs"
+      ref={sectionRef}
+      className="py-24 bg-white"
+      data-testid="section-programs"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -52,10 +57,16 @@ export function Programs() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl text-black mb-4" data-testid="text-programs-title">
+          <h2
+            className="font-serif text-4xl md:text-5xl text-black mb-4"
+            data-testid="text-programs-title"
+          >
             {translations.programs.title[language]}
           </h2>
-          <p className="font-serif text-xl text-gold italic" data-testid="text-programs-subtitle">
+          <p
+            className="font-serif text-xl text-gold italic"
+            data-testid="text-programs-subtitle"
+          >
             {translations.programs.subtitle[language]}
           </p>
         </motion.div>
@@ -109,10 +120,16 @@ function ProgramCard({
           <span className="inline-block px-2 py-1 text-xs font-sans text-gold bg-gold/10 rounded mb-2">
             {ages}
           </span>
-          <h3 className="font-display text-xl text-black mb-2" data-testid={`text-program-title-${index}`}>
+          <h3
+            className="font-serif text-xl text-black mb-2"
+            data-testid={`text-program-title-${index}`}
+          >
             {title}
           </h3>
-          <p className="font-sans text-gray-600 text-sm leading-relaxed" data-testid={`text-program-desc-${index}`}>
+          <p
+            className="font-sans text-gray-600 text-sm leading-relaxed"
+            data-testid={`text-program-desc-${index}`}
+          >
             {description}
           </p>
         </div>
