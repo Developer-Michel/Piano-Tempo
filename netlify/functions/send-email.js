@@ -13,7 +13,9 @@ export async function handler(event) {
   }
 
   try {
-    const { name, email, message } = JSON.parse(event.body || "{}");
+    const { name, email, message, phone, language } = JSON.parse(
+      event.body || "{}"
+    );
 
     if (!name || !email || !message) {
       return {
@@ -30,7 +32,8 @@ export async function handler(event) {
       text: `
 Name: ${name}
 Email: ${email}
-
+Language Preference: ${language}
+Phone: ${phone || "N/A"}
 Message:
 ${message}
       `,

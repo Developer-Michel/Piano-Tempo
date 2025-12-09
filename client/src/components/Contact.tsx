@@ -51,7 +51,9 @@ export function Contact() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const { toast } = useToast();
-
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -63,7 +65,36 @@ export function Contact() {
     },
   });
 
-  const onSubmit = async (data: ContactFormData) => {};
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      const response = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast({
+          title: "Success",
+          description:
+            "Your message has been sent. We will get back to you shortly.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description:
+          "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  };
 
   const contactInfo = [
     {
