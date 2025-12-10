@@ -13,7 +13,7 @@ export async function handler(event) {
   }
 
   try {
-    const { name, email, message, phone, language } = JSON.parse(
+    const { name, email, message, phone, language, course } = JSON.parse(
       event.body || "{}"
     );
 
@@ -34,6 +34,7 @@ Name: ${name}
 Email: ${email}
 Language Preference: ${language}
 Phone: ${phone || "N/A"}
+course: ${course || "N/A"}
 Message:
 ${message}
       `,

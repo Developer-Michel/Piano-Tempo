@@ -12,6 +12,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
+import { useLocation } from "wouter";
 
 export function Programs() {
   const { language } = useLanguage();
@@ -62,11 +63,12 @@ export function Programs() {
         <div className="space-y-12">
           {/* Private Course */}
 
-          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0 }}
+              className="h-full"
             >
               <ProgramCard
                 icon={programs[0].icon}
@@ -76,6 +78,7 @@ export function Programs() {
                 }
                 ages={translations.programs.private.ages[language]}
                 index={0}
+                value="private"
               />
             </motion.div>
 
@@ -85,6 +88,7 @@ export function Programs() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
+              className="h-full"
             >
               <GroupProgramCard
                 icon={programs[1].icon}
@@ -112,15 +116,25 @@ function ProgramCard({
   description,
   ages,
   index,
+  value,
 }: {
   icon: typeof User;
   title: string;
   description: string;
   ages: string;
   index: number;
+  value?: string;
 }) {
   return (
     <Card
+      onClick={() => {
+        if (value) {
+          const target = `${
+            window.location.pathname
+          }#contact?course=${encodeURIComponent(value)}`;
+          window.location.href = target;
+        }
+      }}
       className="group p-6 border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
       data-testid={`card-program-${index}`}
     >
@@ -167,13 +181,13 @@ function GroupProgramCard({
 }) {
   const { language } = useLanguage();
   const [open, setOpen] = useState(false);
-
+  const [, navigate] = useLocation();
   return (
     <Card
       onClick={() => setOpen((v) => !v)}
-      className="group p-6 border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+      className="group h-full p-6 border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
     >
-      <div className="flex items-start gap-4">
+      <div className="flex   gap-4">
         <div className="w-12 h-12 flex items-center justify-center bg-gold/10 rounded-md shrink-0 transition-colors duration-300 group-hover:bg-gold/20">
           <Icon className="w-6 h-6 text-gold" />
         </div>
@@ -196,15 +210,26 @@ function GroupProgramCard({
       </div>
 
       {open && (
-        <div className="mt-6 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="mt-6 grid whitespace-pre-line sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map((it, i) => (
-            <div
+            <button
               key={i}
-              className="p-3 border rounded bg-gray-50 text-sm text-gray-700"
+              type="button"
+              onClick={() => {
+                const target = `${
+                  window.location.pathname
+                }#contact?course=${encodeURIComponent(`group-${i}`)}`;
+                navigate(target);
+                // const element = document.getElementById("contact");
+                // if (element) {
+                //   element.scrollIntoView({ behavior: "smooth" });
+                // }
+              }}
+              className="p-3 text-left border rounded text-sm text-gray-700 hover:bg-gray-100"
               data-testid={`group-item-${i}`}
             >
               {it[language]}
-            </div>
+            </button>
           ))}
         </div>
       )}

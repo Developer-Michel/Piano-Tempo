@@ -8,7 +8,7 @@ import { Music, Award, Calendar, ChevronDown } from "lucide-react";
 export function About() {
   const { language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
@@ -19,13 +19,13 @@ export function About() {
     translations.about.p4,
   ];
 
-  useEffect(() => {
-    if (isHovered) return;
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % paragraphs.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [isHovered, paragraphs.length]);
+  // useEffect(() => {
+  //   if (isHovered) return;
+  //   const interval = setInterval(() => {
+  //     setCurrentIndex((prev) => (prev + 1) % paragraphs.length);
+  //   }, 6000);
+  //   return () => clearInterval(interval);
+  // }, [isHovered, paragraphs.length]);
 
   return (
     <section
@@ -60,8 +60,8 @@ export function About() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
+            // onHoverStart={() => setIsHovered(true)}
+            // onHoverEnd={() => setIsHovered(false)}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-4"
           >
@@ -101,7 +101,7 @@ export function About() {
                   {index === currentIndex && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "250px" }}
+                      animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden "

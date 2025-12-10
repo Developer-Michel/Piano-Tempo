@@ -111,7 +111,7 @@ export function Header() {
                 testId={`nav-${item.key}`}
               />
             ))}
-            <DropdownMenu>
+            <DropdownMenu modal={false}>
               <DropdownMenuTrigger asChild>
                 <button
                   className={`relative font-sans text-sm tracking-wide group ${

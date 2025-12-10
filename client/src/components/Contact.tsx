@@ -1,9 +1,10 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
 import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
 import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
@@ -34,12 +35,15 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { useLocation } from "wouter";
+import { useFullLocation } from "@/hooks/useFullLocation";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Valid email required"),
   phone: z.string().optional(),
   language: z.string(),
+  course: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
@@ -61,9 +65,48 @@ export function Contact() {
       email: "",
       phone: "",
       language: language,
+      course: "",
       message: "",
     },
   });
+
+  const fullLocation = useFullLocation();
+
+  useEffect(() => {
+    try {
+      const url = new URL(fullLocation, window.location.origin);
+
+      // 1) if there is a hash like #contact?course=...
+      let raw = url.hash || "";
+
+      // 2) if no hash, fallback to normal ?course=...
+      if (!raw && url.search) {
+        const courseFromSearch = url.searchParams.get("course");
+        if (courseFromSearch) {
+          form.setValue("course", courseFromSearch);
+          const el = document.getElementById("contact");
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }
+        return;
+      }
+
+      if (!raw) return;
+
+      const parts = raw.replace(/^#/, "").split("?");
+      if (parts.length < 2) return;
+
+      const params = new URLSearchParams(parts[1]);
+      const course = params.get("course");
+
+      if (course) {
+        form.setValue("course", course);
+        const el = document.getElementById("contact");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
+    } catch {
+      // ignore parsing errors
+    }
+  }, [fullLocation, form]);
 
   const onSubmit = async (data: ContactFormData) => {
     try {
@@ -242,7 +285,7 @@ export function Contact() {
                           </FormLabel>
                           <Select
                             onValueChange={field.onChange}
-                            defaultValue={field.value}
+                            value={field.value}
                           >
                             <FormControl>
                               <SelectTrigger
@@ -257,6 +300,63 @@ export function Contact() {
                               <SelectItem value="fr">Français</SelectItem>
                             </SelectContent>
                           </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="course"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-sans text-gray-700">
+                            {language === "en"
+                              ? "Which course are you interested in?"
+                              : "Quel cours vous intéresse ?"}
+                          </FormLabel>
+                          <FormControl>
+                            <Select
+                              onValueChange={field.onChange}
+                              value={field.value}
+                            >
+                              <SelectTrigger
+                                className="border-gray-300 focus:border-gold focus:ring-gold"
+                                data-testid="select-course"
+                              >
+                                <SelectValue
+                                  placeholder={
+                                    language === "en"
+                                      ? "Select a course"
+                                      : "Sélectionner un cours"
+                                  }
+                                />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem
+                                  value="private"
+                                  data-testid="option-private"
+                                >
+                                  {
+                                    translations.programs.private.title[
+                                      language
+                                    ]
+                                  }
+                                </SelectItem>
+                                {translations.programs.groups.items.map(
+                                  (it, idx) => (
+                                    <SelectItem
+                                      key={idx}
+                                      value={`group-${idx}`}
+                                      data-testid={`option-group-${idx}`}
+                                    >
+                                      {it[language]}
+                                    </SelectItem>
+                                  )
+                                )}
+                              </SelectContent>
+                            </Select>
+                          </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
