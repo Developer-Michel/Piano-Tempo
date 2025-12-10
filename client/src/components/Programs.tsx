@@ -169,7 +169,10 @@ function GroupProgramCard({
   const [open, setOpen] = useState(false);
 
   return (
-    <Card className="group p-6 border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+    <Card
+      onClick={() => setOpen((v) => !v)}
+      className="group p-6 border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+    >
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 flex items-center justify-center bg-gold/10 rounded-md shrink-0 transition-colors duration-300 group-hover:bg-gold/20">
           <Icon className="w-6 h-6 text-gold" />
@@ -190,29 +193,6 @@ function GroupProgramCard({
             </p>
           </div>
         </div>
-
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="flex items-center gap-2 text-gold font-semibold"
-          aria-expanded={open}
-          data-testid="button-toggle-groups"
-        >
-          {open ? (
-            <>
-              <span className="hidden sm:inline">
-                {language === "en" ? "Show less" : "Réduire"}
-              </span>
-              <ChevronUp className="w-4 h-4" />
-            </>
-          ) : (
-            <>
-              <span className="hidden sm:inline">
-                {language === "en" ? "Show all" : "Voir tout"}
-              </span>
-              <ChevronDown className="w-4 h-4" />
-            </>
-          )}
-        </button>
       </div>
 
       {open && (

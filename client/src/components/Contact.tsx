@@ -100,12 +100,7 @@ export function Contact() {
     {
       icon: MapPin,
       label: translations.contact.info.address[language],
-      value: "123 Music Avenue\nMontreal, QC H2X 1Y6",
-    },
-    {
-      icon: Phone,
-      label: translations.contact.info.phone[language],
-      value: "(514) 555-0123",
+      value: "QC J8Y1B3",
     },
     {
       icon: Mail,

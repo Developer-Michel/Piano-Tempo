@@ -19,24 +19,6 @@ export function About() {
     translations.about.p4,
   ];
 
-  const stats = [
-    {
-      icon: Music,
-      value: "500+",
-      label: translations.about.stats.students[language],
-    },
-    {
-      icon: Award,
-      value: "14+",
-      label: translations.about.stats.years[language],
-    },
-    {
-      icon: Calendar,
-      value: "4",
-      label: translations.about.stats.recitals[language],
-    },
-  ];
-
   useEffect(() => {
     if (isHovered) return;
     const interval = setInterval(() => {

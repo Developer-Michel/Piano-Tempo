@@ -220,8 +220,8 @@ export const translations = {
       email: { en: "Email", fr: "Courriel" },
       hours: { en: "Hours", fr: "Heures" },
       hoursDetail: {
-        en: "Mon-Fri: 8AM-8PM",
-        fr: "Lun-Ven: 8AM-8PM",
+        en: "Mon-Fri: 10AM-8PM",
+        fr: "Lun-Ven: 10AM-8PM",
       },
     },
   },
