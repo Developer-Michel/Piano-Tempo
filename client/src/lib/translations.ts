@@ -128,24 +128,24 @@ export const translations = {
       ages: { en: "Multiple Options", fr: "Plusieurs options" },
       items: [
         {
-          en: "Group Lessons (Ages 5-7)",
-          fr: "Cours de groupe (5-7 ans)",
+          en: "Group Lessons \n(Ages 5-7)",
+          fr: "Cours de groupe \n(5-7 ans)",
         },
         {
-          en: "Group Lessons (Ages 7-10)",
-          fr: "Cours de groupe (7-10 ans)",
+          en: "Group Lessons \n(Ages 7-10)",
+          fr: "Cours de groupe \n(7-10 ans)",
         },
         {
-          en: "Group Lessons (Ages 10-13)",
-          fr: "Cours de groupe (10-13 ans)",
+          en: "Group Lessons \n(Ages 10-13)",
+          fr: "Cours de groupe \n(10-13 ans)",
         },
         {
-          en: "Group Lessons (Ages 13-17)",
-          fr: "Cours de groupe (13-17 ans)",
+          en: "Group Lessons \n(Ages 13-17)",
+          fr: "Cours de groupe \n(13-17 ans)",
         },
         {
-          en: "Adult Group Lessons (18+)",
-          fr: "Cours de groupe adultes (18+)",
+          en: "Adult Group Lessons \n(18+)",
+          fr: "Cours de groupe adultes \n(18+)",
         },
         {
           en: "Daytime Adult & Retired",
