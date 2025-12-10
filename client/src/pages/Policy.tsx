@@ -12,23 +12,13 @@ export default function Policy() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
-  const policies = [
-    {
-      icon: FileText,
-      title: translations.policy.enrollment.title[language],
-      content: translations.policy.enrollment.content[language],
-    },
-    {
-      icon: XCircle,
-      title: translations.policy.cancellation.title[language],
-      content: translations.policy.cancellation.content[language],
-    },
-    {
-      icon: CreditCard,
-      title: translations.policy.payment.title[language],
-      content: translations.policy.payment.content[language],
-    },
-  ];
+  const policyItems = translations.policy.items;
+  const icons = [FileText, XCircle, CreditCard];
+  const policies = policyItems.map((p, i) => ({
+    icon: icons[i] || FileText,
+    title: p.title[language],
+    content: p.content[language],
+  }));
 
   return (
     <div className="min-h-screen bg-white" data-testid="page-policy">
