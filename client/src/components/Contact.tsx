@@ -110,7 +110,7 @@ export function Contact() {
     {
       icon: Mail,
       label: translations.contact.info.email[language],
-      value: "info@pianoatempo.ca",
+      value: "info.pianoatempo@gmail.com",
     },
     {
       icon: Clock,

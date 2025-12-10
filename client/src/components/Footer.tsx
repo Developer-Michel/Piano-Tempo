@@ -28,10 +28,9 @@ export function Footer() {
       href: "/#programs",
     },
     {
-      label: translations.programs.group7to9.title[language],
+      label: translations.programs.groups.title[language],
       href: "/#programs",
     },
-    { label: translations.programs.adult.title[language], href: "/#programs" },
   ];
 
   const socialLinks = [
@@ -138,10 +137,9 @@ export function Footer() {
               {translations.footer.contactInfo[language]}
             </h3>
             <ul className="space-y-3 font-sans text-white/70">
-              <li>123 Music Avenue</li>
-              <li>Montreal, QC H2X 1Y6</li>
-              <li className="pt-2">(514) 555-0123</li>
-              <li>info@pianoatempo.ca</li>
+              <li>Gatineau, secteur Hull, QC J8Y 1B3</li>
+              {/* <li className="pt-2">(514) 555-0123</li> */}
+              <li>info.pianoatempo@gmail.com</li>
             </ul>
           </div>
         </div>

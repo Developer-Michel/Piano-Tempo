@@ -27,7 +27,7 @@ export async function handler(event) {
     // Send the email
     await resend.emails.send({
       from: "Website Contact <no-reply@yourdomain.com>",
-      to: "info@pianoatempo.ca", // <- put YOUR email here
+      to: "info.pianoatempo@gmail.com", // <- put YOUR email here
       subject: "New contact form message",
       text: `
 Name: ${name}

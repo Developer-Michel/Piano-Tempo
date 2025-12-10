@@ -1,3 +1,5 @@
+import { text } from "stream/consumers";
+
 export type Language = "en" | "fr";
 
 export const translations = {
@@ -14,24 +16,56 @@ export const translations = {
   },
   hero: {
     tagline: {
-      en: "Where passion meets discipline",
-      fr: "Là où la passion rencontre la discipline",
+      en: "Welcome to Piano a tempo! Where you learn piano at YOUR tempo! ",
+      fr: "Bienvenue chez Piano a Tempo !  L’endroit où vous apprenez le piano à VOTRE tempo !",
     },
     cta: { en: "Inquire Now", fr: "Renseignez-vous" },
   },
   about: {
     title: { en: "About Piano à Tempo", fr: "À propos de Piano à Tempo" },
     subtitle: {
-      en: "Excellence in Piano Education Since 2010",
-      fr: "L'excellence en enseignement du piano depuis 2010",
+      en: "“Why our studio is different” - Our Pedagogical Philosophy",
+      fr: "« Pourquoi notre studio est différent » – Notre philosophie pédagogique",
     },
     p1: {
-      en: "At Piano à Tempo, we believe that music education is a transformative journey. Our school was founded on the principle that every student, regardless of age or skill level, deserves access to world-class piano instruction in a nurturing environment.",
-      fr: "Chez Piano à Tempo, nous croyons que l'éducation musicale est un voyage transformateur. Notre école a été fondée sur le principe que chaque élève, quel que soit son âge ou son niveau, mérite un accès à un enseignement du piano de classe mondiale dans un environnement bienveillant.",
+      title: {
+        en: "“technique first” approach ",
+        fr: "Une approche “technique d’abord”",
+      },
+      text: {
+        en: "Proper hand position, posture, and technique are essential for injury-free playing, fluid movement and long-term skill. While these foundations are sometimes overlooked elsewhere, due to the patience, repeated attention, and consistent reinforcement they require, the teachers at Piano a tempo treat them with the outmost importance. This means they’ll revisit corrections as often as needed, reinforcing proper foundations in fun and engaging ways…until they become second nature! ",
+        fr: "Une bonne position des mains, une posture adéquate et une technique solide sont indispensables pour jouer sans douleur, développer un mouvement fluide et acquérir des compétences durables. Alors que ces bases sont parfois négligées ailleurs — parce qu’elles demandent de la patience, une attention répétée et un renforcement constant — les enseignants de Piano a Tempo leur accordent la plus haute importance. Cela signifie qu’ils reviendront sur les ajustements aussi souvent que nécessaire, renforçant les fondations de manière amusante et engageante… jusqu’à ce qu’elles deviennent une seconde nature !",
+      },
     },
     p2: {
-      en: "Our approach combines traditional conservatory methods with modern pedagogical techniques, ensuring that students develop not only technical proficiency but also a deep appreciation for the art of piano performance.",
-      fr: "Notre approche combine les méthodes traditionnelles du conservatoire avec des techniques pédagogiques modernes, garantissant que les élèves développent non seulement une compétence technique mais aussi une profonde appréciation de l'art de l'interprétation pianistique.",
+      title: {
+        en: "Our passion for pedagogy (how we teach matters)",
+        fr: "Notre passion pour la pédagogie (la façon d’enseigner compte)",
+      },
+      text: {
+        en: "What truly sets us apart is how we teach. We pour creativity, diversity, and enthusiasm into every lesson. \n We explain concepts in ways students can genuinely understand : using real-life analogies, storytelling, humour, demonstrations, and playful activities to make each notion memorable and comprehensible.  We constantly adapt our approach so every child, teen, or adult feels supported and capable.",
+        fr: "Ce qui nous distingue vraiment, c’est notre manière d’enseigner. Nous insufflons créativité, diversité et enthousiasme dans chaque leçon. \n Nous expliquons les notions d’une façon que les élèves peuvent réellement comprendre : à l’aide d’analogies concrètes, d’histoires, d’humour, de démonstrations et d’activités ludiques qui rendent chaque concept mémorable et accessible. Nous adaptons constamment notre approche pour que chaque enfant, adolescent ou adulte se sente soutenu et capable.",
+      },
+    },
+    p3: {
+      title: {
+        en: "A warm and supportive atmosphere ",
+        fr: "Une atmosphère chaleureuse et bienveillante",
+      },
+      text: {
+        en: "Our studio is a place where students feel welcomed, encouraged, and inspired. We teach with kindness, patience, and genuine care for each individual and their progress. \n We believe that when students feel safe and supported, they learn better and grow their confidence.",
+        fr: "Notre studio est un lieu où les élèves se sentent accueillis, encouragés et inspirés. Nous enseignons avec gentillesse, patience et une réelle attention portée à chaque personne et à sa progression. \n Nous croyons que lorsque les élèves se sentent en sécurité et soutenus, ils apprennent mieux et développent davantage leur confiance.",
+      },
+    },
+    p4: {
+      title: {
+        en: "What We Value and Cultivate",
+        fr: "Ce que nous valorisons et cultivons",
+      },
+      text: {
+        en: "Beyond technique and teaching methods, we strive to develop musicians who are curious, expressive, and connected to the world around them. Our program also focuses on:\nIntrinsic motivation — encouraging students to play for the love of music, explore new music independently and develop a personal connection to their journey \nCultural and historical awareness — exploring music from around the world and from all historical eras, understanding the context, traditions and stories behind it\nEfficient practice strategies — teaching students to practice strategically, breaking pieces into sections and focusing on what truly matters to achieve the goals",
+        fr: "Au-delà de la technique et des méthodes d’enseignement, nous souhaitons développer des musiciens curieux, expressifs et connectés au monde qui les entoure. Notre programme met également l’accent sur :\nLa motivation intrinsèque — encourager les élèves à jouer par amour de la musique, à explorer de nouvelles pièces de façon autonome et à développer un lien personnel avec leur parcours.\nLa conscience culturelle et historique — découvrir de la musique provenant du monde entier et de toutes les époques, en comprenant le contexte, les traditions et les histoires qui l’accompagnent.\nDes stratégies de pratique efficaces — apprendre aux élèves à pratiquer de manière stratégique, à découper les pièces en sections et à se concentrer sur ce qui compte vraiment pour atteindre leurs objectifs.",
+      },
     },
     stats: {
       students: { en: "Students Taught", fr: "Élèves enseignés" },
@@ -48,25 +82,25 @@ export const translations = {
     readMore: { en: "Read More", fr: "Lire la suite" },
     readLess: { en: "Read Less", fr: "Réduire" },
     teacher1: {
-      name: " Yasemin Angelina Bayindir",
+      name: "Angelina",
       title: {
-        en: "Director & Senior Instructor",
-        fr: "Directrice & Instructrice principale",
+        en: "Director & Instructor",
+        fr: "Directrice & Instructrice",
       },
       bio: {
-        en: "Marie-Claire Dubois brings over 25 years of professional piano experience to Piano à Tempo. A graduate of the Royal Conservatory of Music in Toronto and the Paris Conservatoire, she has performed in concert halls across Europe and North America. Her teaching philosophy emphasizes the importance of building a strong technical foundation while nurturing each student's unique musical voice.\n\nHer expertise spans classical repertoire from Bach to contemporary composers, with a particular passion for Romantic-era works by Chopin and Liszt. Marie-Claire has mentored numerous students who have gone on to pursue professional careers in music, and she takes great pride in watching her students grow both as musicians and as individuals.\n\nAs the founder and director of Piano à Tempo, Marie-Claire has created a curriculum that balances rigorous technical training with the joy of musical expression, ensuring that every student finds their own path to musical excellence.",
-        fr: "Marie-Claire Dubois apporte plus de 25 ans d'expérience professionnelle au piano à Piano à Tempo. Diplômée du Conservatoire Royal de Musique de Toronto et du Conservatoire de Paris, elle s'est produite dans des salles de concert à travers l'Europe et l'Amérique du Nord. Sa philosophie d'enseignement met l'accent sur l'importance de construire une base technique solide tout en cultivant la voix musicale unique de chaque élève.\n\nSon expertise couvre le répertoire classique de Bach aux compositeurs contemporains, avec une passion particulière pour les œuvres de l'époque romantique de Chopin et Liszt. Marie-Claire a encadré de nombreux élèves qui ont poursuivi des carrières professionnelles dans la musique, et elle est très fière de voir ses élèves grandir tant en tant que musiciens qu'en tant qu'individus.\n\nEn tant que fondatrice et directrice de Piano à Tempo, Marie-Claire a créé un programme qui équilibre une formation technique rigoureuse avec la joie de l'expression musicale, garantissant que chaque élève trouve son propre chemin vers l'excellence musicale.",
+        en: "With over 8 years of teaching experience, Angelina has taught in a variety of settings, adapting her approach to meet the unique needs of each student. Her lessons balance focus and enjoyment, making the learning process both effective and rewarding. \n What truly sets Angelina apart is her engaging personality that makes every lesson dynamic and fulfilling. She fosters an environment where students feel comfortable expressing themselves, which in turn makes them more open and engaged in the learning process. \n Her classical teaching method promotes steady progress while keeping students motivated, which is why so many continue lessons with her for years and always look forward to each session. ",
+        fr: "Avec plus de huit ans d’expérience en enseignement, Angelina a travaillé dans divers environnements musicaux et sait adapter son approche aux besoins uniques de chaque élève. Ses leçons allient concentration et plaisir, rendant l’apprentissage à la fois efficace et enrichissant. \n Ce qui distingue réellement Angelina, c’est sa personnalité engageante, qui rend chaque cours dynamique et satisfaisant. Elle crée un environnement où les élèves se sentent libres de s’exprimer, ce qui les rend plus ouverts et impliqués dans leur apprentissage.Sa méthode d’enseignement classique favorise une progression constante tout en maintenant une grande motivation — une des raisons pour lesquelles tant d’élèves restent avec elle pendant des années et attendent chaque leçon avec impatience.",
       },
     },
     teacher2: {
-      name: "Alexandre Fontaine",
+      name: "Inessa",
       title: {
-        en: "Senior Instructor & Performance Coach",
-        fr: "Instructeur principal & Coach de performance",
+        en: "Senior Instructor",
+        fr: "Instructeur senior",
       },
       bio: {
-        en: "Alexandre Fontaine is a distinguished pianist and educator whose career spans two decades of performance and teaching excellence. After completing his studies at the Juilliard School in New York, he toured internationally as a concert pianist before discovering his passion for teaching.\n\nAlexandre specializes in preparing students for competitions and examinations, with a remarkable track record of students achieving distinctions at regional and national levels. His approach combines meticulous attention to technique with deep musicological analysis, helping students understand not just how to play, but why the music was composed as it was.\n\nKnown for his patience and ability to connect with students of all ages, Alexandre has a particular gift for working with young beginners, making their first steps into music both enjoyable and educational. His group lessons are renowned for their engaging atmosphere and the sense of community they foster among students.",
-        fr: "Alexandre Fontaine est un pianiste et éducateur distingué dont la carrière s'étend sur deux décennies d'excellence en performance et en enseignement. Après avoir terminé ses études à la Juilliard School de New York, il a tourné internationalement en tant que pianiste de concert avant de découvrir sa passion pour l'enseignement.\n\nAlexandre se spécialise dans la préparation des élèves aux concours et aux examens, avec un bilan remarquable d'élèves obtenant des distinctions aux niveaux régional et national. Son approche combine une attention méticuleuse à la technique avec une analyse musicologique approfondie, aidant les élèves à comprendre non seulement comment jouer, mais pourquoi la musique a été composée ainsi.\n\nConnu pour sa patience et sa capacité à se connecter avec des élèves de tous âges, Alexandre a un don particulier pour travailler avec les jeunes débutants, rendant leurs premiers pas dans la musique à la fois agréables et éducatifs. Ses cours de groupe sont réputés pour leur atmosphère engageante et le sens de la communauté qu'ils favorisent parmi les élèves.",
+        en: "With over 30 years of teaching experience, Inessa brings both depth and warmth to her piano lessons. Trained in the Russian classical tradition she helps students build strong technical foundations while guiding them to cultivate their musicality and expressive playing. \n Inessa’s approach is structured yet encouraging : she meets students where they are and helps them grow step by step, cultivating confidence and a genuine love for music. She knows how to challenge students while also adapting to each individual’s learning tempo. \n With her graceful presence and genuine care, Inessa creates a welcoming and motivating environment where students flourish while discovering the beauty of music. ",
+        fr: "Avec plus de 30 ans d’expérience en enseignement, Inessa apporte à ses cours de piano à la fois profondeur et chaleur. Formée dans la tradition classique russe, elle aide les élèves à établir de solides bases techniques tout en les guidant à développer leur musicalité et leur expressivité. \n L’approche d’Inessa est à la fois structurée et encourageante : elle rencontre les élèves là où ils en sont et les aide à progresser pas à pas, cultivant confiance et amour véritable pour la musique. Elle réussit à motiver les élèves à se surpasser tout en respectant leur rythme individuel.\n Avec sa présence élégante et sa préoccupation sincère, Inessa crée un environnement accueillant et motivant où les élèves s’épanouissent tout en découvrant la beauté de la musique.",
       },
     },
   },
@@ -80,65 +114,44 @@ export const translations = {
     private: {
       title: { en: "Private Lessons", fr: "Cours privés" },
       description: {
-        en: "One-on-one instruction tailored to your individual goals and learning pace. Perfect for focused skill development and personalized attention.",
-        fr: "Enseignement individuel adapté à vos objectifs personnels et à votre rythme d'apprentissage. Parfait pour un développement ciblé des compétences et une attention personnalisée.",
+        en: "One-on-one lessons tailored to each student’s individual needs, learning pace and goals, these classes develop technique, musical interpretation and theoretical understanding of music. They also offer the possibility to prepare for the preparatory-level auditions at the Conservatoire de musique de Gatineau and for the RCM examinations in Toronto.",
+        fr: "Enseignement individuel adaptés aux besoins individuels, au rythme et aux objectifs de chaque élève, ces cours permettent de développer la technique, l’interprétation musicale et la compréhension théorique de la musique. Ils offrent en outre la possibilité de se préparer aux auditions du niveau préparatoire du Conservatoire de musique de Gatineau et aux examens du RCM de Toronto.",
       },
       ages: { en: "All ages", fr: "Tous âges" },
     },
-    group7to9: {
-      title: {
-        en: "Group Lessons (Ages 7-9)",
-        fr: "Cours de groupe (7-9 ans)",
-      },
+    groups: {
+      title: { en: "Group lesson", fr: "Cours de groupe" },
       description: {
         en: "Fun and engaging group sessions for young beginners. Students learn together, building confidence and musical friendships in a supportive environment.",
         fr: "Sessions de groupe amusantes et engageantes pour les jeunes débutants. Les élèves apprennent ensemble, développant confiance et amitiés musicales dans un environnement bienveillant.",
       },
-      ages: { en: "Ages 7-9", fr: "7-9 ans" },
-    },
-    group10to13: {
-      title: {
-        en: "Group Lessons (Ages 10-13)",
-        fr: "Cours de groupe (10-13 ans)",
-      },
-      description: {
-        en: "Intermediate group instruction focusing on technique refinement, music theory, and ensemble playing. Ideal for developing young musicians.",
-        fr: "Enseignement de groupe intermédiaire axé sur le perfectionnement technique, la théorie musicale et le jeu d'ensemble. Idéal pour les jeunes musiciens en développement.",
-      },
-      ages: { en: "Ages 10-13", fr: "10-13 ans" },
-    },
-    group13to17: {
-      title: {
-        en: "Group Lessons (Ages 13-17)",
-        fr: "Cours de groupe (13-17 ans)",
-      },
-      description: {
-        en: "Advanced group sessions for teens focusing on repertoire building, performance preparation, and advanced theory. Prepare for examinations and competitions.",
-        fr: "Sessions de groupe avancées pour adolescents axées sur la construction du répertoire, la préparation aux performances et la théorie avancée. Préparation aux examens et concours.",
-      },
-      ages: { en: "Ages 13-17", fr: "13-17 ans" },
-    },
-    adult: {
-      title: {
-        en: "Adult Group Lessons (18+)",
-        fr: "Cours de groupe adultes (18+)",
-      },
-      description: {
-        en: "Evening sessions designed for working adults who want to pursue their passion for piano. All skill levels welcome, from beginners to returning players.",
-        fr: "Sessions en soirée conçues pour les adultes actifs qui veulent poursuivre leur passion pour le piano. Tous niveaux bienvenus, des débutants aux joueurs de retour.",
-      },
-      ages: { en: "Ages 18+", fr: "18 ans et +" },
-    },
-    retired: {
-      title: {
-        en: "Daytime Adult & Retired",
-        fr: "Cours de jour adultes et retraités",
-      },
-      description: {
-        en: "Relaxed daytime sessions for adults and retirees. Focus on enjoyment and personal enrichment in a welcoming, pressure-free atmosphere.",
-        fr: "Sessions de jour détendues pour adultes et retraités. Focus sur le plaisir et l'enrichissement personnel dans une atmosphère accueillante et sans pression.",
-      },
-      ages: { en: "Adults & Seniors", fr: "Adultes et aînés" },
+      ages: { en: "Multiple Options", fr: "Plusieurs options" },
+      items: [
+        {
+          en: "Group Lessons (Ages 5-7)",
+          fr: "Cours de groupe (5-7 ans)",
+        },
+        {
+          en: "Group Lessons (Ages 7-10)",
+          fr: "Cours de groupe (7-10 ans)",
+        },
+        {
+          en: "Group Lessons (Ages 10-13)",
+          fr: "Cours de groupe (10-13 ans)",
+        },
+        {
+          en: "Group Lessons (Ages 13-17)",
+          fr: "Cours de groupe (13-17 ans)",
+        },
+        {
+          en: "Adult Group Lessons (18+)",
+          fr: "Cours de groupe adultes (18+)",
+        },
+        {
+          en: "Daytime Adult & Retired",
+          fr: "Cours de jour adultes et retraités",
+        },
+      ],
     },
   },
   testimonials: {
@@ -207,8 +220,8 @@ export const translations = {
       email: { en: "Email", fr: "Courriel" },
       hours: { en: "Hours", fr: "Heures" },
       hoursDetail: {
-        en: "Mon-Fri: 9AM-8PM\nSat: 9AM-5PM\nSun: Closed",
-        fr: "Lun-Ven: 9h-20h\nSam: 9h-17h\nDim: Fermé",
+        en: "Mon-Fri: 8AM-8PM",
+        fr: "Lun-Ven: 8AM-8PM",
       },
     },
   },
@@ -222,33 +235,35 @@ export const translations = {
     contactInfo: { en: "Contact Info", fr: "Coordonnées" },
     followUs: { en: "Follow Us", fr: "Suivez-nous" },
     copyright: {
-      en: "© 2024 Piano à Tempo. All rights reserved.",
-      fr: "© 2024 Piano à Tempo. Tous droits réservés.",
+      en: "© 2025 Piano à Tempo. All rights reserved.",
+      fr: "© 2025 Piano à Tempo. Tous droits réservés.",
     },
   },
   policy: {
     title: { en: "Policies", fr: "Politiques" },
-    enrollment: {
-      title: { en: "Enrollment Policy", fr: "Politique d'inscription" },
-      content: {
-        en: "Registration is open year-round. New students may join at the beginning of any month, subject to availability. A non-refundable registration fee of $50 is required upon enrollment.",
-        fr: "L'inscription est ouverte toute l'année. Les nouveaux élèves peuvent s'inscrire au début de chaque mois, selon la disponibilité. Des frais d'inscription non remboursables de 50$ sont requis lors de l'inscription.",
+    items: [
+      {
+        title: { en: "Enrollment Policy", fr: "Politique d'inscription" },
+        content: {
+          en: "Registration is open year-round. New students may join at the beginning of any month, subject to availability. A non-refundable registration fee of $50 is required upon enrollment.",
+          fr: "L'inscription est ouverte toute l'année. Les nouveaux élèves peuvent s'inscrire au début de chaque mois, selon la disponibilité. Des frais d'inscription non remboursables de 50$ sont requis lors de l'inscription.",
+        },
       },
-    },
-    cancellation: {
-      title: { en: "Cancellation Policy", fr: "Politique d'annulation" },
-      content: {
-        en: "Lessons cancelled with less than 24 hours notice will not be rescheduled or refunded. Students are entitled to reschedule up to 2 lessons per term with 24+ hours notice.",
-        fr: "Les cours annulés avec moins de 24 heures d'avis ne seront pas reprogrammés ni remboursés. Les élèves ont droit à reprogrammer jusqu'à 2 cours par trimestre avec un préavis de 24 heures ou plus.",
+      {
+        title: { en: "Cancellation Policy", fr: "Politique d'annulation" },
+        content: {
+          en: "Lessons cancelled with less than 24 hours notice will not be rescheduled or refunded. Students are entitled to reschedule up to 2 lessons per term with 24+ hours notice.",
+          fr: "Les cours annulés avec moins de 24 heures d'avis ne seront pas reprogrammés ni remboursés. Les élèves ont droit à reprogrammer jusqu'à 2 cours par trimestre avec un préavis de 24 heures ou plus.",
+        },
       },
-    },
-    payment: {
-      title: { en: "Payment Terms", fr: "Conditions de paiement" },
-      content: {
-        en: "Tuition is due at the beginning of each month. We accept payment by credit card, debit, e-transfer, or cash. A late fee of $25 applies to payments received after the 7th of the month.",
-        fr: "Les frais de scolarité sont dus au début de chaque mois. Nous acceptons les paiements par carte de crédit, débit, virement électronique ou comptant. Des frais de retard de 25$ s'appliquent aux paiements reçus après le 7 du mois.",
+      {
+        title: { en: "Payment Terms", fr: "Conditions de paiement" },
+        content: {
+          en: "Tuition is due at the beginning of each month. We accept payment by credit card, debit, e-transfer, or cash. A late fee of $25 applies to payments received after the 7th of the month.",
+          fr: "Les frais de scolarité sont dus au début de chaque mois. Nous acceptons les paiements par carte de crédit, débit, virement électronique ou comptant. Des frais de retard de 25$ s'appliquent aux paiements reçus après le 7 du mois.",
+        },
       },
-    },
+    ],
   },
   faq: {
     title: {
@@ -264,26 +279,6 @@ export const translations = {
         a: {
           en: "We accept students from age 5 and up. For children under 7, we recommend our introductory private lessons to build foundational skills before joining group sessions.",
           fr: "Nous acceptons les élèves à partir de 5 ans. Pour les enfants de moins de 7 ans, nous recommandons nos cours privés d'introduction pour développer les compétences fondamentales avant de rejoindre les sessions de groupe.",
-        },
-      },
-      {
-        q: {
-          en: "Do I need a piano at home?",
-          fr: "Ai-je besoin d'un piano à la maison?",
-        },
-        a: {
-          en: "Yes, regular practice at home is essential for progress. A quality digital piano or acoustic piano is recommended. We can provide guidance on purchasing or renting an instrument.",
-          fr: "Oui, la pratique régulière à la maison est essentielle pour progresser. Un piano numérique de qualité ou un piano acoustique est recommandé. Nous pouvons vous guider dans l'achat ou la location d'un instrument.",
-        },
-      },
-      {
-        q: {
-          en: "How long are the lessons?",
-          fr: "Quelle est la durée des cours?",
-        },
-        a: {
-          en: "Private lessons are 30, 45, or 60 minutes depending on the student's level. Group lessons are 60 minutes.",
-          fr: "Les cours privés sont de 30, 45 ou 60 minutes selon le niveau de l'élève. Les cours de groupe sont de 60 minutes.",
         },
       },
       {
@@ -304,6 +299,106 @@ export const translations = {
         a: {
           en: "Absolutely! We hold two annual recitals (winter and spring) where all students are encouraged to perform. We also participate in local music festivals and competitions.",
           fr: "Absolument! Nous organisons deux récitals annuels (hiver et printemps) où tous les élèves sont encouragés à se produire. Nous participons également à des festivals de musique locaux et à des concours.",
+        },
+      },
+      {
+        q: {
+          en: "Rates and fees",
+          fr: "Tarifs et frais",
+        },
+        a: {
+          en: "Registration fee: $10 per session (3 sessions total per year).\n\nLesson fees:\n• 30 minutes: $30\n• 45 minutes: $45\n• 1 hour: $60\n\nThese rates are for individual lessons. Any additional fees, such as materials or special events, will be communicated separately.\n\nNote: Individual tickets are sold for the 2 concerts organized per year: $15 per adult, $5 per child, free for the pianist.",
+          fr: "Frais d'inscription: 10 $ par session (3 sessions au total par an).\n\nTarifs des leçons:\n• 30 minutes: 30 $\n• 45 minutes: 45 $\n• 1 heure: 60 $\n\nCes tarifs concernent les cours individuels. Tous frais supplémentaires, tels que le matériel ou les événements spéciaux, seront communiqués séparément.\n\nVeuillez noter que des billets individuels sont vendus pour assister aux 2 concerts organisés chaque année: 15 $ par adulte, 5 $ par enfant, gratuit pour le pianiste.",
+        },
+      },
+      {
+        q: {
+          en: "Which program to pick?",
+          fr: "Quel programme choisir?",
+        },
+        a: {
+          en: "Every student learns differently!\n\nPick one-on-one lessons if you want a customized learning experience ideal for faster progress and deeper musical and technical growth.\n\nPick group lessons if you want a fun, social and collaborative approach to learning music that covers all the core fundamentals while remaining budget-friendly.",
+          fr: "Chaque élève apprend différemment!\n\nChoisissez les cours privés si vous souhaitez une expérience d'apprentissage personnalisée, idéale pour progresser plus rapidement et développer en profondeur vos compétences musicales et techniques.\n\nOptez pour les cours en groupe si vous préférez une approche ludique, sociale et collaborative qui couvre tous les fondamentaux à un tarif avantageux.",
+        },
+      },
+      {
+        q: {
+          en: "How can I prepare for the first lesson?",
+          fr: "Comment se préparer pour la première leçon?",
+        },
+        a: {
+          en: "If this is your first lesson, please bring a simple notebook to record any assigned homework.\n\nIf you have any music books or scores of your own, you are welcomed to bring them to class and the teacher will have a look at them.\n\nPlease arrive 5-10 minutes before the class and don't forget to wash your hands!",
+          fr: "Si c'est votre premier cours, veuillez apporter un cahier simple pour noter les devoirs qui pourraient être donnés.\n\nSi vous avez vos propres partitions ou livres de musique, vous êtes invité à les apporter en cours; l'enseignant pourra les consulter.\n\nArrivez 5 à 10 minutes avant le début du cours et n'oubliez pas de vous laver les mains!",
+        },
+      },
+      {
+        q: {
+          en: "How many concerts are there?",
+          fr: "Combien y a-t-il de concerts?",
+        },
+        a: {
+          en: "There are two official concerts held each year:\n\n• One during the week before Christmas in December\n• One during the second-to-last week of June, aligning with the final week of the school year\n\nFurther details will be provided once the date has been confirmed with the venue.\n\nConcert pricing: $15 per adult, $5 per child, Free for the performing student.\n\n(These ticket fees help cover the various costs associated with organizing the event, including venue rental, administrative work, student gifts, and other logistical expenses.)\n\nIn addition to these concerts, there is also an optional, free concert held in March, hosted by the Conservatory of Music of Gatineau, which offers students an additional performance opportunity in a formal setting. Details will be shared upon receiving the confirmation of the date from the Conservatory.",
+          fr: "Deux concerts officiels ont lieu chaque année:\n\n• Un durant la semaine précédant Noël en décembre\n• Un durant l'avant-dernière semaine de juin, correspondant à la dernière semaine de l'année scolaire\n\nDes détails supplémentaires seront communiqués une fois la date confirmée avec la salle.\n\nTarifs des concerts: 15 $ par adulte, 5 $ par enfant, Gratuit pour l'élève performant.\n\n(Ces frais de billet contribuent à couvrir les différents coûts liés à l'organisation de l'événement, notamment la location de la salle, le travail administratif, les cadeaux pour les élèves et autres frais logistiques.)\n\nEn plus de ces concerts, un concert optionnel et gratuit a lieu en mars, organisé par le Conservatoire de musique de Gatineau. Il offre aux élèves une occasion supplémentaire de se produire dans un cadre officiel. Les détails seront partagés dès que la date sera confirmée par le Conservatoire.",
+        },
+      },
+      {
+        q: {
+          en: "How do online lessons work?",
+          fr: "Comment fonctionnent les cours en ligne?",
+        },
+        a: {
+          en: "Classes are offered through a variety of apps: FaceTime, Messenger, WhatsApp, Teams, or Zoom.\n\nThe camera on the student (on a computer, phone, or iPad) should be positioned so that we can see the upper body of the student and have a clear view of the hands on the piano.\n\nNew students: The teacher already has all the necessary books for the lessons and will inform you which ones to purchase.\n\nExisting students: The teacher will contact you if she needs a photo of your current assignment or a specific page from your piano book.",
+          fr: "Les cours sont offerts via différentes applications: FaceTime, Messenger, WhatsApp, Teams ou Zoom.\n\nLa caméra de l'élève (ordinateur, téléphone ou iPad) doit être positionnée de manière à ce que le haut du corps soit visible et que l'on ait une vue claire des mains sur le piano.\n\nNouveaux élèves: L'enseignant possède déjà tous les livres nécessaires pour les cours et vous indiquera lesquels acheter.\n\nÉlèves existants: L'enseignante vous contactera si elle a besoin d'une photo de vos notes de cours ou d'une page spécifique de votre cahier.",
+        },
+      },
+      {
+        q: {
+          en: "How long does a lesson last?",
+          fr: "Quelle est la durée d'un cours?",
+        },
+        a: {
+          en: "Lesson length is highly individual and depends on the student's concentration level.\n\nChildren (up to 10 years old): We recommend that beginners start with 30-minute lessons. As they progress, parents will be informed when the student is ready for 45-minute or 1-hour lessons.\n\nChildren 10 years and older: Beginners are recommended to take 30- or 45-minute lessons. Intermediate players are advised to take 45- or 60-minute lessons, depending on their goals, as this allows more material to be covered.\n\nAdults: 30- or 45-minute lessons. The duration can be adjusted if needed.",
+          fr: "La durée d'un cours dépend beaucoup de chaque élève et de son niveau de concentration.\n\nEnfants (jusqu'à 10 ans): Nous recommandons aux débutants de commencer par des cours de 30 minutes. Au fur et à mesure de leur progression, les parents seront informés lorsque l'élève sera prêt pour des cours de 45 minutes ou 1 heure.\n\nEnfants de 10 ans et plus: Les débutants commencent généralement avec des cours de 30 ou 45 minutes. Les élèves intermédiaires devraient opter pour des cours de 45 ou 60 minutes, selon leurs objectifs, afin de pouvoir couvrir davantage de matière.\n\nAdultes: Cours de 30 à 60 minutes, en fonction des buts à atteindre. La durée peut être ajustée si nécessaire.",
+        },
+      },
+      {
+        q: {
+          en: "What should practice at home look like?",
+          fr: "À quoi devrait ressembler la pratique à la maison?",
+        },
+        a: {
+          en: "Practice length will depend on each student's goals, concentration capabilities and time.\n\nWhile daily practice is ideal, we understand that every student's schedule and family life is different and that such a goal could be challenging to achieve. That being said, we like to remind our students that even a few well-spent practice sessions per week can lead to steady and meaningful progress over time. Consistent and focused practice at home are the keys to success!\n\nA practice can last anywhere between 10 minutes and 45 minutes for beginner and intermediate students. This time can be divided into smaller blocks, with breaks in between, which often helps maintain focus and motivation.",
+          fr: "La durée de la pratique dépendra des objectifs de chaque élève, de sa capacité de concentration et du temps dont il dispose.\n\nBien qu'une pratique quotidienne soit idéale, nous comprenons que l'horaire et la réalité familiale de chaque élève sont différents, et qu'il peut être difficile d'atteindre cet objectif. Cela dit, nous aimons rappeler que même quelques séances de pratique chaque semaine peuvent mener à des progrès constants et significatifs. Une pratique régulière et structurée à la maison est la clé du succès!\n\nPour les élèves débutants et intermédiaires, une séance de pratique peut durer entre 10 et 45 minutes. Ce temps peut être divisé en blocs plus courts, avec des pauses entre chaque segment, ce qui aide souvent à maintenir la concentration et la motivation.",
+        },
+      },
+      {
+        q: {
+          en: "What happens if a student breaks a hand or finger?",
+          fr: "Que se passe-t-il si un élève se casse une main ou un doigt?",
+        },
+        a: {
+          en: "If a student experiences an injury to an arm, hand, or finger, they're welcome to keep their spot in their teacher's schedule by continuing lessons in an adapted way.\n\nThere's still plenty to explore during this time, such as exercises and repertoire to strengthen the technique and playing capacity of the uninjured arm, as well as a greater focus on music theory lessons.\n\nEven with one hand, students can continue developing all the core aspects of musicianship, including articulation, dynamics, phrasing, and musical expression.\n\nThis approach helps students stay connected to music and maintain their progress, even while recovering.",
+          fr: "Si un élève se blesse à un bras, une main ou un doigt, il est invité à conserver sa place dans l'horaire de son enseignante en poursuivant les cours sous une forme adaptée.\n\nIl reste encore beaucoup à explorer durant cette période, comme des exercices et un répertoire visant à renforcer la technique et la capacité de jeu du bras non blessé, ainsi qu'un travail plus approfondi sur la théorie musicale.\n\nMême avec une seule main, les élèves peuvent continuer à développer les aspects essentiels de la formation musicale, notamment les articulations, les nuances, le phrasé et l'expressivité.\n\nCette approche permet aux élèves de rester connectés à la musique et de maintenir leurs progrès, même en période de rétablissement.",
+        },
+      },
+      {
+        q: {
+          en: "Do I need a piano at home to start the lessons?",
+          fr: "Ai-je besoin d'un piano à la maison pour commencer les cours?",
+        },
+        a: {
+          en: "Ideally, yes. Having an instrument at home allows students to practice regularly, which greatly accelerates learning.",
+          fr: "Idéalement, oui. Avoir un instrument à la maison permet aux élèves de s'entraîner régulièrement, ce qui accélère grandement l'apprentissage.",
+        },
+      },
+      {
+        q: {
+          en: "Which piano should I buy?",
+          fr: "Quel piano acheter?",
+        },
+        a: {
+          en: "Yamaha is a highly recommended brand for quality pianos that balance durability, sound quality, and value. We recommend consulting with the teacher for specific model recommendations based on your budget and space.",
+          fr: "Yamaha est une marque hautement recommandée pour les pianos de qualité qui équilibrent la durabilité, la qualité sonore et la valeur. Nous recommandons de consulter l'enseignant pour des recommandations de modèles spécifiques en fonction de votre budget et de votre espace.",
         },
       },
     ],
@@ -329,6 +424,86 @@ export const translations = {
       en: "Resource downloads coming soon. We are preparing practice sheets, music theory guides, and recommended reading lists for our students.",
       fr: "Téléchargements de ressources à venir. Nous préparons des feuilles de pratique, des guides de théorie musicale et des listes de lecture recommandées pour nos élèves.",
     },
+  },
+  methadlology: {
+    title: { en: "Our Methodology", fr: "Notre méthodologie" },
+    subtitle: {
+      en: "A Unique Approach to Piano Education",
+      fr: "Une approche unique de l'enseignement du piano",
+    },
+    items: [
+      {
+        title: {
+          en: "Attention to proper hand and overall body position",
+          fr: "Attention à la position des mains et du corps",
+        },
+        content: {
+          en: "which are crucial for playing comfortably and with the right technique.",
+          fr: "essentielles pour jouer confortablement et avec la bonne technique.",
+        },
+      },
+      {
+        title: {
+          en: "Technical exercices of all kinds",
+          fr: "Exercices techniques variés",
+        },
+        content: {
+          en: "they aim to develop finger strength, agility, coordination, and hand independence.",
+          fr: "ils visent à développer la force des doigts, l’agilité, la coordination et l’indépendance des mains.",
+        },
+      },
+      {
+        title: {
+          en: "Classical repertoire",
+          fr: "Répertoire classique",
+        },
+        content: {
+          en: "pieces are chosen to target specific technical and musical goals such as phrasing, dynamics, rhythm and articulations.",
+          fr: "les pièces sont choisies pour cibler des objectifs techniques et musicaux précis, tels que les phrasés, les nuances, le rythme et les articulations.",
+        },
+      },
+      {
+        title: {
+          en: "Songs of student’s choice and teacher recommendations",
+          fr: "Chansons au choix de l’élève et recommandations de l’enseignant",
+        },
+        content: {
+          en: "whether it’s film music, pop, jazz or contemporary songs, we encourage students to choose music they love to keep the lessons inspiring and motivating. The teacher finds an adapted version of the chosen music for the student’s level. ",
+          fr: "que ce soit de la musique de film, pop, jazz ou contemporaine, nous encourageons les élèves à choisir des morceaux qu’ils aiment pour rendre les cours inspirants et motivants. L’enseignant trouve une version adaptée au niveau de l’élève.",
+        },
+      },
+      {
+        title: {
+          en: "Music theory and sight reading",
+          fr: "Théorie musicale et lecture à vue ",
+        },
+        content: {
+          en: "learning to read notations, understanding rhythm, key signatures, musical patterns, terminologies, etc.",
+          fr: "apprendre à lire les notations, comprendre le rythme, les armatures, les motifs musicaux, le vocabulaire, etc.",
+        },
+      },
+
+      {
+        title: {
+          en: "Detailed notes for homework and exercises",
+          fr: "Notes détaillées pour les devoirs et exercices",
+        },
+        content: {
+          en: "to do at home between lessons, ensuring consistent progress and reinforcement of concepts learned during the lesson.",
+          fr: "à faire à la maison entre les leçons, assurant une progression constante et le renforcement des concepts appris pendant la leçon.",
+        },
+      },
+      {
+        title: {
+          en: "Possibilité de participer à trois concerts par an",
+          fr: "Opportunity to participate in 3 concerts per year",
+        },
+        content: {
+          en: "to encourage self-confidence and performance skills.",
+          fr: "pour encourager la confiance en soi et les compétences en performance.",
+        },
+      },
+    ],
   },
 };
 
