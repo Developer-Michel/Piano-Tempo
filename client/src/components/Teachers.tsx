@@ -107,9 +107,8 @@ function TeacherCard({
           <img
             src={teacher.image}
             alt={teacher.name}
-            className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+            className="w-full h-full object-cover opacity-90 transition-all duration-500 group-hover:opacity-100"
           />
-          <div className="absolute inset-0 bg-gold/0 transition-all duration-500 group-hover:bg-gold/20" />
         </motion.div>
       </div>
 
