@@ -334,7 +334,11 @@ export function Contact() {
                               </SelectTrigger>
                               <SelectContent>
                                 <SelectItem
-                                  value="private"
+                                  value={
+                                    translations.programs.private.title[
+                                      language
+                                    ]
+                                  }
                                   data-testid="option-private"
                                 >
                                   {
@@ -347,7 +351,7 @@ export function Contact() {
                                   (it, idx) => (
                                     <SelectItem
                                       key={idx}
-                                      value={`group-${idx}`}
+                                      value={it[language]}
                                       data-testid={`option-group-${idx}`}
                                     >
                                       {it[language]}

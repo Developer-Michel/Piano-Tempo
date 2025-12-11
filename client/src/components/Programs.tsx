@@ -78,7 +78,7 @@ export function Programs() {
                 }
                 ages={translations.programs.private.ages[language]}
                 index={0}
-                value="private"
+                value={translations.programs.private.title[language]}
               />
             </motion.div>
 
@@ -216,9 +216,10 @@ function GroupProgramCard({
               key={i}
               type="button"
               onClick={() => {
+                const courseName = it[language];
                 const target = `${
                   window.location.pathname
-                }#contact?course=${encodeURIComponent(`group-${i}`)}`;
+                }#contact?course=${encodeURIComponent(courseName)}`;
                 navigate(target);
                 // const element = document.getElementById("contact");
                 // if (element) {
