@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
 import { Menu, X } from "lucide-react";
+import { SiFacebook, SiInstagram } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "wouter";
@@ -44,6 +45,7 @@ export function Header() {
   const activeExtra = additionalNavItems.some((item) => item.href === location);
   const handleNavClick = (href: string, isSection: boolean) => {
     setIsMobileMenuOpen(false);
+
     if (isSection && location === "/") {
       const sectionId = href.replace("/#", "");
       const element = document.getElementById(sectionId);
@@ -59,6 +61,8 @@ export function Header() {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
+    } else if (location === "/" && href === "/") {
+      window.scrollTo(0, 0);
     } else {
       navigate(href);
     }
@@ -75,7 +79,7 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/">
+          <Link href="/" onClick={() => handleNavClick("/", false)}>
             <motion.div
               className="flex items-center gap-2 cursor-pointer"
               whileHover={{ scale: 1.02 }}
@@ -119,7 +123,7 @@ export function Header() {
                   }`}
                   aria-label="More"
                 >
-                  More
+                  {translations.nav["more"][language]}
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -141,6 +145,42 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
+            {/* Social links (from env) */}
+            <div className="flex items-center gap-3">
+              {import.meta.env.VITE_FACEBOOK && (
+                <a
+                  href={import.meta.env.VITE_FACEBOOK}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={`w-8 h-8 flex items-center justify-center rounded-md transition-colors ${
+                    isScrolled || activeExtra
+                      ? "text-black hover:text-gold"
+                      : "text-white hover:text-gold"
+                  }`}
+                  aria-label="Facebook"
+                  data-testid="link-header-facebook"
+                >
+                  <SiFacebook className="w-5 h-5" />
+                </a>
+              )}
+              {import.meta.env.VITE_INSTAGRAM && (
+                <a
+                  href={import.meta.env.VITE_INSTAGRAM}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={`w-8 h-8 flex items-center justify-center rounded-md transition-colors ${
+                    isScrolled || activeExtra
+                      ? "text-black hover:text-gold"
+                      : "text-white hover:text-gold"
+                  }`}
+                  aria-label="Instagram"
+                  data-testid="link-header-instagram"
+                >
+                  <SiInstagram className="w-5 h-5" />
+                </a>
+              )}
+            </div>
+
             <div
               className={`flex items-center gap-1 text-sm font-medium ${
                 isScrolled || activeExtra ? "text-black" : "text-white"

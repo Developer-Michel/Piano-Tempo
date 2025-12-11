@@ -34,9 +34,21 @@ export function Footer() {
   ];
 
   const socialLinks = [
-    { icon: SiFacebook, href: "#", label: "Facebook" },
-    { icon: SiInstagram, href: "#", label: "Instagram" },
-    { icon: SiYoutube, href: "#", label: "YouTube" },
+    {
+      icon: SiFacebook,
+      href: import.meta.env.VITE_FACEBOOK,
+      label: "Facebook",
+    },
+    {
+      icon: SiInstagram,
+      href: import.meta.env.VITE_INSTAGRAM,
+      label: "Instagram",
+    },
+    {
+      icon: SiYoutube,
+      href: import.meta.env.VITE_YOUTUBE_CHANNEL,
+      label: "YouTube",
+    },
   ];
 
   return (
@@ -137,9 +149,11 @@ export function Footer() {
               {translations.footer.contactInfo[language]}
             </h3>
             <ul className="space-y-3 font-sans text-white/70">
-              <li>Gatineau, secteur Hull, QC J8Y 1B3</li>
-              {/* <li className="pt-2">(514) 555-0123</li> */}
-              <li>info.pianoatempo@gmail.com</li>
+              <li>{import.meta.env.VITE_ADDRESS}</li>
+              {import.meta.env.VITE_PHONE && (
+                <li className="pt-2">{import.meta.env.VITE_PHONE}</li>
+              )}
+              <li>{import.meta.env.VITE_EMAIL}</li>
             </ul>
           </div>
         </div>

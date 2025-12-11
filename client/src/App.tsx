@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+import { useEffect } from "react";
+import { Switch, Route, useLocation } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/lib/language-context";
@@ -10,6 +11,15 @@ import Resources from "@/pages/Resources";
 import NotFound from "@/pages/not-found";
 
 function Router() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    console.log("Location changed:", location);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 10);
+  }, [location]);
+
   return (
     <Switch>
       <Route path="/" component={Home} />

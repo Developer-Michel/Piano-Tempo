@@ -10,14 +10,15 @@ export const translations = {
     programs: { en: "Programs", fr: "Programmes" },
     contact: { en: "Contact Us", fr: "Contactez-nous" },
     policy: { en: "Policy", fr: "Politique" },
-    information: { en: "Information", fr: "Information" },
+    information: { en: "FAQ", fr: "FAQ" },
     gallery: { en: "Gallery", fr: "Galerie" },
     resources: { en: "Resources", fr: "Ressources" },
+    more: { en: "More", fr: "Plus" },
   },
   hero: {
     tagline: {
-      en: "Welcome to Piano a tempo! Where you learn piano at YOUR tempo! ",
-      fr: "Bienvenue chez Piano a Tempo !  L’endroit où vous apprenez le piano à VOTRE tempo !",
+      en: "Where you learn piano at YOUR tempo! ",
+      fr: "L’endroit où vous apprenez le piano à VOTRE tempo !",
     },
     cta: { en: "Inquire Now", fr: "Renseignez-vous" },
   },
@@ -155,7 +156,7 @@ export const translations = {
     },
   },
   testimonials: {
-    title: { en: "What Parents Say", fr: "Ce que disent les parents" },
+    title: { en: "What clients Say", fr: "Ce que disent les clients" },
     subtitle: {
       en: "Trusted by Families Across the Community",
       fr: "La confiance des familles de toute la communauté",
@@ -220,8 +221,8 @@ export const translations = {
       email: { en: "Email", fr: "Courriel" },
       hours: { en: "Hours", fr: "Heures" },
       hoursDetail: {
-        en: "Mon-Fri: 10AM-8PM",
-        fr: "Lun-Ven: 10AM-8PM",
+        en: "Mon-Fri: 10am-8pm",
+        fr: "Lun-Ven: 10am-8pm",
       },
     },
   },
@@ -245,8 +246,12 @@ export const translations = {
       {
         title: { en: "Enrollment Policy", fr: "Politique d'inscription" },
         content: {
-          en: "Registration is open year-round. New students may join at the beginning of any month, subject to availability. A non-refundable registration fee of $50 is required upon enrollment.",
-          fr: "L'inscription est ouverte toute l'année. Les nouveaux élèves peuvent s'inscrire au début de chaque mois, selon la disponibilité. Des frais d'inscription non remboursables de 50$ sont requis lors de l'inscription.",
+          en: `Registration is open year-round. New students may join at the beginning of any month, subject to availability. A non-refundable registration fee of $${
+            import.meta.env.VITE_ENROLLMENT_REGISTRATION_FEE
+          } is required upon enrollment.`,
+          fr: `L'inscription est ouverte toute l'année. Les nouveaux élèves peuvent s'inscrire au début de chaque mois, selon la disponibilité. Des frais d'inscription non remboursables de ${
+            import.meta.env.VITE_ENROLLMENT_REGISTRATION_FEE
+          }$ sont requis lors de l'inscription.`,
         },
       },
       {
@@ -259,8 +264,12 @@ export const translations = {
       {
         title: { en: "Payment Terms", fr: "Conditions de paiement" },
         content: {
-          en: "Tuition is due at the beginning of each month. We accept payment by credit card, debit, e-transfer, or cash. A late fee of $25 applies to payments received after the 7th of the month.",
-          fr: "Les frais de scolarité sont dus au début de chaque mois. Nous acceptons les paiements par carte de crédit, débit, virement électronique ou comptant. Des frais de retard de 25$ s'appliquent aux paiements reçus après le 7 du mois.",
+          en: `Tuition is due at the beginning of each month. We accept payment by credit card, debit, e-transfer, or cash. A late fee of $${
+            import.meta.env.VITE_LATE_FEE
+          } applies to payments received after the 7th of the month.`,
+          fr: `Les frais de scolarité sont dus au début de chaque mois. Nous acceptons les paiements par carte de crédit, débit, virement électronique ou comptant. Des frais de retard de ${
+            import.meta.env.VITE_LATE_FEE
+          }$ s'appliquent aux paiements reçus après le 7 du mois.`,
         },
       },
     ],
@@ -307,8 +316,32 @@ export const translations = {
           fr: "Tarifs et frais",
         },
         a: {
-          en: "Registration fee: $10 per session (3 sessions total per year).\n\nLesson fees:\n• 30 minutes: $30\n• 45 minutes: $45\n• 1 hour: $60\n\nThese rates are for individual lessons. Any additional fees, such as materials or special events, will be communicated separately.\n\nNote: Individual tickets are sold for the 2 concerts organized per year: $15 per adult, $5 per child, free for the pianist.",
-          fr: "Frais d'inscription: 10 $ par session (3 sessions au total par an).\n\nTarifs des leçons:\n• 30 minutes: 30 $\n• 45 minutes: 45 $\n• 1 heure: 60 $\n\nCes tarifs concernent les cours individuels. Tous frais supplémentaires, tels que le matériel ou les événements spéciaux, seront communiqués séparément.\n\nVeuillez noter que des billets individuels sont vendus pour assister aux 2 concerts organisés chaque année: 15 $ par adulte, 5 $ par enfant, gratuit pour le pianiste.",
+          en: `Registration fee: $${
+            import.meta.env.VITE_REGISTRATION_SESSION_FEE
+          } per session (${
+            import.meta.env.VITE_REGISTRATION_SESSIONS_TOTAL
+          } sessions total per year).\n\nLesson fees:\n• 30 minutes: $${
+            import.meta.env.VITE_LESSON_30
+          }\n• 45 minutes: $${import.meta.env.VITE_LESSON_45}\n• 1 hour: $${
+            import.meta.env.VITE_LESSON_60
+          }\n\nThese rates are for individual lessons. Any additional fees, such as materials or special events, will be communicated separately.\n\nNote: Individual tickets are sold for the 2 concerts organized per year: $${
+            import.meta.env.VITE_CONCERT_PRICE_ADULT
+          } per adult, $${
+            import.meta.env.VITE_CONCERT_PRICE_CHILD
+          } per child, free for the pianist.`,
+          fr: `Frais d'inscription: ${
+            import.meta.env.VITE_REGISTRATION_SESSION_FEE
+          } $ par session (${
+            import.meta.env.VITE_REGISTRATION_SESSIONS_TOTAL
+          } sessions au total par an).\n\nTarifs des leçons:\n• 30 minutes: ${
+            import.meta.env.VITE_LESSON_30
+          } $\n• 45 minutes: ${import.meta.env.VITE_LESSON_45} $\n• 1 heure: ${
+            import.meta.env.VITE_LESSON_60
+          } $\n\nCes tarifs concernent les cours individuels. Tous frais supplémentaires, tels que le matériel ou les événements spéciaux, seront communiqués séparément.\n\nVeuillez noter que des billets individuels sont vendus pour assister aux 2 concerts organisés chaque année: ${
+            import.meta.env.VITE_CONCERT_PRICE_ADULT
+          } $ par adulte, ${
+            import.meta.env.VITE_CONCERT_PRICE_CHILD
+          } $ par enfant, gratuit pour le pianiste.`,
         },
       },
       {

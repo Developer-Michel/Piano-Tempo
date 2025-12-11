@@ -143,12 +143,12 @@ export function Contact() {
     {
       icon: MapPin,
       label: translations.contact.info.address[language],
-      value: "QC J8Y1B3",
+      value: import.meta.env.VITE_ADDRESS,
     },
     {
       icon: Mail,
       label: translations.contact.info.email[language],
-      value: "info.pianoatempo@gmail.com",
+      value: import.meta.env.VITE_EMAIL,
     },
     {
       icon: Clock,

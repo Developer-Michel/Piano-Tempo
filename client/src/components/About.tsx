@@ -78,7 +78,11 @@ export function About() {
               >
                 {/* Title Button - Expandable */}
                 <button
-                  onClick={() => setCurrentIndex(index)}
+                  onClick={() =>
+                    currentIndex === index
+                      ? setCurrentIndex(-1)
+                      : setCurrentIndex(index)
+                  }
                   className={`w-full p-6 flex items-center justify-between transition-all duration-1000 ${
                     index === currentIndex
                       ? " text-black"
