@@ -188,18 +188,6 @@ export function Header() {
               data-testid="language-toggle"
             >
               <button
-                onClick={() => setLanguage("en")}
-                className={`px-2 py-1 transition-colors duration-300 ${
-                  language === "en"
-                    ? "text-gold"
-                    : "opacity-70 hover:opacity-100"
-                }`}
-                data-testid="button-lang-en"
-              >
-                EN
-              </button>
-              <span className="opacity-50">|</span>
-              <button
                 onClick={() => setLanguage("fr")}
                 className={`px-2 py-1 transition-colors duration-300 ${
                   language === "fr"
@@ -209,6 +197,18 @@ export function Header() {
                 data-testid="button-lang-fr"
               >
                 FR
+              </button>
+              <span className="opacity-50">|</span>
+              <button
+                onClick={() => setLanguage("en")}
+                className={`px-2 py-1 transition-colors duration-300 ${
+                  language === "en"
+                    ? "text-gold"
+                    : "opacity-70 hover:opacity-100"
+                }`}
+                data-testid="button-lang-en"
+              >
+                EN
               </button>
             </div>
 

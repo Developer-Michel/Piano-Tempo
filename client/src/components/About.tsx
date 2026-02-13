@@ -16,7 +16,6 @@ export function About() {
     translations.about.p1,
     translations.about.p2,
     translations.about.p3,
-    translations.about.p4,
   ];
 
   // useEffect(() => {

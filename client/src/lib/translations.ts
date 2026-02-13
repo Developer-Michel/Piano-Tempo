@@ -1,5 +1,3 @@
-import { text } from "stream/consumers";
-
 export type Language = "en" | "fr";
 
 export const translations = {
@@ -30,42 +28,32 @@ export const translations = {
     },
     p1: {
       title: {
-        en: "“technique first” approach ",
-        fr: "Une approche “technique d’abord”",
+        en: "Who we are",
+        fr: "Qui nous sommes",
       },
       text: {
-        en: "Proper hand position, posture, and technique are essential for injury-free playing, fluid movement and long-term skill. While these foundations are sometimes overlooked elsewhere, due to the patience, repeated attention, and consistent reinforcement they require, the teachers at Piano a tempo treat them with the outmost importance. This means they’ll revisit corrections as often as needed, reinforcing proper foundations in fun and engaging ways…until they become second nature! ",
-        fr: "Une bonne position des mains, une posture adéquate et une technique solide sont indispensables pour jouer sans douleur, développer un mouvement fluide et acquérir des compétences durables. Alors que ces bases sont parfois négligées ailleurs — parce qu’elles demandent de la patience, une attention répétée et un renforcement constant — les enseignants de Piano a Tempo leur accordent la plus haute importance. Cela signifie qu’ils reviendront sur les ajustements aussi souvent que nécessaire, renforçant les fondations de manière amusante et engageante… jusqu’à ce qu’elles deviennent une seconde nature !",
+        en: "Piano a tempo is a family owned studio that strives to make learning piano an enjoyable and progressive journey. It is a space of kindness, patience and genuine care for each student’s pace and needs.",
+        fr: "Piano à Tempo est un studio familial qui vise à rendre l’apprentissage du piano agréable et progressif. C’est un lieu de bienveillance, de patience et d’attention sincère au rythme et aux besoins de chaque élève.",
       },
     },
     p2: {
       title: {
-        en: "Our passion for pedagogy (how we teach matters)",
-        fr: "Notre passion pour la pédagogie (la façon d’enseigner compte)",
+        en: "Our mission",
+        fr: "Notre mission",
       },
       text: {
-        en: "What truly sets us apart is how we teach. We pour creativity, diversity, and enthusiasm into every lesson. \n We explain concepts in ways students can genuinely understand : using real-life analogies, storytelling, humour, demonstrations, and playful activities to make each notion memorable and comprehensible.  We constantly adapt our approach so every child, teen, or adult feels supported and capable.",
-        fr: "Ce qui nous distingue vraiment, c’est notre manière d’enseigner. Nous insufflons créativité, diversité et enthousiasme dans chaque leçon. \n Nous expliquons les notions d’une façon que les élèves peuvent réellement comprendre : à l’aide d’analogies concrètes, d’histoires, d’humour, de démonstrations et d’activités ludiques qui rendent chaque concept mémorable et accessible. Nous adaptons constamment notre approche pour que chaque enfant, adolescent ou adulte se sente soutenu et capable.",
+        en: "To teach strong and lasting musical skills while inspiring students to discover and appreciate a wide variety of music, from different cultures, historical eras, and genres.",
+        fr: "Transmettre des compétences musicales solides et durables tout en inspirant les élèves à découvrir et à apprécier une grande variété de musiques issues de cultures, d’époques historiques et de genres différents.",
       },
     },
     p3: {
       title: {
-        en: "A warm and supportive atmosphere ",
-        fr: "Une atmosphère chaleureuse et bienveillante",
+        en: "Our vision",
+        fr: "Notre vision",
       },
       text: {
-        en: "Our studio is a place where students feel welcomed, encouraged, and inspired. We teach with kindness, patience, and genuine care for each individual and their progress. \n We believe that when students feel safe and supported, they learn better and grow their confidence.",
-        fr: "Notre studio est un lieu où les élèves se sentent accueillis, encouragés et inspirés. Nous enseignons avec gentillesse, patience et une réelle attention portée à chaque personne et à sa progression. \n Nous croyons que lorsque les élèves se sentent en sécurité et soutenus, ils apprennent mieux et développent davantage leur confiance.",
-      },
-    },
-    p4: {
-      title: {
-        en: "What We Value and Cultivate",
-        fr: "Ce que nous valorisons et cultivons",
-      },
-      text: {
-        en: "Beyond technique and teaching methods, we strive to develop musicians who are curious, expressive, and connected to the world around them. Our program also focuses on:\nIntrinsic motivation — encouraging students to play for the love of music, explore new music independently and develop a personal connection to their journey \nCultural and historical awareness — exploring music from around the world and from all historical eras, understanding the context, traditions and stories behind it\nEfficient practice strategies — teaching students to practice strategically, breaking pieces into sections and focusing on what truly matters to achieve the goals",
-        fr: "Au-delà de la technique et des méthodes d’enseignement, nous souhaitons développer des musiciens curieux, expressifs et connectés au monde qui les entoure. Notre programme met également l’accent sur :\nLa motivation intrinsèque — encourager les élèves à jouer par amour de la musique, à explorer de nouvelles pièces de façon autonome et à développer un lien personnel avec leur parcours.\nLa conscience culturelle et historique — découvrir de la musique provenant du monde entier et de toutes les époques, en comprenant le contexte, les traditions et les histoires qui l’accompagnent.\nDes stratégies de pratique efficaces — apprendre aux élèves à pratiquer de manière stratégique, à découper les pièces en sections et à se concentrer sur ce qui compte vraiment pour atteindre leurs objectifs.",
+        en: "Our vision is to inspire students to become lifelong musicians by nurturing their love of music and sparking their intrinsic motivation.",
+        fr: "Inspirer les élèves à devenir des musiciens pour la vie en nourrissant leur amour de la musique et en éveillant leur motivation intrinsèque.",
       },
     },
     stats: {
@@ -90,17 +78,17 @@ export const translations = {
       },
       bio: {
         en: "With over 8 years of teaching experience, Angelina has taught in a variety of settings, adapting her approach to meet the unique needs of each student. Her lessons balance focus and enjoyment, making the learning process both effective and rewarding. \n What truly sets Angelina apart is her engaging personality that makes every lesson dynamic and fulfilling. She fosters an environment where students feel comfortable expressing themselves, which in turn makes them more open and engaged in the learning process. \n Her classical teaching method promotes steady progress while keeping students motivated, which is why so many continue lessons with her for years and always look forward to each session. ",
-        fr: "Avec plus de huit ans d’expérience en enseignement, Angelina a travaillé dans divers environnements musicaux et sait adapter son approche aux besoins uniques de chaque élève. Ses leçons allient concentration et plaisir, rendant l’apprentissage à la fois efficace et enrichissant. \n Ce qui distingue réellement Angelina, c’est sa personnalité engageante, qui rend chaque cours dynamique et satisfaisant. Elle crée un environnement où les élèves se sentent libres de s’exprimer, ce qui les rend plus ouverts et impliqués dans leur apprentissage.Sa méthode d’enseignement classique favorise une progression constante tout en maintenant une grande motivation — une des raisons pour lesquelles tant d’élèves restent avec elle pendant des années et attendent chaque leçon avec impatience.",
+        fr: "Avec plus de huit ans d’expérience en enseignement, Angelina a travaillé dans divers environnements musicaux et sait adapter son approche aux besoins uniques de chaque élève. Ses leçons allient concentration et plaisir, rendant l’apprentissage à la fois efficace et enrichissant. \n Ce qui distingue réellement Angelina, c’est sa personnalité engageante, qui rend chaque cours dynamique et satisfaisant. Elle crée un environnement où les élèves se sentent libres de s’exprimer, ce qui les rend plus ouverts et impliqués dans leur apprentissage. Sa méthode d’enseignement classique favorise une progression constante tout en maintenant une grande motivation — une des raisons pour lesquelles tant d’élèves restent avec elle pendant des années et attendent chaque leçon avec impatience.",
       },
     },
     teacher2: {
       name: "Inessa",
       title: {
         en: "Senior Instructor",
-        fr: "Instructeur senior",
+        fr: "Instructrice principale",
       },
       bio: {
-        en: "With over 30 years of teaching experience, Inessa brings both depth and warmth to her piano lessons. Trained in the Russian classical tradition she helps students build strong technical foundations while guiding them to cultivate their musicality and expressive playing. \n Inessa’s approach is structured yet encouraging : she meets students where they are and helps them grow step by step, cultivating confidence and a genuine love for music. She knows how to challenge students while also adapting to each individual’s learning tempo. \n With her graceful presence and genuine care, Inessa creates a welcoming and motivating environment where students flourish while discovering the beauty of music. ",
+        en: "With over 30 years of teaching experience, Inessa brings both depth and warmth to her piano lessons. Trained in the Russian classical tradition, she helps students build strong technical foundations while guiding them to cultivate their musicality and expressive playing. \n Inessa’s approach is structured yet encouraging: she meets students where they are and helps them grow step by step, cultivating confidence and a genuine love for music. She knows how to challenge students while also adapting to each individual’s learning tempo. \n With her graceful presence and genuine care, Inessa creates a welcoming and motivating environment where students flourish while discovering the beauty of music. ",
         fr: "Avec plus de 30 ans d’expérience en enseignement, Inessa apporte à ses cours de piano à la fois profondeur et chaleur. Formée dans la tradition classique russe, elle aide les élèves à établir de solides bases techniques tout en les guidant à développer leur musicalité et leur expressivité. \n L’approche d’Inessa est à la fois structurée et encourageante : elle rencontre les élèves là où ils en sont et les aide à progresser pas à pas, cultivant confiance et amour véritable pour la musique. Elle réussit à motiver les élèves à se surpasser tout en respectant leur rythme individuel.\n Avec sa présence élégante et sa préoccupation sincère, Inessa crée un environnement accueillant et motivant où les élèves s’épanouissent tout en découvrant la beauté de la musique.",
       },
     },
@@ -156,7 +144,7 @@ export const translations = {
     },
   },
   testimonials: {
-    title: { en: "What clients Say", fr: "Ce que disent les clients" },
+    title: { en: "What Clients Say", fr: "Ce que disent les clients" },
     subtitle: {
       en: "Trusted by Families Across the Community",
       fr: "La confiance des familles de toute la communauté",
@@ -477,7 +465,7 @@ export const translations = {
       },
       {
         title: {
-          en: "Technical exercices of all kinds",
+          en: "Technical exercises of all kinds",
           fr: "Exercices techniques variés",
         },
         content: {
@@ -528,8 +516,8 @@ export const translations = {
       },
       {
         title: {
-          en: "Possibilité de participer à trois concerts par an",
-          fr: "Opportunity to participate in 3 concerts per year",
+          en: "Opportunity to participate in 3 concerts per year",
+          fr: "Possibilité de participer à trois concerts par an",
         },
         content: {
           en: "to encourage self-confidence and performance skills.",

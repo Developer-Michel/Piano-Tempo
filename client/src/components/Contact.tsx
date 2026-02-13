@@ -440,11 +440,36 @@ export function Contact() {
               transition={{ duration: 0.6, delay: 0.9 }}
               className="mt-8"
             >
-              <div
-                className="w-full h-64 bg-gray-200 rounded-md flex items-center justify-center"
-                data-testid="map-placeholder"
-              >
-                <span className="font-sans text-gray-500">Map location</span>
+              <div className="w-full h-64 rounded-md overflow-hidden border">
+                {/* Map embed: prefer lat/lng if provided, otherwise use address search */}
+                {import.meta.env.VITE_MAP_LAT &&
+                import.meta.env.VITE_MAP_LNG ? (
+                  <iframe
+                    title="Studio location"
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                      `${import.meta.env.VITE_MAP_LAT},${
+                        import.meta.env.VITE_MAP_LNG
+                      }`
+                    )}&z=15&output=embed`}
+                    className="w-full h-full"
+                    loading="lazy"
+                  />
+                ) : import.meta.env.VITE_ADDRESS ? (
+                  <iframe
+                    title="Studio location"
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                      import.meta.env.VITE_ADDRESS
+                    )}&z=15&output=embed`}
+                    className="w-full h-full"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+                    <span className="font-sans text-gray-500">
+                      Map location
+                    </span>
+                  </div>
+                )}
               </div>
             </motion.div>
           </motion.div>
