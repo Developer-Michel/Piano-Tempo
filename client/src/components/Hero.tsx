@@ -37,7 +37,7 @@ export function Hero() {
             className="font-serif text-5xl sm:text-6xl md:text-7xl text-white mb-2 tracking-wide"
             data-testid="text-school-name"
           >
-            Piano <span className="text-gold">à Tempo</span>
+            Piano <span className="text-gold italic">a Tempo</span>
           </h1>
         </motion.div>
 

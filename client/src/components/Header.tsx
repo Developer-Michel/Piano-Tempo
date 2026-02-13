@@ -93,7 +93,7 @@ export function Header() {
               >
                 Piano
               </span>
-              <span className="font-serif text-2xl text-gold">à Tempo</span>
+              <span className="font-serif text-2xl text-gold italic">a Tempo</span>
             </motion.div>
           </Link>
 
@@ -145,8 +145,8 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-            {/* Social links (from env) */}
-            <div className="flex items-center gap-3">
+            {/* Social links (desktop) */}
+            <div className="hidden lg:flex items-center gap-3">
               {import.meta.env.VITE_FACEBOOK && (
                 <a
                   href={import.meta.env.VITE_FACEBOOK}
@@ -182,7 +182,7 @@ export function Header() {
             </div>
 
             <div
-              className={`hidden lg:flex items-center gap-1 text-sm font-medium ${
+              className={`flex items-center gap-1 text-sm font-medium ${
                 isScrolled || activeExtra ? "text-black" : "text-white"
               }`}
               data-testid="language-toggle"
@@ -251,32 +251,6 @@ export function Header() {
                   }
                 </button>
               ))}
-              <div
-                className="flex items-center gap-2 text-lg font-medium text-black mt-2"
-                data-testid="language-toggle-mobile"
-              >
-                <button
-                  onClick={() => setLanguage("fr")}
-                  className={`px-2 py-1 transition-colors duration-300 ${
-                    language === "fr"
-                      ? "text-gold"
-                      : "opacity-70 hover:opacity-100"
-                  }`}
-                >
-                  FR
-                </button>
-                <span className="opacity-50">|</span>
-                <button
-                  onClick={() => setLanguage("en")}
-                  className={`px-2 py-1 transition-colors duration-300 ${
-                    language === "en"
-                      ? "text-gold"
-                      : "opacity-70 hover:opacity-100"
-                  }`}
-                >
-                  EN
-                </button>
-              </div>
               {additionalNavItems.map((item) => (
                 <button
                   key={item.key}
@@ -291,6 +265,32 @@ export function Header() {
                   }
                 </button>
               ))}
+              <div className="mt-4 flex items-center gap-3">
+                {import.meta.env.VITE_FACEBOOK && (
+                  <a
+                    href={import.meta.env.VITE_FACEBOOK}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="w-8 h-8 flex items-center justify-center rounded-md text-black hover:text-gold transition-colors"
+                    aria-label="Facebook"
+                    data-testid="link-header-facebook-mobile"
+                  >
+                    <SiFacebook className="w-5 h-5" />
+                  </a>
+                )}
+                {import.meta.env.VITE_INSTAGRAM && (
+                  <a
+                    href={import.meta.env.VITE_INSTAGRAM}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="w-8 h-8 flex items-center justify-center rounded-md text-black hover:text-gold transition-colors"
+                    aria-label="Instagram"
+                    data-testid="link-header-instagram-mobile"
+                  >
+                    <SiInstagram className="w-5 h-5" />
+                  </a>
+                )}
+              </div>
             </nav>
           </motion.div>
         )}

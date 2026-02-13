@@ -58,7 +58,7 @@ export function Footer() {
           <div>
             <div className="mb-6">
               <span className="font-serif text-2xl">
-                Piano <span className="text-gold">à Tempo</span>
+                Piano <span className="text-gold italic">a Tempo</span>
               </span>
             </div>
             <p

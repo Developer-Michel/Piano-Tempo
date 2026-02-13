@@ -21,7 +21,7 @@ export const translations = {
     cta: { en: "Inquire Now", fr: "Renseignez-vous" },
   },
   about: {
-    title: { en: "About Piano à Tempo", fr: "À propos de Piano à Tempo" },
+    title: { en: "About Piano a Tempo", fr: "À propos de Piano a Tempo" },
     subtitle: {
       en: "“Why our studio is different” - Our Pedagogical Philosophy",
       fr: "« Pourquoi notre studio est différent » – Notre philosophie pédagogique",
@@ -33,7 +33,7 @@ export const translations = {
       },
       text: {
         en: "Piano a tempo is a family owned studio that strives to make learning piano an enjoyable and progressive journey. It is a space of kindness, patience and genuine care for each student’s pace and needs.",
-        fr: "Piano à Tempo est un studio familial qui vise à rendre l’apprentissage du piano agréable et progressif. C’est un lieu de bienveillance, de patience et d’attention sincère au rythme et aux besoins de chaque élève.",
+        fr: "Piano a Tempo est un studio familial qui vise à rendre l’apprentissage du piano agréable et progressif. C’est un lieu de bienveillance, de patience et d’attention sincère au rythme et aux besoins de chaque élève.",
       },
     },
     p2: {
@@ -160,8 +160,8 @@ export const translations = {
       },
       {
         quote: {
-          en: "The structured yet nurturing environment at Piano à Tempo has given my son both discipline and a genuine love for music. The progress he's made in just one year is incredible.",
-          fr: "L'environnement structuré mais bienveillant de Piano à Tempo a donné à mon fils à la fois de la discipline et un véritable amour de la musique. Les progrès qu'il a réalisés en seulement un an sont incroyables.",
+          en: "The structured yet nurturing environment at Piano a Tempo has given my son both discipline and a genuine love for music. The progress he's made in just one year is incredible.",
+          fr: "L'environnement structuré mais bienveillant de Piano a Tempo a donné à mon fils à la fois de la discipline et un véritable amour de la musique. Les progrès qu'il a réalisés en seulement un an sont incroyables.",
         },
         author: { en: "Marc D., Parent", fr: "Marc D., Parent" },
         child: {
@@ -224,8 +224,8 @@ export const translations = {
     contactInfo: { en: "Contact Info", fr: "Coordonnées" },
     followUs: { en: "Follow Us", fr: "Suivez-nous" },
     copyright: {
-      en: "© 2025 Piano à Tempo. All rights reserved.",
-      fr: "© 2025 Piano à Tempo. Tous droits réservés.",
+      en: "© 2025 Piano a Tempo. All rights reserved.",
+      fr: "© 2025 Piano a Tempo. Tous droits réservés.",
     },
   },
   policy: {
