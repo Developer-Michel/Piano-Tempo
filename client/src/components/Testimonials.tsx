@@ -22,7 +22,7 @@ export function Testimonials() {
 
   const goToPrev = () => {
     setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
   };
 
@@ -50,7 +50,7 @@ export function Testimonials() {
             {translations.testimonials.title[language]}
           </h2>
           <p
-            className="font-serif text-xl text-gold italic"
+            className="font-serif text-xl text-gold "
             data-testid="text-testimonials-subtitle"
           >
             {translations.testimonials.subtitle[language]}
@@ -76,7 +76,7 @@ export function Testimonials() {
                 className="text-center px-8"
               >
                 <p
-                  className="font-serif text-xl md:text-2xl text-white/90 italic leading-relaxed mb-8"
+                  className="font-serif text-xl md:text-2xl text-white/90  leading-relaxed mb-8"
                   data-testid={`text-testimonial-quote-${currentIndex}`}
                 >
                   "{testimonials[currentIndex].quote[language]}"

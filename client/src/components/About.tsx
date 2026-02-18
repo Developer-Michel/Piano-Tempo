@@ -1,30 +1,15 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
 import { motion } from "framer-motion";
-import { useInView, AnimatePresence } from "framer-motion";
-import { Music, Award, Calendar, ChevronDown } from "lucide-react";
+import { useInView } from "framer-motion";
+import concertImage from "@assets/stock_images/concert.jpg";
 
 export function About() {
   const { language } = useLanguage();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  // const [isHovered, setIsHovered] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-
-  const paragraphs = [
-    translations.about.p1,
-    translations.about.p2,
-    translations.about.p3,
-  ];
-
-  // useEffect(() => {
-  //   if (isHovered) return;
-  //   const interval = setInterval(() => {
-  //     setCurrentIndex((prev) => (prev + 1) % paragraphs.length);
-  //   }, 6000);
-  //   return () => clearInterval(interval);
-  // }, [isHovered, paragraphs.length]);
+  const aboutText = translations.about.singleText[language];
 
   return (
     <section
@@ -34,94 +19,61 @@ export function About() {
       data-testid="section-about"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2
-            className="font-serif text-4xl md:text-5xl text-black mb-4"
-            data-testid="text-about-title"
+        <div className="grid gap-12 md:grid-cols-2 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-full"
           >
-            {translations.about.title[language]}
-          </h2>
-          <p
-            className="font-serif text-xl text-gold italic"
-            data-testid="text-about-subtitle"
-          >
-            {translations.about.subtitle[language]}
-          </p>
-        </motion.div>
+            <div className="overflow-hidden rounded-xl shadow-lg h-64 md:h-80 lg:h-96">
+              <img
+                src={concertImage}
+                alt="Concert performance"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
 
-        <div className="grid  gap-12">
-          {/* Left: Accordion-style title cards with expandable content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            // onHoverStart={() => setIsHovered(true)}
-            // onHoverEnd={() => setIsHovered(false)}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-4"
+            className="space-y-4 self-center"
           >
-            {paragraphs.map((para, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className={`border-0.2 border-gold rounded-lg overflow-hidden hover:-translate-y-1 bg-white ${
-                  index === currentIndex ? "shadow-lg" : "shadow-sm"
-                }`}
-                data-testid={`accordion-about-${index}`}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <h2
+                className="font-serif text-4xl md:text-5xl text-black mb-4"
+                data-testid="text-about-title"
               >
-                {/* Title Button - Expandable */}
-                <button
-                  onClick={() =>
-                    currentIndex === index
-                      ? setCurrentIndex(-1)
-                      : setCurrentIndex(index)
-                  }
-                  className={`w-full p-6 flex items-center justify-between transition-all duration-1000 ${
-                    index === currentIndex
-                      ? " text-black"
-                      : "bg-white text-black hover:bg-gold/5"
-                  }`}
-                  data-testid={`button-about-title-${index}`}
-                >
-                  <h3 className="font-serif text-lg md:text-xl text-left">
-                    {para.title[language]}
-                  </h3>
-                  <ChevronDown
-                    className={`w-6 h-6 shrink-0 transition-transform duration-500 ${
-                      index === currentIndex ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {/* Content - Expandable */}
-                <AnimatePresence>
-                  {index === currentIndex && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden "
-                    >
-                      <div className="p-6 pt-0 border-t-1 border-gold">
-                        <p
-                          className="font-sans text-gray-700 leading-relaxed whitespace-pre-line"
-                          data-testid={`text-about-p${index + 1}`}
-                        >
-                          {para.text[language]}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
+                {translations.about.title[language]}
+              </h2>
+              <p
+                className="font-serif text-xl text-gold "
+                data-testid="text-about-subtitle"
+              >
+                {translations.about.subtitle[language]}
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className=" "
+              data-testid="about-text"
+            >
+              <div className="p-6">
+                <p className="font-sans text-gray-700 leading-relaxed whitespace-pre-line">
+                  {aboutText}
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 

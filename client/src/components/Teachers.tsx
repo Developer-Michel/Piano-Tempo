@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import teacher1Image from "@assets/stock_images/angelina.jpg";
-import teacher2Image from "@assets/stock_images/professional_male_pi_2b0ebdfb.jpg";
+import teacher2Image from "@assets/stock_images/inessa.jpg";
 
 export function Teachers() {
   const { language } = useLanguage();
@@ -48,7 +48,7 @@ export function Teachers() {
             {translations.teachers.title[language]}
           </h2>
           <p
-            className="font-serif text-xl text-gold italic"
+            className="font-serif text-xl text-gold "
             data-testid="text-teachers-subtitle"
           >
             {translations.teachers.subtitle[language]}
@@ -107,7 +107,7 @@ function TeacherCard({
           <img
             src={teacher.image}
             alt={teacher.name}
-            className="w-full h-full object-cover opacity-90 transition-all duration-500 group-hover:opacity-100"
+            className="w-full h-full object-cover transition-all duration-500"
           />
         </motion.div>
       </div>

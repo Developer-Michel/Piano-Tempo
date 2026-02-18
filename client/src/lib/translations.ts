@@ -11,6 +11,7 @@ export const translations = {
     information: { en: "FAQ", fr: "FAQ" },
     gallery: { en: "Gallery", fr: "Galerie" },
     resources: { en: "Resources", fr: "Ressources" },
+    methodology: { en: "Methodology", fr: "Méthodologie" },
     more: { en: "More", fr: "Plus" },
   },
   hero: {
@@ -25,6 +26,10 @@ export const translations = {
     subtitle: {
       en: "“Why our studio is different” - Our Pedagogical Philosophy",
       fr: "« Pourquoi notre studio est différent » – Notre philosophie pédagogique",
+    },
+    singleText: {
+      en: "At Piano à Tempo, mother and daughter share the same passion: teaching piano with care, musicality, and lasting technical foundations. The love of music has been passed down in our family for generations. Today, it’s our turn to share it with you!",
+      fr: "Chez Piano a tempo, mère et fille partagent une même passion: celle d’enseigner le piano avec soin, musicalité et bases techniques durables. L’amour de la musique se transmet dans notre famille depuis plusieurs générations. Aujourd’hui, c’est à notre tour de le partager avec vous!",
     },
     p1: {
       title: {
@@ -99,6 +104,10 @@ export const translations = {
       en: "Tailored Instruction for Every Age and Level",
       fr: "Un enseignement adapté à chaque âge et niveau",
     },
+    feeNote: {
+      en: "An additional $10 fee may apply.",
+      fr: "Des frais supplémentaires de 10 $ peuvent s'appliquer.",
+    },
     learnMore: { en: "Learn More", fr: "En savoir plus" },
     private: {
       title: { en: "Private Lessons", fr: "Cours privés" },
@@ -107,6 +116,10 @@ export const translations = {
         fr: "Enseignement individuel adaptés aux besoins individuels, au rythme et aux objectifs de chaque élève, ces cours permettent de développer la technique, l’interprétation musicale et la compréhension théorique de la musique. Ils offrent en outre la possibilité de se préparer aux auditions du niveau préparatoire du Conservatoire de musique de Gatineau et aux examens du RCM de Toronto.",
       },
       ages: { en: "All ages", fr: "Tous âges" },
+      price: {
+        en: "Pricing: 30 min — $30 | 45 min — $45 | 60 min — $60",
+        fr: "Tarifs : 30 min — 30 $ | 45 min — 45 $ | 60 min — 60 $",
+      },
     },
     groups: {
       title: { en: "Group lesson", fr: "Cours de groupe" },
@@ -115,6 +128,10 @@ export const translations = {
         fr: "Sessions de groupe amusantes et engageantes pour les jeunes débutants. Les élèves apprennent ensemble, développant confiance et amitiés musicales dans un environnement bienveillant.",
       },
       ages: { en: "Multiple Options", fr: "Plusieurs options" },
+      price: {
+        en: "60-minute group class — $25 (per hour)",
+        fr: "Cours de groupe de 60 minutes — 25 $ (par heure)",
+      },
       items: [
         {
           en: "Group Lessons \n(Ages 5-7)",
@@ -446,7 +463,7 @@ export const translations = {
       fr: "Téléchargements de ressources à venir. Nous préparons des feuilles de pratique, des guides de théorie musicale et des listes de lecture recommandées pour nos élèves.",
     },
   },
-  methadlology: {
+  methodology: {
     title: { en: "Our Methodology", fr: "Notre méthodologie" },
     subtitle: {
       en: "A Unique Approach to Piano Education",

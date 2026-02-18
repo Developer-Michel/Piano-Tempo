@@ -8,6 +8,7 @@ import Policy from "@/pages/Policy";
 import FAQ from "@/pages/FAQ";
 import Gallery from "@/pages/Gallery";
 import Resources from "@/pages/Resources";
+import Methodology from "@/pages/Methodology";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/faq" component={FAQ} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/resources" component={Resources} />
+      <Route path="/methodology" component={Methodology} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -178,7 +178,7 @@ export function Contact() {
             {translations.contact.title[language]}
           </h2>
           <p
-            className="font-serif text-xl text-gold italic"
+            className="font-serif text-xl text-gold "
             data-testid="text-contact-subtitle"
           >
             {translations.contact.subtitle[language]}
@@ -356,7 +356,7 @@ export function Contact() {
                                     >
                                       {it[language]}
                                     </SelectItem>
-                                  )
+                                  ),
                                 )}
                               </SelectContent>
                             </Select>
@@ -449,7 +449,7 @@ export function Contact() {
                     src={`https://maps.google.com/maps?q=${encodeURIComponent(
                       `${import.meta.env.VITE_MAP_LAT},${
                         import.meta.env.VITE_MAP_LNG
-                      }`
+                      }`,
                     )}&z=15&output=embed`}
                     className="w-full h-full"
                     loading="lazy"
@@ -458,7 +458,7 @@ export function Contact() {
                   <iframe
                     title="Studio location"
                     src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                      import.meta.env.VITE_ADDRESS
+                      import.meta.env.VITE_ADDRESS,
                     )}&z=15&output=embed`}
                     className="w-full h-full"
                     loading="lazy"

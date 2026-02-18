@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
 import { Menu, X } from "lucide-react";
-import { SiFacebook, SiInstagram } from "react-icons/si";
+import { SiFacebook } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "wouter";
@@ -18,6 +18,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location, navigate] = useLocation();
+  const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61550469422765";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +37,7 @@ export function Header() {
   ];
 
   const additionalNavItems = [
+    { key: "methodology", href: "/methodology" },
     { key: "policy", href: "/policy" },
     { key: "information", href: "/faq" },
     { key: "gallery", href: "/gallery" },
@@ -93,7 +95,7 @@ export function Header() {
               >
                 Piano
               </span>
-              <span className="font-serif text-2xl text-gold italic">a Tempo</span>
+              <span className="font-serif text-2xl text-gold">a Tempo</span>
             </motion.div>
           </Link>
 
@@ -147,38 +149,20 @@ export function Header() {
           <div className="flex items-center gap-4">
             {/* Social links (desktop) */}
             <div className="hidden lg:flex items-center gap-3">
-              {import.meta.env.VITE_FACEBOOK && (
-                <a
-                  href={import.meta.env.VITE_FACEBOOK}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className={`w-8 h-8 flex items-center justify-center rounded-md transition-colors ${
-                    isScrolled || activeExtra
-                      ? "text-black hover:text-gold"
-                      : "text-white hover:text-gold"
-                  }`}
-                  aria-label="Facebook"
-                  data-testid="link-header-facebook"
-                >
-                  <SiFacebook className="w-5 h-5" />
-                </a>
-              )}
-              {import.meta.env.VITE_INSTAGRAM && (
-                <a
-                  href={import.meta.env.VITE_INSTAGRAM}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className={`w-8 h-8 flex items-center justify-center rounded-md transition-colors ${
-                    isScrolled || activeExtra
-                      ? "text-black hover:text-gold"
-                      : "text-white hover:text-gold"
-                  }`}
-                  aria-label="Instagram"
-                  data-testid="link-header-instagram"
-                >
-                  <SiInstagram className="w-5 h-5" />
-                </a>
-              )}
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                className={`w-8 h-8 flex items-center justify-center rounded-md transition-colors ${
+                  isScrolled || activeExtra
+                    ? "text-black hover:text-gold"
+                    : "text-white hover:text-gold"
+                }`}
+                aria-label="Facebook"
+                data-testid="link-header-facebook"
+              >
+                <SiFacebook className="w-5 h-5" />
+              </a>
             </div>
 
             <div
@@ -266,30 +250,16 @@ export function Header() {
                 </button>
               ))}
               <div className="mt-4 flex items-center gap-3">
-                {import.meta.env.VITE_FACEBOOK && (
-                  <a
-                    href={import.meta.env.VITE_FACEBOOK}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="w-8 h-8 flex items-center justify-center rounded-md text-black hover:text-gold transition-colors"
-                    aria-label="Facebook"
-                    data-testid="link-header-facebook-mobile"
-                  >
-                    <SiFacebook className="w-5 h-5" />
-                  </a>
-                )}
-                {import.meta.env.VITE_INSTAGRAM && (
-                  <a
-                    href={import.meta.env.VITE_INSTAGRAM}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="w-8 h-8 flex items-center justify-center rounded-md text-black hover:text-gold transition-colors"
-                    aria-label="Instagram"
-                    data-testid="link-header-instagram-mobile"
-                  >
-                    <SiInstagram className="w-5 h-5" />
-                  </a>
-                )}
+                <a
+                  href={FACEBOOK_URL}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="w-8 h-8 flex items-center justify-center rounded-md text-black hover:text-gold transition-colors"
+                  aria-label="Facebook"
+                  data-testid="link-header-facebook-mobile"
+                >
+                  <SiFacebook className="w-5 h-5" />
+                </a>
               </div>
             </nav>
           </motion.div>

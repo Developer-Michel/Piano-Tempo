@@ -28,7 +28,7 @@ export function Methodology() {
   const { language } = useLanguage();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-  const methodologyData = translations.methadlology;
+  const methodologyData = translations.methodology;
   const items = methodologyData.items;
 
   return (
@@ -52,7 +52,7 @@ export function Methodology() {
             {methodologyData.title[language]}
           </h2>
           <p
-            className="font-serif text-xl text-gold italic"
+            className="font-serif text-xl text-gold "
             data-testid="text-methodology-subtitle"
           >
             {methodologyData.subtitle[language]}

@@ -37,7 +37,7 @@ export function Hero() {
             className="font-serif text-5xl sm:text-6xl md:text-7xl text-white mb-2 tracking-wide"
             data-testid="text-school-name"
           >
-            Piano <span className="text-gold italic">a Tempo</span>
+            Piano <span className="text-gold ">a Tempo</span>
           </h1>
         </motion.div>
 
@@ -47,7 +47,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
         >
           <p
-            className="font-serif text-xl sm:text-2xl md:text-3xl text-white/90 italic mt-6 mb-10"
+            className="font-serif text-xl sm:text-2xl md:text-3xl text-white/90  mt-6 mb-10"
             data-testid="text-tagline"
           >
             {translations.hero.tagline[language]}

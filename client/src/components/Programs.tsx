@@ -53,7 +53,7 @@ export function Programs() {
             {translations.programs.title[language]}
           </h2>
           <p
-            className="font-serif text-xl text-gold italic"
+            className="font-serif text-xl text-gold "
             data-testid="text-programs-subtitle"
           >
             {translations.programs.subtitle[language]}
@@ -77,6 +77,7 @@ export function Programs() {
                   translations.programs.private.description[language]
                 }
                 ages={translations.programs.private.ages[language]}
+                price={translations.programs.private.price[language]}
                 index={0}
                 value={translations.programs.private.title[language]}
               />
@@ -100,6 +101,7 @@ export function Programs() {
                 items={translations.programs.groups.items}
                 title={translations.programs.groups.title[language]}
                 ages={translations.programs.groups.ages[language]}
+                price={translations.programs.groups.price[language]}
                 index={1}
               />
             </motion.div>
@@ -115,6 +117,7 @@ function ProgramCard({
   title,
   description,
   ages,
+  price,
   index,
   value,
 }: {
@@ -122,9 +125,11 @@ function ProgramCard({
   title: string;
   description: string;
   ages: string;
+  price?: string;
   index: number;
   value?: string;
 }) {
+  const { language } = useLanguage();
   return (
     <Card
       onClick={() => {
@@ -152,6 +157,19 @@ function ProgramCard({
           >
             {title}
           </h3>
+          {price && (
+            <p
+              className="font-sans text-gold text-sm mb-2"
+              data-testid={`text-program-price-${index}`}
+            >
+              {price}
+            </p>
+          )}
+          {price && (
+            <p className="font-sans text-xs text-gray-500 mb-2">
+              {translations.programs.feeNote[language]}
+            </p>
+          )}
           <p
             className="font-sans text-gray-600 text-sm leading-relaxed"
             data-testid={`text-program-desc-${index}`}
@@ -170,6 +188,7 @@ function GroupProgramCard({
   description,
   items,
   ages,
+  price,
   index,
 }: {
   icon: typeof Users;
@@ -177,6 +196,7 @@ function GroupProgramCard({
   description: string;
   items: { en: string; fr: string }[];
   ages: string;
+  price?: string;
   index: number;
 }) {
   const { language } = useLanguage();
@@ -201,6 +221,19 @@ function GroupProgramCard({
           >
             {title}
           </h3>
+          {price && (
+            <p
+              className="font-sans text-gold text-sm mb-2"
+              data-testid={`text-program-price-${index}`}
+            >
+              {price}
+            </p>
+          )}
+          {price && (
+            <p className="font-sans text-xs text-gray-500 mb-2">
+              {translations.programs.feeNote[language]}
+            </p>
+          )}
           <div>
             <p className="font-sans text-gray-700 text-sm mb-2">
               {description}

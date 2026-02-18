@@ -32,7 +32,7 @@ export default function Gallery() {
               {translations.gallery.title[language]}
             </h1>
             <p
-              className="font-serif text-xl text-gold italic mb-4"
+              className="font-serif text-xl text-gold  mb-4"
               data-testid="text-gallery-subtitle"
             >
               {translations.gallery.subtitle[language]}

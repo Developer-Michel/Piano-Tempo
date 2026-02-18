@@ -1,7 +1,7 @@
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
 import { Link } from "wouter";
-import { SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
+import { SiFacebook } from "react-icons/si";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -36,18 +36,8 @@ export function Footer() {
   const socialLinks = [
     {
       icon: SiFacebook,
-      href: import.meta.env.VITE_FACEBOOK,
+      href: "https://www.facebook.com/profile.php?id=61550469422765",
       label: "Facebook",
-    },
-    {
-      icon: SiInstagram,
-      href: import.meta.env.VITE_INSTAGRAM,
-      label: "Instagram",
-    },
-    {
-      icon: SiYoutube,
-      href: import.meta.env.VITE_YOUTUBE_CHANNEL,
-      label: "YouTube",
     },
   ];
 
@@ -58,7 +48,7 @@ export function Footer() {
           <div>
             <div className="mb-6">
               <span className="font-serif text-2xl">
-                Piano <span className="text-gold italic">a Tempo</span>
+                Piano <span className="text-gold ">a Tempo</span>
               </span>
             </div>
             <p
