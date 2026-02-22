@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "tagline": "Where you learn piano at YOUR tempo!",
+    "cta": "Inquire Now"
+  },
+  "about": {
+    "title": "About Piano a Tempo",
+    "subtitle": "“Why our studio is different” - Our Pedagogical Philosophy",
+    "singleText": "At Piano à Tempo, mother and daughter share the same passion: teaching piano with care, musicality, and lasting technical foundations. The love of music has been passed down in our family for generations. Today, it’s our turn to share it with you!",
+    "p1": {
+      "title": "Who we are",
+      "text": "Piano a tempo is a family owned studio that strives to make learning piano an enjoyable and progressive journey. It is a space of kindness, patience and genuine care for each student’s pace and needs."
+    },
+    "p2": {
+      "title": "Our mission",
+      "text": "To teach strong and lasting musical skills while inspiring students to discover and appreciate a wide variety of music, from different cultures, historical eras, and genres."
+    },
+    "p3": {
+      "title": "Our vision",
+      "text": "Our vision is to inspire students to become lifelong musicians by nurturing their love of music and sparking their intrinsic motivation."
+    },
+    "stats": {
+      "students": "Students Taught",
+      "years": "Years of Excellence",
+      "recitals": "Annual Recitals"
+    }
+  },
+  "teachers": {
+    "title": "Our Teachers",
+    "subtitle": "Expert Instructors Dedicated to Your Musical Journey",
+    "readMore": "Read More",
+    "readLess": "Read Less",
+    "backgroundShow": "Formation Background",
+    "backgroundHide": "Hide Formation Background",
+    "items": [
+      {
+        "name": "Angelina",
+        "title": "Teacher",
+        "bio": "With over 10 years of teaching experience, Angelina has taught in a variety of settings, adapting her approach to meet the unique needs of each student. Her lessons balance focus and enjoyment, making the learning process both effective and rewarding. \n What truly sets Angelina apart is her engaging personality that makes every lesson dynamic and fulfilling. She fosters an environment where students feel comfortable expressing themselves, which in turn makes them more open and engaged in the learning process. \n Her classical teaching method promotes steady progress while keeping students motivated, which is why so many continue lessons with her for years and always look forward to each session.",
+        "background": [
+          "Conservatory of Gatineau Preparatory level in Clarinet (CDMG)",
+          "Conservatory of Gatineau College degree in Classical singing (Music DEC)",
+          "Royal Conservatory of Toronto, Piano Level 9",
+          "Bachelors in International Management (Montreal University)"
+        ]
+      },
+      {
+        "name": "Inessa",
+        "title": "Teacher",
+        "bio": "With over 30 years of teaching experience, Inessa brings both depth and warmth to her piano lessons. Trained in the Russian classical tradition, she helps students build strong technical foundations while guiding them to cultivate their musicality and expressive playing. \n Inessa’s approach is structured yet encouraging: she meets students where they are and helps them grow step by step, cultivating confidence and a genuine love for music. She knows how to challenge students while also adapting to each individual’s learning tempo. \n With her graceful presence and genuine care, Inessa creates a welcoming and motivating environment where students flourish while discovering the beauty of music.",
+        "background": [
+          "Bachelor in Music Pedagogy, Russian State University, Saint-Petersburg."
+        ]
+      }
+    ]
+  },
+  "programs": {
+    "title": "Our Programs",
+    "subtitle": "Tailored Instruction for Every Age and Level",
+    "feeNote": "An additional $10 fee may apply.",
+    "learnMore": "Learn More",
+    "private": {
+      "title": "Private Lessons",
+      "description": "One-on-one lessons tailored to each student’s individual needs, learning pace and goals, these classes develop technique, musical interpretation and theoretical understanding of music. They also offer the possibility to prepare for the preparatory-level auditions at the Conservatoire de musique de Gatineau and for the RCM examinations in Toronto.",
+      "ages": "All ages",
+      "price": "Pricing: 30 min — $30 | 45 min — $45 | 60 min — $60"
+    },
+    "groups": {
+      "title": "Group lesson",
+      "description": "Fun and engaging group sessions for young beginners. Students learn together, building confidence and musical friendships in a supportive environment.",
+      "ages": "Multiple Options",
+      "price": "60-minute group class — $25 (per hour)",
+      "items": [
+        "Group Lessons \n(Ages 5-7)",
+        "Group Lessons \n(Ages 7-10)",
+        "Group Lessons \n(Ages 10-13)",
+        "Group Lessons \n(Ages 13-17)",
+        "Adult Group Lessons \n(18+)",
+        "Daytime Adult & Retired"
+      ]
+    }
+  },
+  "testimonials": {
+    "title": "What Clients Say",
+    "subtitle": "Trusted by Families Across the Gatineau and Ottawa",
+    "items": [
+      {
+        "quote": "To be added",
+        "author": "",
+        "child": ""
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Begin Your Musical Journey Today",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Your Message",
+      "language": "Preferred Language",
+      "submit": "Send Inquiry",
+      "success": "Thank you! We will be in touch soon.",
+      "courseLabel": "Which course are you interested in?",
+      "coursePlaceholder": "Select a course"
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Hours",
+      "hoursDetail": "Mon-Fri: 10am-8pm"
+    },
+    "languageOptions": {
+      "en": "English",
+      "fr": "Français"
+    }
+  }
+}

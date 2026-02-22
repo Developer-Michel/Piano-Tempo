@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "teachers": "Teachers",
+    "programs": "Programs",
+    "contact": "Contact Us",
+    "policy": "Policy",
+    "information": "FAQ",
+    "gallery": "Gallery",
+    "resources": "Resources",
+    "methodology": "Methodology",
+    "more": "More"
+  },
+  "footer": {
+    "tagline": "Excellence in Piano Education",
+    "quickLinks": "Quick Links",
+    "programs": "Programs",
+    "contactInfo": "Contact Info",
+    "followUs": "Follow Us",
+    "copyright": "© 2025 Piano a Tempo. All rights reserved."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "cta": "Return Home"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Resources",
+  "subtitle": "Tools and Materials for Your Practice",
+  "comingSoon": "Resource downloads coming soon. We are preparing practice sheets, music theory guides, and recommended reading lists for our students.",
+  "categories": [
+    {
+      "title": "Practice Sheets",
+      "description": "Weekly practice logs and assignment trackers for students"
+    },
+    {
+      "title": "Theory Guides",
+      "description": "Music theory fundamentals from beginner to advanced levels"
+    },
+    {
+      "title": "Sheet Music",
+      "description": "Curated selection of pieces for various skill levels"
+    }
+  ]
+}

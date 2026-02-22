@@ -1,0 +1,19 @@
+{
+  "title": "Ressources",
+  "subtitle": "Outils et matériaux pour votre pratique",
+  "comingSoon": "Téléchargements de ressources à venir. Nous préparons des feuilles de pratique, des guides de théorie musicale et des listes de lecture recommandées pour nos élèves.",
+  "categories": [
+    {
+      "title": "Feuilles de pratique",
+      "description": "Journaux de pratique hebdomadaires et suivis de devoirs pour les élèves"
+    },
+    {
+      "title": "Guides de théorie",
+      "description": "Fondamentaux de la théorie musicale du niveau débutant au niveau avancé"
+    },
+    {
+      "title": "Partitions",
+      "description": "Sélection de pièces pour différents niveaux"
+    }
+  ]
+}
