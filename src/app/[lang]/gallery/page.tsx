@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { ImageIcon } from "lucide-react";
-import type { Locale } from "@/lib/i18n/config";
 
 export default function Gallery() {
   const sectionRef = useRef(null);

@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { FileText, BookOpen, Music, Download } from "lucide-react";
-import type { Locale } from "@/lib/i18n/config";
 import { getTranslations } from "next-intl/server";
 
 export default async function Resources({}: {}) {

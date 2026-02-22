@@ -10,7 +10,6 @@ import {
   Pen,
   Star,
 } from "lucide-react";
-import type { Locale } from "@/lib/i18n/config";
 
 const iconMap: { [key: number]: any } = {
   0: Music,
