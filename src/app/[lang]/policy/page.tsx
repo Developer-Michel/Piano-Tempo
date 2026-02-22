@@ -9,9 +9,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import type { Locale } from "@/lib/i18n/config";
 
-export default function Policy({ params }: { params: { lang: Locale } }) {
+export default function Policy() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const t = useTranslations("policy");

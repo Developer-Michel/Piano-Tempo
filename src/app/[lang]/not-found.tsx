@@ -3,11 +3,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import type { Locale } from "@/lib/i18n/config";
+import { useLocale, useTranslations } from "next-intl";
 
-export default function NotFound({ params }: { params: { lang: Locale } }) {
-  const { lang } = params;
+export default function NotFound() {
+  const lang = useLocale();
   const t = useTranslations("notFound");
   const homePath = `/${lang}`;
 
