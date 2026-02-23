@@ -19,7 +19,7 @@ export async function Hero() {
     >
       <Image
         className="absolute inset-0 object-cover"
-        src="/yamaha_piano.avif"
+        src="/yamaha_piano.webp"
         alt="Piano a Tempo"
         sizes="100vw"
         fill
