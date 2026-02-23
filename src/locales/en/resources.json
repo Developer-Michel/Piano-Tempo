@@ -1,19 +1,19 @@
 {
-  "title": "Resources",
-  "subtitle": "Tools and Materials for Your Practice",
-  "comingSoon": "Resource downloads coming soon. We are preparing practice sheets, music theory guides, and recommended reading lists for our students.",
+  "title": "Choosing the Right Piano",
+  "subtitle": "Three options for beginners and advancing students",
+  "comingSoon": "Explore the three recommended options below; links to pianos are available in the resources section.",
   "categories": [
     {
-      "title": "Practice Sheets",
-      "description": "Weekly practice logs and assignment trackers for students"
+      "title": "Buy a New Digital Piano (Electronic Keyboard)",
+      "description": "A digital piano is the most practical choice for most families since it will never need tuning, is easy to move (depending on the model), and allows you to play with headphones—perfect for apartments or shared spaces.\nLook for:\n- 88 weighted keys (essential for proper technique)\n- Trusted brands such as Yamaha, Kawai, Roland, or Casio\n- In the resources section of the website, you will find links to the pianos we recommend."
     },
     {
-      "title": "Theory Guides",
-      "description": "Music theory fundamentals from beginner to advanced levels"
+      "title": "Buy a Used Digital Piano (e.g., Facebook Marketplace)",
+      "description": "A used digital piano can be an excellent budget-friendly option. Typical prices range from $300 (if you're lucky) to $600+ for a solid, reliable model. You can often find high-quality instruments that still have many years of life left. Make sure that:\n- The piano has 88 weighted keys and comes from one of the recommended brands (Yamaha, Kawai, Roland, or Casio).\n- All the keys work and return after being played.\n- There are no electronic glitches such as sound defects or malfunctioning buttons."
     },
     {
-      "title": "Sheet Music",
-      "description": "Curated selection of pieces for various skill levels"
+      "title": "Buy an Acoustic Piano",
+      "description": "An acoustic piano offers a rich sound, but it comes with responsibilities:\n- Maintenance: It must be tuned regularly; in our region (Gatineau-Ottawa) a tuning costs around $175.\n- Moving: Acoustic pianos are extremely heavy and usually require a professional moving crew. Expect a minimum of $250+, depending on stairs and distance.\n- Noise: You cannot control the volume. For apartments or attached homes, this could be an issue as neighbours may complain.\nThis option is wonderful if you have the space, budget, and environment to support it."
     }
   ]
 }

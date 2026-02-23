@@ -1,19 +1,19 @@
 {
-  "title": "Ressources",
-  "subtitle": "Outils et matériaux pour votre pratique",
-  "comingSoon": "Téléchargements de ressources à venir. Nous préparons des feuilles de pratique, des guides de théorie musicale et des listes de lecture recommandées pour nos élèves.",
+  "title": "Choisir le bon piano",
+  "subtitle": "Trois options pour bien débuter et progresser",
+  "comingSoon": "Découvrez ci-dessous les trois options recommandées; des liens vers les pianos se trouvent dans la section ressources.",
   "categories": [
     {
-      "title": "Feuilles de pratique",
-      "description": "Journaux de pratique hebdomadaires et suivis de devoirs pour les élèves"
+      "title": "Acheter un piano numérique neuf (clavier électronique)",
+      "description": "Un piano numérique est le choix le plus pratique pour la majorité des familles, puisqu'il n'a jamais besoin d'accordage, est facile à déplacer (selon le modèle) et permet de jouer avec des écouteurs, ce qui le rend parfait pour les appartements ou les espaces partagés.\nÀ rechercher :\n- 88 touches lestées (essentiel pour développer une bonne technique)\n- Des marques reconnues comme Yamaha, Kawai, Roland ou Casio\n- Dans la section ressources du site web, vous trouverez des liens vers les pianos que nous recommandons."
     },
     {
-      "title": "Guides de théorie",
-      "description": "Fondamentaux de la théorie musicale du niveau débutant au niveau avancé"
+      "title": "Acheter un piano numérique usagé (ex. : Facebook Marketplace)",
+      "description": "Un piano numérique usagé peut être une excellente option économique. Les prix varient généralement entre 300 $ (si vous êtes chanceux) et 600 $ ou plus pour un modèle fiable et de qualité. Il est souvent possible de trouver des instruments haut de gamme ayant encore plusieurs années d'utilisation. Assurez-vous simplement que :\n- Le piano possède 88 touches lestées et provient d'une marque recommandée (Yamaha, Kawai, Roland ou Casio).\n- Toutes les touches fonctionnent bien et remontent après avoir été appuyées.\n- Il n'y a aucun problème électronique, comme des défauts de son ou des boutons défectueux."
     },
     {
-      "title": "Partitions",
-      "description": "Sélection de pièces pour différents niveaux"
+      "title": "Acheter un piano acoustique",
+      "description": "Un piano acoustique offre une sonorité riche, mais comporte certaines responsabilités :\n- Entretien : Il doit être accordé régulièrement; dans notre région (Gatineau-Ottawa), un accordage coûte environ 175 $.\n- Transport : Les pianos acoustiques sont extrêmement lourds et nécessitent généralement des déménageurs professionnels. Prévoyez un minimum d'environ 250 $ ou plus, selon les escaliers et la distance.\n- Bruit : Le volume ne peut pas être contrôlé. En appartement ou dans une maison jumelée, cela peut poser un problème pour les voisins.\nCette option est idéale si vous avez l'espace, le budget et l'environnement nécessaires pour en profiter pleinement."
     }
   ]
 }

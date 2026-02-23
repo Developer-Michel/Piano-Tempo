@@ -93,7 +93,48 @@ export async function generateMetadata({
     },
   };
 }
-
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": ["MusicSchool", "LocalBusiness"],
+  name: "Piano à Tempo",
+  url: "https://pianoatempo.ca",
+  description:
+    "Cours de piano à Gatineau et Ottawa : leçons pour enfants, adolescents et adultes, en personne et/ou en ligne.",
+  email: "TODO:info.pianoatempo@gmail.com",
+  priceRange: "25-60$",
+  image: [
+    "https://pianoatempo.ca/concert.jpg", // TODO optionnel
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Rue Champagne", // TODO idéal: "123 Rue Champagne"
+    addressLocality: "Gatineau",
+    addressRegion: "QC",
+    postalCode: "TODO:J8Y 1B3", // optionnel mais recommandé
+    addressCountry: "CA",
+  },
+  areaServed: [
+    { "@type": "City", name: "Gatineau" },
+    { "@type": "City", name: "Ottawa" },
+    { "@type": "AdministrativeArea", name: "Gatineau" },
+  ],
+  knowsLanguage: ["fr-CA", "en-CA"],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "10:00",
+      closes: "20:30",
+    },
+  ],
+  hasMap: "https://www.google.com/maps?q=Rue%20Champagne%20Gatineau%20QC", // OK sans lat/lng
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "TODO:45.46152714550786",
+    longitude: "TODO:-75.74642768797247",
+  },
+  sameAs: ["TODO:https://www.facebook.com/profile.php?id=61550469422765"],
+};
 export default async function LocaleLayout({
   children,
   params,
@@ -110,23 +151,7 @@ export default async function LocaleLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "MusicSchool",
-              name: "Piano a Tempo",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Rue Champagne",
-                addressLocality: "Gatineau",
-                addressRegion: "QC",
-                postalCode: "J8Y 1B3",
-                addressCountry: "CA",
-              },
-              url: "https://pianoatempo.ca",
-              strategy: "afterInteractive",
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body>
