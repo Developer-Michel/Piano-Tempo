@@ -102,83 +102,81 @@ function TeacherCard({
       </div>
 
       <div className="p-8">
-        <div className="max-w-prose mx-auto space-y-4 text-center">
-          <h3
-            className="font-serif text-2xl text-black"
-            data-testid={`text-teacher-name-${index}`}
-          >
-            {teacher.name}
-          </h3>
-          <p
-            className="font-sans text-gold"
-            data-testid={`text-teacher-title-${index}`}
-          >
-            {teacher.title}
-          </p>
+        <h3
+          className="font-serif text-2xl text-black mb-1"
+          data-testid={`text-teacher-name-${index}`}
+        >
+          {teacher.name}
+        </h3>
+        <p
+          className="font-sans text-gold mb-4"
+          data-testid={`text-teacher-title-${index}`}
+        >
+          {teacher.title}
+        </p>
 
-          <div className="space-y-4">
-            <div
-              style={{ height: isExpanded ? "auto" : "100px" }}
-              className="overflow-hidden text-left"
+        <div className="space-y-4">
+          <div
+            style={{ height: isExpanded ? "auto" : "100px" }}
+            className="overflow-hidden"
+          >
+            <p
+              className="font-sans text-gray-700 leading-relaxed whitespace-pre-line"
+              data-testid={`text-teacher-bio-${index}`}
             >
-              <p
-                className="font-sans text-gray-700 leading-relaxed whitespace-pre-line"
-                data-testid={`text-teacher-bio-${index}`}
-              >
-                {isExpanded ? teacher.bio : bioPreview}
-              </p>
-              {teacher.background?.length ? (
-                <div className="border-t border-gray-100 pt-4">
-                  <Button
-                    variant="ghost"
-                    onClick={() => setShowBackground((prev) => !prev)}
-                    className="text-gold hover:text-gold-dark hover:bg-gold/10 p-0 h-auto font-sans flex items-center mx-auto"
-                    data-testid={`button-teacher-background-${index}`}
-                  >
-                    {showBackground ? t("backgroundHide") : t("backgroundShow")}
-                    {showBackground ? (
-                      <ChevronUp className="ml-1 w-4 h-4" />
-                    ) : (
-                      <ChevronDown className="ml-1 w-4 h-4" />
-                    )}
-                  </Button>
-
-                  {showBackground && (
-                    <ul
-                      className="mt-3 space-y-2 list-disc list-inside text-gray-700 text-left"
-                      data-testid={`list-teacher-background-${index}`}
-                    >
-                      {teacher.background.map((item, bgIndex) => (
-                        <li
-                          key={bgIndex}
-                          className="font-sans text-sm leading-relaxed"
-                        >
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+              {isExpanded ? teacher.bio : bioPreview}
+            </p>
+            {teacher.background?.length ? (
+              <div className="border-t border-gray-100 pt-4">
+                <Button
+                  variant="ghost"
+                  onClick={() => setShowBackground((prev) => !prev)}
+                  className="text-gold hover:text-gold-dark hover:bg-gold/10 p-0 h-auto font-sans flex items-center"
+                  data-testid={`button-teacher-background-${index}`}
+                >
+                  {showBackground ? t("backgroundHide") : t("backgroundShow")}
+                  {showBackground ? (
+                    <ChevronUp className="ml-1 w-4 h-4" />
+                  ) : (
+                    <ChevronDown className="ml-1 w-4 h-4" />
                   )}
-                </div>
-              ) : null}
-            </div>
+                </Button>
 
-            <Button
-              variant="ghost"
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="text-gold hover:text-gold-dark hover:bg-gold/10 p-0 h-auto font-sans mx-auto"
-              data-testid={`button-teacher-expand-${index}`}
-            >
-              {isExpanded ? (
-                <>
-                  {t("readLess")} <ChevronUp className="ml-1 w-4 h-4" />
-                </>
-              ) : (
-                <>
-                  {t("readMore")} <ChevronDown className="ml-1 w-4 h-4" />
-                </>
-              )}
-            </Button>
+                {showBackground && (
+                  <ul
+                    className="mt-3 space-y-2 list-disc list-inside text-gray-700"
+                    data-testid={`list-teacher-background-${index}`}
+                  >
+                    {teacher.background.map((item, bgIndex) => (
+                      <li
+                        key={bgIndex}
+                        className="font-sans text-sm leading-relaxed"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ) : null}
           </div>
+
+          <Button
+            variant="ghost"
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-gold hover:text-gold-dark hover:bg-gold/10 p-0 h-auto font-sans"
+            data-testid={`button-teacher-expand-${index}`}
+          >
+            {isExpanded ? (
+              <>
+                {t("readLess")} <ChevronUp className="ml-1 w-4 h-4" />
+              </>
+            ) : (
+              <>
+                {t("readMore")} <ChevronDown className="ml-1 w-4 h-4" />
+              </>
+            )}
+          </Button>
         </div>
       </div>
     </Reveal>
