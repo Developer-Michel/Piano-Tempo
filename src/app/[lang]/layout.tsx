@@ -10,7 +10,19 @@ import { Toaster } from "@/components/ui/toaster";
 import { locales } from "@/i18n/request";
 import { Footer } from "@/components/Footer";
 import { Metadata } from "next";
+import { Lato, Playfair_Display } from "next/font/google";
 
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
+
+export const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -154,7 +166,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body>
+      <body className={lato.className}>
         <NextIntlClientProvider locale={lang} messages={messages}>
           <Header />
           <TooltipProvider>{children}</TooltipProvider>

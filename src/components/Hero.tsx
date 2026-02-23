@@ -1,9 +1,15 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
-
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
 export function Hero() {
   const t = useTranslations("home.hero");
   const scrollToContact = () => {
@@ -12,7 +18,9 @@ export function Hero() {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+  const isMobile =
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 768px)").matches;
   return (
     <section
       id="hero"
@@ -20,11 +28,11 @@ export function Hero() {
       data-testid="section-hero"
     >
       <Image
-        className="bg-cover bg-center absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 object-cover"
         src="/yamaha_piano.jpg"
         alt="Piano a Tempo"
-        width={1920}
-        height={1280}
+        sizes="100vw"
+        fill
         priority
         data-testid="image-hero-background"
       />
@@ -34,7 +42,7 @@ export function Hero() {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="font-bold">
           <h1
-            className="font-serif text-5xl sm:text-6xl md:text-7xl text-white mb-2 tracking-wide"
+            className={`${playfair.className} text-5xl sm:text-6xl md:text-7xl text-white mb-2 tracking-wide`}
             data-testid="text-school-name"
           >
             Piano <span className="text-gold ">a Tempo</span>
@@ -43,41 +51,35 @@ export function Hero() {
 
         <div>
           <p
-            className="font-serif text-xl sm:text-2xl md:text-3xl text-white/90  mt-6 mb-10"
+            className={`${playfair.className} text-xl sm:text-2xl md:text-3xl text-white/90  mt-6 mb-10`}
             data-testid="text-tagline"
           >
             {t("tagline")}
           </p>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0 }}
+        <Button
+          onClick={scrollToContact}
+          className="bg-gold hover:bg-gold-dark text-white font-sans text-lg px-8 py-3 tracking-wide transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(212,175,55,0.4)]"
+          data-testid="button-inquire-hero"
         >
-          <Button
-            onClick={scrollToContact}
-            className="bg-gold hover:bg-gold-dark text-white font-sans text-lg px-8 py-3 tracking-wide transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(212,175,55,0.4)]"
-            data-testid="button-inquire-hero"
-          >
-            {t("cta")}
-          </Button>
-        </motion.div>
+          {t("cta")}
+        </Button>
       </div>
-
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{
-          opacity: { delay: 1.5, duration: 0.5 },
-          y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
-        }}
-      >
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-3 bg-white/70 rounded-full" />
-        </div>
-      </motion.div>
+      {!isMobile && (
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: [0, 10, 0] }}
+          transition={{
+            opacity: { delay: 1.5, duration: 0.5 },
+            y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+          }}
+        >
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
+            <div className="w-1 h-3 bg-white/70 rounded-full" />
+          </div>
+        </motion.div>
+      )}
     </section>
   );
 }

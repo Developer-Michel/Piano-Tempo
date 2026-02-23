@@ -74,7 +74,7 @@ export default function FAQ() {
                     className="font-sans text-gray-700 pb-6 leading-relaxed"
                     data-testid={`text-faq-answer-${index}`}
                   >
-                    <p>{item.a}</p>
+                    <p className="whitespace-pre-line">{item.a}</p>
                   </AccordionContent>
                 </AccordionItem>
               ))}

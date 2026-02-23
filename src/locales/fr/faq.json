@@ -5,7 +5,7 @@
   "items": [
     {
       "q": "Tarifs et frais",
-      "a": "Frais d'inscription: import.meta.env.VITE_REGISTRATION_SESSION_FEE $ par session ( import.meta.env.VITE_REGISTRATION_SESSIONS_TOTAL sessions au total par an).\n\nTarifs des leçons:\n• 30 minutes: import.meta.env.VITE_LESSON_30 ,$\n• 45 minutes: import.meta.env.VITE_LESSON_45} $\n• 1 heure: import.meta.env.VITE_LESSON_60  $\n\nCes tarifs concernent les cours individuels. Tous frais supplémentaires, tels que le matériel ou les événements spéciaux, seront communiqués séparément.\n\nVeuillez noter que des billets individuels sont vendus pour assister aux 2 concerts organisés chaque année:  import.meta.env.VITE_CONCERT_PRICE_ADULT ,$ par adulte,   import.meta.env.VITE_CONCERT_PRICE_CHILD  $ par enfant, gratuit pour le pianiste."
+      "a": "Frais d'inscription:\n 10 $ par session (3 sessions au total par an).\n\nTarifs des leçons (cours individuels):\n• 30 minutes: 30 $\n• 45 minutes: 45 $\n• 1 heure: 60 $\n\nFrais additionnels: 50 $ de frais d'inscription, 25 $ de frais de retard.\n\nBillets de concert (2 concerts par an):\n• 15 $ par adulte\n• 5 $ par enfant\n• Gratuit pour l'élève pianiste"
     },
     {
       "q": "Quel programme choisir?",
