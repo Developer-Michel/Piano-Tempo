@@ -5,7 +5,7 @@
   },
   "about": {
     "title": "About Piano a Tempo",
-    "subtitle": "“Why our studio is different” - Our Pedagogical Philosophy",
+    "subtitle": "Rooted in tradition, Passion and Pedagogy",
     "singleText": "At Piano à Tempo, mother and daughter share the same passion: teaching piano with care, musicality, and lasting technical foundations. The love of music has been passed down in our family for generations. Today, it’s our turn to share it with you!",
     "p1": {
       "title": "Who we are",
@@ -27,7 +27,7 @@
   },
   "teachers": {
     "title": "Our Teachers",
-    "subtitle": "Expert Instructors Dedicated to Your Musical Journey",
+    "subtitle": "Instructors Dedicated to Your Musical Journey",
     "readMore": "Read More",
     "readLess": "Read Less",
     "backgroundShow": "Formation Background",
@@ -57,17 +57,17 @@
   "programs": {
     "title": "Our Programs",
     "subtitle": "Tailored Instruction for Every Age and Level",
-    "feeNote": "An additional $10 fee may apply.",
+    "feeNote": " A $10 registration fee applies every session.",
     "learnMore": "Learn More",
     "private": {
       "title": "Private Lessons",
-      "description": "One-on-one lessons tailored to each student’s individual needs, learning pace and goals, these classes develop technique, musical interpretation and theoretical understanding of music. They also offer the possibility to prepare for the preparatory-level auditions at the Conservatoire de musique de Gatineau and for the RCM examinations in Toronto.",
+      "description": "Tailored to each student’s individual needs, learning pace and goals, these classes develop technique, musical interpretation and theoretical understanding of music. They also offer the possibility to prepare for the preparatory-level auditions at the Conservatoire de musique de Gatineau and for the RCM examinations in Toronto.",
       "ages": "All ages",
       "price": "Pricing: 30 min — $30 | 45 min — $45 | 60 min — $60"
     },
     "groups": {
       "title": "Group lesson",
-      "description": "Fun and engaging group sessions for young beginners. Students learn together, building confidence and musical friendships in a supportive environment.",
+      "description": " In this collaborative setting, students learn everything they need to read and play music, while also creating new friendships, building ensemble skills, improving their listening, and staying in rhythm.",
       "ages": "Multiple Options",
       "price": "60-minute group class — $25 (per hour)",
       "items": [
@@ -110,7 +110,7 @@
       "phone": "Phone",
       "email": "Email",
       "hours": "Hours",
-      "hoursDetail": "Mon-Fri: 10am-8pm"
+      "hoursDetail": "Mon-Fri: 10am-8:30pm"
     },
     "languageOptions": {
       "en": "English",

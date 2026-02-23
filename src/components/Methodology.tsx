@@ -1,6 +1,3 @@
-import { useRef } from "react";
-import { useTranslations } from "next-intl";
-import { motion, useInView } from "framer-motion";
 import {
   Music,
   Hand,
@@ -10,7 +7,7 @@ import {
   Pen,
   Star,
 } from "lucide-react";
-
+import { getTranslations } from "next-intl/server";
 const iconMap: { [key: number]: any } = {
   0: Music,
   1: Hand,
@@ -21,26 +18,18 @@ const iconMap: { [key: number]: any } = {
   6: Star,
 };
 
-export function Methodology() {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-  const t = useTranslations("methodology");
+export async function Methodology() {
+  const t = await getTranslations("methodology");
   const items = t.raw("items") as { title: string; content: string }[];
 
   return (
     <section
       id="methodology"
-      ref={sectionRef}
       className="py-24 bg-gray-50"
       data-testid="section-methodology"
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2
             className="font-serif text-4xl md:text-5xl text-black mb-4"
             data-testid="text-methodology-title"
@@ -54,17 +43,14 @@ export function Methodology() {
             {t("subtitle")}
           </p>
           <div className="w-24 h-1 bg-gold mx-auto mt-6" />
-        </motion.div>
+        </div>
 
         <ul className="space-y-12">
           {items.map((item, index) => {
             const Icon = iconMap[index] || Music;
             return (
-              <motion.li
+              <li
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
                 className="flex items-start gap-6"
                 data-testid={`methodology-item-${index}`}
               >
@@ -85,7 +71,7 @@ export function Methodology() {
                     {item.content}
                   </p>
                 </div>
-              </motion.li>
+              </li>
             );
           })}
         </ul>

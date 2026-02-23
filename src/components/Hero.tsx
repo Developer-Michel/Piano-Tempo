@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export function Hero() {
   const t = useTranslations("home.hero");
@@ -18,10 +19,16 @@ export function Hero() {
       className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden"
       data-testid="section-hero"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(/yamaha_piano.jpg)` }}
+      <Image
+        className="bg-cover bg-center absolute inset-0 h-full w-full object-cover"
+        src="/yamaha_piano.jpg"
+        alt="Piano a Tempo"
+        width={1920}
+        height={1280}
+        priority
+        data-testid="image-hero-background"
       />
+
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">

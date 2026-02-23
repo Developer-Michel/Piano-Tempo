@@ -26,8 +26,8 @@ export async function generateMetadata({
   const isFrench = lang === "fr";
   return {
     title: isFrench
-      ? "Cours de piano à Gatineau | Piano a Tempo"
-      : "Piano Lessons in Gatineau | Piano a Tempo",
+      ? "Piano a Tempo | Cours de piano à Gatineau et Ottawa"
+      : "Piano a Tempo | Piano Lessons in Gatineau and Ottawa",
     description: isFrench
       ? "Cours de piano pour enfants et adultes à Gatineau et Ottawa. Cours privés et en groupe en anglais et en français. Apprenez le piano à votre rythme."
       : "Piano lessons for children and adults in Gatineau and Ottawa. Private and group classes in English and French. Learn piano at your tempo.",
@@ -124,6 +124,7 @@ export default async function LocaleLayout({
                 addressCountry: "CA",
               },
               url: "https://pianoatempo.ca",
+              strategy: "afterInteractive",
             }),
           }}
         />

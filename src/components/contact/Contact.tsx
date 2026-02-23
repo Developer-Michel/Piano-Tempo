@@ -38,6 +38,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useFullLocation } from "@/hooks/useFullLocation";
+import { MapEmbedOnView } from "./GoogleMap";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -430,37 +431,7 @@ export function Contact() {
               transition={{ duration: 0.6, delay: 0.9 }}
               className="mt-8"
             >
-              <div className="w-full h-64 rounded-md overflow-hidden border">
-                {/* Map embed: prefer lat/lng if provided, otherwise use address search */}
-                {getPublicEnv("NEXT_PUBLIC_MAP_LAT") &&
-                getPublicEnv("NEXT_PUBLIC_MAP_LNG") ? (
-                  <iframe
-                    title="Studio location"
-                    src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                      `${getPublicEnv("NEXT_PUBLIC_MAP_LAT")},${getPublicEnv(
-                        "NEXT_PUBLIC_MAP_LNG",
-                      )}`,
-                    )}&z=15&output=embed`}
-                    className="w-full h-full"
-                    loading="lazy"
-                  />
-                ) : getPublicEnv("NEXT_PUBLIC_ADDRESS") ? (
-                  <iframe
-                    title="Studio location"
-                    src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                      getPublicEnv("NEXT_PUBLIC_ADDRESS"),
-                    )}&z=15&output=embed`}
-                    className="w-full h-full"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-                    <span className="font-sans text-gray-500">
-                      Map location
-                    </span>
-                  </div>
-                )}
-              </div>
+              <MapEmbedOnView />
             </motion.div>
           </motion.div>
         </div>

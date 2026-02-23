@@ -1,5 +1,5 @@
 {
-  "title": "Politiques",
+  "title": "Politiques résumées",
   "subtitle": "Résumé des politiques pour les cours privés et les cours de groupe",
   "groups": [
     {
@@ -63,12 +63,18 @@
           "content": [
             "Tout dommage résultant d’une mauvaise utilisation de l’équipement du studio entraînera des frais de réparation."
           ]
+        },
+        {
+          "title": "Votre Accord",
+          "content": [
+            "En vous inscrivant au studio, vous reconnaissez avoir lu, compris et accepté de respecter les politiques du studio de piano énoncées dans le présent document. Ces politiques prennent effet dès l’adhésion et restent en vigueur pendant toute la durée de l’inscription de l’élève, jusqu’à ce que les cours soient interrompus conformément aux procédures décrites dans la présente politique."
+          ]
         }
       ]
     },
     {
       "id": "group",
-      "title": "Cours de groupe — résumé des politiques",
+      "title": "Cours de groupe",
       "sections": [
         {
           "title": "Calendrier et horaire",

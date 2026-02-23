@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { Reveal } from "../ui/Reveal";
+import Image from "next/image";
 
 export function Teachers() {
   const t = useTranslations("home.teachers");
@@ -89,10 +90,13 @@ function TeacherCard({
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.4 }}
         >
-          <img
+          <Image
+            width={520}
+            height={693}
+            sizes="(max-width: 768px) 100vw, 520px"
             src={teacher.image}
             alt={teacher.name}
-            className="w-full h-full object-cover transition-all duration-500"
+            className="w-full h-auto object-cover transition-all duration-500"
           />
         </Reveal>
       </div>

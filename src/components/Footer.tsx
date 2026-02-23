@@ -137,9 +137,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-3 font-sans text-white/70">
               <li>{getPublicEnv("NEXT_PUBLIC_ADDRESS")}</li>
-              {getPublicEnv("NEXT_PUBLIC_PHONE") && (
-                <li className="pt-2">{getPublicEnv("NEXT_PUBLIC_PHONE")}</li>
-              )}
+
               <li>{getPublicEnv("NEXT_PUBLIC_EMAIL")}</li>
             </ul>
           </div>

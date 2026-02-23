@@ -20,10 +20,10 @@ export async function About() {
               <Image
                 src="/concert.jpg"
                 alt="Concert performance"
-                width={1920}
-                height={1080}
+                width={520}
+                height={693}
+                sizes="(max-width: 768px) 100vw, 520px"
                 className="w-full h-full object-cover"
-                loading="lazy"
               />
             </div>
           </Reveal>

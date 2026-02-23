@@ -1,6 +1,6 @@
 {
-  "title": "Policies",
-  "subtitle": "Policy summary for private and group lessons",
+  "title": "Policy Summaries",
+  "subtitle": "Summary of policies for private and group lessons",
   "groups": [
     {
       "id": "private",
@@ -63,12 +63,18 @@
           "content": [
             "Any damage resulting from careless handling of studio equipment will incur repair fees."
           ]
+        },
+        {
+          "title": "Your Agreement",
+          "content": [
+            "By enrolling in the studio, you acknowledge that you have read, understood, and agreed to abide by the piano studio policies outlined in this document. These policies take effect upon enrollment and remain in effect for the duration of the student’s enrollment, until lessons are discontinued in accordance with the procedures described in this policy."
+          ]
         }
       ]
     },
     {
       "id": "group",
-      "title": "Group Lessons — Policy Summary",
+      "title": "Group Lessons",
       "sections": [
         {
           "title": "Calendar & Schedule",

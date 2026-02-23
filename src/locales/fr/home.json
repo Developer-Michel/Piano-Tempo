@@ -5,7 +5,7 @@
   },
   "about": {
     "title": "À propos de Piano a Tempo",
-    "subtitle": "« Pourquoi notre studio est différent » – Notre philosophie pédagogique",
+    "subtitle": "Ancré dans la tradition, la passion et la pédagogie",
     "singleText": "Chez Piano a tempo, mère et fille partagent une même passion: celle d’enseigner le piano avec soin, musicalité et bases techniques durables. L’amour de la musique se transmet dans notre famille depuis plusieurs générations. Aujourd’hui, c’est à notre tour de le partager avec vous!",
     "p1": {
       "title": "Qui nous sommes",
@@ -27,7 +27,7 @@
   },
   "teachers": {
     "title": "Nos Professeurs",
-    "subtitle": "Des instructeurs experts dédiés à votre parcours musical",
+    "subtitle": "Des instructeurs dédiés à votre parcours musical",
     "readMore": "Lire la suite",
     "readLess": "Réduire",
     "backgroundShow": "Parcours académique",
@@ -57,17 +57,17 @@
   "programs": {
     "title": "Nos Programmes",
     "subtitle": "Un enseignement adapté à chaque âge et niveau",
-    "feeNote": "Des frais supplémentaires de 10 $ peuvent s'appliquer.",
+    "feeNote": "Des frais d’inscription de 10 $ s’appliquent à chaque session.",
     "learnMore": "En savoir plus",
     "private": {
       "title": "Cours privés",
-      "description": "Enseignement individuel adaptés aux besoins individuels, au rythme et aux objectifs de chaque élève, ces cours permettent de développer la technique, l’interprétation musicale et la compréhension théorique de la musique. Ils offrent en outre la possibilité de se préparer aux auditions du niveau préparatoire du Conservatoire de musique de Gatineau et aux examens du RCM de Toronto.",
+      "description": "Adaptés aux besoins individuels, au rythme d’apprentissage et aux objectifs de chaque élève, ces cours permettent de développer la technique, l’interprétation musicale ainsi que la compréhension théorique de la musique. Ils offrent également la possibilité de se préparer aux auditions de niveau préparatoire du Conservatoire de musique de Gatineau ainsi qu’aux examens du Royal Conservatory of Music (RCM).",
       "ages": "Tous âges",
       "price": "Tarifs : 30 min — 30 $ | 45 min — 45 $ | 60 min — 60 $"
     },
     "groups": {
       "title": "Cours de groupe",
-      "description": "Sessions de groupe amusantes et engageantes pour les jeunes débutants. Les élèves apprennent ensemble, développant confiance et amitiés musicales dans un environnement bienveillant.",
+      "description": "Dans ce cadre collaboratif, les élèves apprennent tout ce dont ils ont besoin pour lire et jouer de la musique, tout en créant de nouvelles amitiés, en développant leurs compétences d’ensemble, en améliorant leur écoute et en renforçant leur sens du rythme.",
       "ages": "Plusieurs options",
       "price": "Cours de groupe de 60 minutes — 25 $ (par heure)",
       "items": [
@@ -85,7 +85,7 @@
     "subtitle": "La confiance des familles de Gatineau et d'Ottawa",
     "items": [
       {
-        "quote": "A venir",
+        "quote": "À venir",
         "author": "",
         "child": ""
       }
@@ -110,7 +110,7 @@
       "phone": "Téléphone",
       "email": "Courriel",
       "hours": "Heures",
-      "hoursDetail": "Lun-Ven: 10am-8pm"
+      "hoursDetail": "Lun-Ven: 10am-8:30pm"
     },
     "languageOptions": {
       "en": "English",
