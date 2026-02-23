@@ -3,12 +3,14 @@
 import { Users } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
-import { useState } from "react";
+import { use, useState } from "react";
 import { Card } from "../ui/card";
 import { useTranslations } from "next-intl";
+import { useNavScroll } from "@/hooks/use-nav";
 
 export function GroupProgramCard({ index }: { index: number }) {
   const t = useTranslations("home.programs");
+  const nav = useNavScroll();
   const groupItems = t.raw("groups.items") as string[];
   const title = t("groups.title");
   const description = t("groups.description");
@@ -63,10 +65,11 @@ export function GroupProgramCard({ index }: { index: number }) {
               key={i}
               type="button"
               onClick={() => {
-                const target = `${pathname}#contact?course=${encodeURIComponent(
-                  courseName,
-                )}`;
-                window.location.href = target;
+                nav({
+                  href: "",
+                  id: "contact",
+                  params: `?course=${encodeURIComponent(courseName)}`,
+                });
               }}
               className="p-3 text-left border rounded text-sm text-gray-700 hover:bg-gray-100"
               data-testid={`group-item-${i}`}

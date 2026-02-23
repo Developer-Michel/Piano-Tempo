@@ -39,6 +39,7 @@ import {
 } from "@/components/ui/form";
 import { useFullLocation } from "@/hooks/useFullLocation";
 import { MapEmbedOnView } from "./GoogleMap";
+import { useParams, useSearchParams } from "next/navigation";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -73,43 +74,15 @@ export function Contact() {
       message: "",
     },
   });
-
-  const fullLocation = useFullLocation();
+  const location = useFullLocation();
+  const searchParams = useSearchParams();
   useEffect(() => {
-    try {
-      const url = new URL(fullLocation, window.location.origin);
-
-      // 1) if there is a hash like #contact?course=...
-      let raw = url.hash || "";
-
-      // 2) if no hash, fallback to normal ?course=...
-      if (!raw && url.search) {
-        const courseFromSearch = url.searchParams.get("course");
-        if (courseFromSearch) {
-          form.setValue("course", courseFromSearch);
-          const el = document.getElementById("contact");
-          if (el) el.scrollIntoView({ behavior: "smooth" });
-        }
-        return;
-      }
-
-      if (!raw) return;
-
-      const parts = raw.replace(/^#/, "").split("?");
-      if (parts.length < 2) return;
-
-      const params = new URLSearchParams(parts[1]);
-      const course = params.get("course");
-
-      if (course) {
-        form.setValue("course", course);
-        const el = document.getElementById("contact");
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }
-    } catch {
-      // ignore parsing errors
+    console.log("Setting course from URL:", searchParams.get("course"));
+    if (searchParams.get("course")) {
+      form.setValue("course", searchParams.get("course") || "");
+      return;
     }
-  }, [fullLocation, form]);
+  }, [searchParams, location]);
 
   const onSubmit = async (data: ContactFormData) => {
     try {

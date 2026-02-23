@@ -13,11 +13,11 @@ export function Footer() {
   const tPrograms = useTranslations("home.programs");
 
   const quickLinks = [
-    { key: "home", href: basePath },
-    { key: "about", href: `${basePath}/about` },
-    { key: "teachers", href: `${basePath}/teachers` },
-    { key: "programs", href: `${basePath}/programs` },
-    { key: "contact", href: `${basePath}/contact` },
+    { key: "home", href: basePath + "#home" },
+    { key: "about", href: `${basePath}#about` },
+    { key: "teachers", href: `${basePath}#teachers` },
+    { key: "programs", href: `${basePath}#programs` },
+    { key: "contact", href: `${basePath}#contact` },
   ];
 
   const additionalLinks = [

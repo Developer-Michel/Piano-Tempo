@@ -3,6 +3,8 @@ import { Card } from "@/components/ui/card";
 import { Users } from "lucide-react";
 import { GroupProgramCard } from "./GroupProgramCard";
 import { useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
+import { useNavScroll } from "@/hooks/use-nav";
 
 export function Programs() {
   const t = useTranslations("home.programs");
@@ -51,19 +53,23 @@ export function Programs() {
 
 function ProgramCard({ index }: { index: number }) {
   const t = useTranslations("home.programs");
+  const nav = useNavScroll();
   const title = t(`private.title`);
   const description = t(`private.description`);
   const ages = t(`private.ages`);
   const price = t(`private.price`);
   const feeNote = t(`feeNote`);
+  const pathName = usePathname();
+  const router = useRouter();
   return (
     <Card
       onClick={() => {
         if (title) {
-          const target = `${
-            window.location.pathname
-          }#contact?course=${encodeURIComponent(title)}`;
-          window.location.href = target;
+          nav({
+            href: "",
+            id: "contact",
+            params: `?course=${encodeURIComponent(title)}`,
+          });
         }
       }}
       className="group p-6 border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"

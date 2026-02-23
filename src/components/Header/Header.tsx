@@ -16,14 +16,15 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { LanguageSelector } from "./Language-Selector";
+import { useNavScroll } from "@/hooks/use-nav";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname() || "";
-  const router = useRouter();
-  const tNav = useTranslations("common.nav");
   const locale = useLocale();
+  const basePath = `/${locale}`;
+  const tNav = useTranslations("common.nav");
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -32,14 +33,12 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const basePath = `/${locale}`;
-
   const navItems = [
-    { key: "home", href: basePath, sectionId: "hero" },
-    { key: "about", href: basePath, sectionId: "about" },
-    { key: "teachers", href: basePath, sectionId: "teachers" },
-    { key: "programs", href: basePath, sectionId: "programs" },
-    { key: "contact", href: basePath, sectionId: "contact" },
+    { key: "home", href: `${basePath}`, sectionId: "home" },
+    { key: "about", href: `${basePath}`, sectionId: "about" },
+    { key: "teachers", href: `${basePath}`, sectionId: "teachers" },
+    { key: "programs", href: `${basePath}`, sectionId: "programs" },
+    { key: "contact", href: `${basePath}`, sectionId: "contact" },
   ];
 
   const additionalNavItems = [
@@ -52,28 +51,14 @@ export function Header() {
 
   const activeExtra = additionalNavItems.some((item) => item.href === pathname);
 
-  const scrollToSection = (sectionId?: string) => {
-    if (!sectionId) return;
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const nav = useNavScroll();
 
   const handleNavClick = (href: string, sectionId?: string) => {
     setIsMobileMenuOpen(false);
-
-    const isSameRoute = pathname === href;
-    if (isSameRoute && sectionId) {
-      scrollToSection(sectionId);
-      return;
-    }
-
-    router.push(href);
-
-    if (sectionId) {
-      setTimeout(() => scrollToSection(sectionId), 80);
-    }
+    nav({
+      href: href,
+      id: sectionId || "",
+    });
   };
 
   return (
@@ -87,10 +72,7 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link
-            href={basePath}
-            onClick={() => handleNavClick(basePath, "hero")}
-          >
+          <Link href={basePath}>
             <motion.div
               className="flex items-center gap-2 cursor-pointer"
               whileHover={{ scale: 1.02 }}
