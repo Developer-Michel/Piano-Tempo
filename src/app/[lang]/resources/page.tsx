@@ -1,8 +1,79 @@
-import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { FileText, BookOpen, Music, Download } from "lucide-react";
+import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: string };
+}): Promise<Metadata> {
+  const { lang } = await params;
+
+  const path = "resources";
+  const isFrench = lang === "fr";
+  return {
+    title: isFrench
+      ? "Ressources | Piano a Tempo"
+      : "Resources | Piano a Tempo",
+    description: isFrench
+      ? "Découvrez nos ressources pour l'enseignement du piano à Gatineau et Ottawa."
+      : "Explore our resources for piano teaching in Gatineau and Ottawa.",
+    keywords: isFrench
+      ? [
+          "ressources cours de piano",
+          "ressources d'enseignement piano",
+          "piano Gatineau",
+          "piano Ottawa",
+        ]
+      : [
+          "piano lessons resources",
+          "piano teaching resources",
+          "piano Gatineau",
+          "piano Ottawa",
+        ],
+    alternates: {
+      canonical: `https://pianoatempo.ca/${lang}/${path}`,
+      languages: {
+        "en-CA": `https://pianoatempo.ca/en/${path}`,
+        "fr-CA": `https://pianoatempo.ca/fr/${path}`,
+        "x-default": `https://pianoatempo.ca/fr/${path}`,
+      },
+    },
+    authors: [
+      {
+        name: "Michel Racicot-Nguyen",
+      },
+    ],
+    publisher: "Michel Racicot-Nguyen",
+    twitter: {
+      card: "summary_large_image",
+      title: isFrench
+        ? "Piano a Tempo | Ressources"
+        : "Piano a Tempo | Resources",
+      images: ["https://pianoatempo.ca/concert.jpg"],
+      description: isFrench
+        ? "Découvrez nos ressources pour l'enseignement du piano à Gatineau et Ottawa."
+        : "Explore our resources for piano teaching in Gatineau and Ottawa.",
+    },
+    openGraph: {
+      title: isFrench
+        ? "Piano a Tempo | Ressources"
+        : "Piano a Tempo | Resources",
+      description: isFrench
+        ? "Découvrez nos ressources pour l'enseignement du piano à Gatineau et Ottawa."
+        : "Explore our resources for piano teaching in Gatineau and Ottawa.",
+      url: `https://pianoatempo.ca/${lang}/${path}`,
+      alternateLocale: lang === "fr" ? ["en_CA"] : ["fr_CA"],
+      locale: lang === "fr" ? "fr_CA" : "en_CA",
+      siteName: "Piano a Tempo",
+      type: "website",
+      images: [
+        { url: "https://pianoatempo.ca/concert.jpg", width: 800, height: 600 },
+      ],
+    },
+  };
+}
 
 export default async function Resources({}: {}) {
   const t = await getTranslations("resources");

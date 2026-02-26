@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
@@ -64,7 +64,7 @@ export function Header() {
   return (
     <header
       className={[
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 transition-colors duration-300",
         isDarkText
           ? "bg-white/95 backdrop-blur-md shadow-lg"
           : "bg-transparent",
@@ -81,7 +81,7 @@ export function Header() {
                   isDarkText ? "text-black" : "text-white",
                 ].join(" ")}
               >
-                Piano
+                <h2>Piano</h2>
               </span>
               <span className="text-2xl text-gold">a Tempo</span>
             </div>
@@ -103,32 +103,12 @@ export function Header() {
             ))}
 
             {/* Lightweight dropdown using <details> */}
-            <details className="relative group">
-              <summary
-                className={[
-                  "list-none cursor-pointer select-none text-sm tracking-wide flex items-center gap-1",
-                  isDarkText ? "text-black" : "text-white",
-                ].join(" ")}
-                aria-label="More"
-              >
-                {tNav("more")}
-                <ChevronDown className="h-4 w-4 transition-transform duration-200 group-open:rotate-180" />
-              </summary>
-
-              {/* dropdown panel */}
-              <div className="absolute right-0 mt-3 w-60 rounded-xl border bg-white shadow-lg overflow-hidden">
-                {additionalNavItems.map((item) => (
-                  <button
-                    key={item.key}
-                    onClick={() => handleNavClick(item.href)}
-                    className="w-full text-left px-4 py-3 text-sm hover:bg-black/5 hover:text-gold transition-colors"
-                    data-testid={`nav-${item.key}`}
-                  >
-                    {tNav(item.key)}
-                  </button>
-                ))}
-              </div>
-            </details>
+            <MoreDrowdown
+              additionalNavItems={additionalNavItems}
+              tNav={tNav}
+              handleNavClick={handleNavClick}
+              isDarkText={isDarkText}
+            />
           </nav>
 
           <div className="flex items-center gap-4">
@@ -139,7 +119,7 @@ export function Header() {
                 target="_blank"
                 rel="noreferrer noopener"
                 className={[
-                  "w-8 h-8 flex items-center justify-center rounded-md transition-colors",
+                  "w-8 h-8 flex items-center justify-center rounded-md",
                   isDarkText
                     ? "text-black hover:text-gold"
                     : "text-white hover:text-gold",
@@ -174,8 +154,8 @@ export function Header() {
       {/* Mobile menu: CSS transition instead of AnimatePresence */}
       <div
         className={[
-          "lg:hidden overflow-hidden border-t bg-white transition-[max-height,opacity] duration-300",
-          isMobileMenuOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0",
+          "lg:hidden font-sans overflow-auto border-t bg-white ",
+          isMobileMenuOpen ? "max-h-[90vh] opacity-100" : "max-h-0 opacity-0",
         ].join(" ")}
         data-testid="nav-mobile"
       >
@@ -184,7 +164,7 @@ export function Header() {
             <button
               key={item.key}
               onClick={() => handleNavClick(item.href, item.sectionId)}
-              className="py-3 text-left text-lg text-black hover:text-gold transition-colors"
+              className="py-3 text-left text-lg text-black hover:text-gold"
               data-testid={`nav-mobile-${item.key}`}
             >
               {tNav(item.key)}
@@ -195,7 +175,7 @@ export function Header() {
             <button
               key={item.key}
               onClick={() => handleNavClick(item.href)}
-              className="py-3 text-left text-lg text-black hover:text-gold transition-colors"
+              className="py-3 text-left text-lg text-black hover:text-gold"
               data-testid={`nav-mobile-${item.key}`}
             >
               {tNav(item.key)}
@@ -207,7 +187,7 @@ export function Header() {
               href={getPublicEnv("NEXT_PUBLIC_FACEBOOK")}
               target="_blank"
               rel="noreferrer noopener"
-              className="w-8 h-8 flex items-center justify-center rounded-md text-black hover:text-gold transition-colors"
+              className="w-8 h-8 flex items-center justify-center rounded-md text-black hover:text-gold"
               aria-label="Facebook"
               data-testid="link-header-facebook-mobile"
             >
@@ -219,7 +199,72 @@ export function Header() {
     </header>
   );
 }
+function MoreDrowdown({
+  additionalNavItems,
+  tNav,
+  handleNavClick,
+  isDarkText,
+}: {
+  additionalNavItems: NavItem[];
+  tNav: (key: string) => string;
+  handleNavClick: (href: string, sectionId?: string) => void;
+  isDarkText: boolean;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const detailsRef = useRef<HTMLDetailsElement>(null);
 
+  // Close when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        detailsRef.current &&
+        !detailsRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <details ref={detailsRef} open={isOpen} className="relative group">
+      <summary
+        onClick={(e) => {
+          e.preventDefault(); // empêche le toggle natif
+          setIsOpen((prev) => !prev);
+        }}
+        className={[
+          "list-none cursor-pointer select-none text-sm tracking-wide flex items-center gap-1",
+          isDarkText ? "text-black" : "text-white",
+        ].join(" ")}
+        aria-label="More"
+      >
+        {tNav("more")}
+        <ChevronDown className="h-4 w-4 transition-transform duration-200 group-open:rotate-180" />
+      </summary>
+
+      <div className="absolute right-0 mt-3 w-60 rounded-xl border bg-white shadow-lg overflow-hidden">
+        {additionalNavItems.map((item) => (
+          <button
+            key={item.key}
+            onClick={() => {
+              handleNavClick(item.href);
+              setIsOpen(false); // ferme au clic
+            }}
+            className="w-full text-left px-4 py-3 text-sm hover:bg-black/5 hover:text-gold"
+            data-testid={`nav-${item.key}`}
+          >
+            {tNav(item.key)}
+          </button>
+        ))}
+      </div>
+    </details>
+  );
+}
 function NavLink({
   label,
   isDarkText,
@@ -235,7 +280,7 @@ function NavLink({
     <button
       onClick={onClick}
       className={[
-        "relative text-sm tracking-wide group transition-colors",
+        "relative text-sm tracking-wide group ",
         isDarkText ? "text-black" : "text-white",
       ].join(" ")}
       data-testid={testId}

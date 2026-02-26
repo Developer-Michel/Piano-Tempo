@@ -9,8 +9,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { locales } from "@/i18n/request";
 import { Footer } from "@/components/Footer";
-import { Metadata } from "next";
 import { Lato, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -28,122 +28,6 @@ export const dynamicParams = false;
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang: string };
-}): Promise<Metadata> {
-  const { lang } = await params;
-
-  const isFrench = lang === "fr";
-  return {
-    title: isFrench
-      ? "Cours de piano à Gatineau et Ottawa | Piano a Tempo "
-      : "Piano Lessons in Gatineau and Ottawa | Piano a Tempo",
-    description: isFrench
-      ? "Cours de piano pour enfants et adultes à Gatineau et Ottawa. Cours privés et en groupe en anglais et en français. Apprenez le piano à votre rythme."
-      : "Piano lessons for children and adults in Gatineau and Ottawa. Private and group classes in English and French. Learn piano at your tempo.",
-    keywords: isFrench
-      ? [
-          "cours de piano Gatineau",
-          "cours de piano Ottawa",
-          "professeur de piano Gatineau",
-          "professeur de piano Ottawa",
-          "cours de piano privés",
-          "cours de piano pour enfants",
-          "studio de piano Québec",
-          "cours de piano en français",
-          "cours de piano en anglais",
-          "cours de piano pour débutants",
-          "cours de piano pour adultes",
-          "cours de piano pour enfants à Gatineau",
-          "cours de piano pour enfants à Ottawa",
-        ]
-      : [
-          "piano lessons Gatineau",
-          "piano lessons Ottawa",
-          "piano teacher Gatineau",
-          "piano teacher Ottawa",
-          "private piano lessons",
-          "piano classes for kids",
-          "piano studio Quebec",
-          "piano lessons in French",
-          "piano lessons in English",
-          "piano lessons for beginners",
-          "piano lessons for adults",
-          "piano lessons for kids in Gatineau",
-          "piano lessons for kids in Ottawa",
-        ],
-    alternates: {
-      canonical: `https://pianoatempo.ca/${lang}`,
-      languages: {
-        "en-CA": "https://pianoatempo.ca/en",
-        "fr-CA": "https://pianoatempo.ca/fr",
-      },
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "Piano a Tempo | Piano Lessons in Gatineau and Ottawa",
-      description: "Private and group piano lessons in Gatineau and Ottawa.",
-      images: ["https://pianoatempo.ca/concert.jpg"],
-    },
-    openGraph: {
-      title: "Piano a Tempo | Piano Lessons in Gatineau and Ottawa",
-      description: "Private and group piano lessons in Gatineau and Ottawa.",
-      url: "https://pianoatempo.ca",
-      alternateLocale: lang === "fr" ? ["en_CA"] : ["fr_CA"],
-      siteName: "Piano a Tempo",
-      locale: lang === "fr" ? "fr_CA" : "en_CA",
-      type: "website",
-      images: [
-        {
-          url: "https://pianoatempo.ca/concert.jpg",
-          width: 1200,
-          height: 630,
-        },
-      ],
-    },
-  };
-}
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "MusicSchool",
-  "@id": "https://pianoatempo.ca/#music-school",
-  name: "Piano à Tempo",
-  url: "https://pianoatempo.ca",
-  description:
-    "Cours de piano à Gatineau et Ottawa : leçons pour enfants, adolescents et adultes, en personne et/ou en ligne.",
-  email: "info.pianoatempo@gmail.com",
-  priceRange: "$25-$60",
-  image: ["https://pianoatempo.ca/concert.jpg"],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Gatineau",
-    addressRegion: "QC",
-    postalCode: "J8Y 1B3", // optionnel mais recommandé
-    addressCountry: "CA",
-  },
-  areaServed: [
-    { "@type": "City", name: "Ottawa" },
-    { "@type": "AdministrativeArea", name: "Gatineau" },
-  ],
-  knowsLanguage: ["fr-CA", "en-CA"],
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "10:00",
-      closes: "20:30",
-    },
-  ],
-  hasMap: "https://www.google.com/maps?q=Rue%20Champagne%20Gatineau%20QC", // OK sans lat/lng
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "45.46152714550786",
-    longitude: "-75.74642768797247",
-  },
-  sameAs: ["https://www.facebook.com/profile.php?id=61550469422765"],
-};
 export default async function LocaleLayout({
   children,
   params,
@@ -154,7 +38,108 @@ export default async function LocaleLayout({
   const { lang } = await params;
   setRequestLocale(lang);
   const messages = await getMessages();
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MusicSchool",
+    "@id": `https://pianoatempo.ca/${lang}/#music-school`,
+    name: "Piano à Tempo",
+    url: `https://pianoatempo.ca/${lang}`,
+    description:
+      lang === "fr"
+        ? "Cours de piano à Gatineau et Ottawa : leçons pour enfants, adolescents et adultes, en personne et/ou en ligne."
+        : "Piano lessons in Gatineau and Ottawa: lessons for children, teenagers, and adults, in person and/or online.",
+    email: "info.pianoatempo@gmail.com",
+    priceRange: "$25-$60",
+    image: ["https://pianoatempo.ca/concert.jpg"],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Gatineau",
+      addressRegion: "QC",
+      postalCode: "J8Y 1B3", // optionnel mais recommandé
+      addressCountry: "CA",
+    },
+    areaServed: [
+      { "@type": "City", name: "Ottawa" },
+      { "@type": "City", name: "Gatineau" },
+    ],
+    knowsLanguage: ["fr-CA", "en-CA"],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "10:00",
+        closes: "20:30",
+      },
+    ],
+    hasMap: "https://www.google.com/maps?q=Rue%20Champagne%20Gatineau%20QC", // OK sans lat/lng
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 45.46152714550786,
+      longitude: -75.74642768797247,
+    },
+    sameAs: ["https://www.facebook.com/profile.php?id=61550469422765"],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: lang === "fr" ? "Cours privés" : "Private Lessons",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name:
+            lang === "fr" ? "Cours privé (30 min)" : "Private lesson (30 min)",
+          price: "30",
+          priceCurrency: "CAD",
+          url: `https://pianoatempo.ca/${lang}/programs#private`,
+          description:
+            lang === "fr"
+              ? "Cours adaptés au rythme et aux objectifs de l’élève."
+              : "Tailored lessons based on the student’s pace and goals.",
+        },
+        {
+          "@type": "Offer",
+          name:
+            lang === "fr" ? "Cours privé (45 min)" : "Private lesson (45 min)",
+          price: "45",
+          priceCurrency: "CAD",
+          url: `https://pianoatempo.ca/${lang}/programs#private`,
+        },
+        {
+          "@type": "Offer",
+          name:
+            lang === "fr" ? "Cours privé (60 min)" : "Private lesson (60 min)",
+          price: "60",
+          priceCurrency: "CAD",
+          url: `https://pianoatempo.ca/${lang}/programs#private`,
+        },
+        {
+          "@type": "Offer",
+          name:
+            lang === "fr" ? "Cours de groupe (60 min)" : "Group class (60 min)",
+          price: "25",
+          priceCurrency: "CAD",
+          url: `https://pianoatempo.ca/${lang}/programs#groups`,
+          description:
+            lang === "fr"
+              ? "Cours collaboratif pour apprendre à lire et jouer la musique."
+              : "Collaborative setting to learn reading and playing music.",
+        },
+      ],
+    },
 
+    // aggregateRating: {
+    //   "@type": "AggregateRating",
+    //   ratingValue: "4.9",
+    //   reviewCount: "38",
+    // },
+    // // Optionnel: quelques reviews (si elles existent vraiment et sont visibles sur ton site)
+    // review: [
+    //   {
+    //     "@type": "Review",
+    //     author: { "@type": "Person", name: "Prénom N." },
+    //     reviewRating: { "@type": "Rating", ratingValue: "5" },
+    //     reviewBody: "Super expérience, prof très pédagogue.",
+    //   },
+    // ],
+  };
   return (
     <html lang={lang}>
       <head>

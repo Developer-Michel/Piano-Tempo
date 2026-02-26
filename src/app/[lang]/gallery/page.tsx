@@ -1,25 +1,87 @@
-"use client";
-
-import { useRef } from "react";
-import { useTranslations } from "next-intl";
-import { motion, useInView } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { ImageIcon } from "lucide-react";
+import { Metadata } from "next";
+import { Reveal } from "@/components/ui/Reveal";
+import { getTranslations } from "next-intl/server";
 
-export default function Gallery() {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-  const t = useTranslations("gallery");
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: string };
+}): Promise<Metadata> {
+  const { lang } = await params;
+
+  const path = "gallery";
+  const isFrench = lang === "fr";
+  return {
+    title: isFrench ? "Galerie | Piano a Tempo" : "Gallery | Piano a Tempo",
+    description: isFrench
+      ? "Découvrez notre galerie de photos et vidéos des cours de piano à Gatineau et Ottawa."
+      : "Explore our gallery of photos and videos from piano lessons in Gatineau and Ottawa.",
+    keywords: isFrench
+      ? [
+          "galerie cours de piano",
+          "photos cours de piano",
+          "vidéos cours de piano",
+          "galerie piano Gatineau",
+          "galerie piano Ottawa",
+        ]
+      : [
+          "piano lessons gallery",
+          "piano lesson photos",
+          "piano lesson videos",
+          "piano lessons Gatineau gallery",
+          "piano lessons Ottawa gallery",
+        ],
+    alternates: {
+      canonical: `https://pianoatempo.ca/${lang}/${path}`,
+      languages: {
+        "en-CA": `https://pianoatempo.ca/en/${path}`,
+        "fr-CA": `https://pianoatempo.ca/fr/${path}`,
+        "x-default": `https://pianoatempo.ca/fr/${path}`,
+      },
+    },
+    authors: [
+      {
+        name: "Michel Racicot-Nguyen",
+      },
+    ],
+    publisher: "Michel Racicot-Nguyen",
+    twitter: {
+      card: "summary_large_image",
+      title: "Piano a Tempo | Gallery",
+      images: ["https://pianoatempo.ca/concert.jpg"],
+      description:
+        "Explore our gallery of photos and videos from piano lessons in Gatineau and Ottawa.",
+    },
+    openGraph: {
+      title: isFrench ? "Piano a Tempo | Galerie" : "Piano a Tempo | Gallery",
+      description: isFrench
+        ? "Découvrez notre galerie de photos et vidéos des cours de piano à Gatineau et Ottawa."
+        : "Explore our gallery of photos and videos from piano lessons in Gatineau and Ottawa.",
+      url: `https://pianoatempo.ca/${lang}/${path}`,
+      alternateLocale: lang === "fr" ? ["en_CA"] : ["fr_CA"],
+      locale: lang === "fr" ? "fr_CA" : "en_CA",
+      siteName: "Piano a Tempo",
+      type: "website",
+      images: [
+        { url: "https://pianoatempo.ca/concert.jpg", width: 800, height: 600 },
+      ],
+    },
+  };
+}
+export default async function Gallery() {
+  const t = await getTranslations("gallery");
 
   const placeholderImages = Array(6).fill(null);
 
   return (
     <div className="min-h-screen bg-white" data-testid="page-gallery">
-      <main className="pt-32 pb-24" ref={sectionRef}>
+      <main className="pt-32 pb-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <Reveal
             initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
@@ -36,11 +98,11 @@ export default function Gallery() {
               {t("subtitle")}
             </p>
             <div className="w-24 h-1 bg-gold mx-auto" />
-          </motion.div>
+          </Reveal>
 
-          <motion.div
+          <Reveal
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center mb-12"
           >
@@ -50,14 +112,14 @@ export default function Gallery() {
             >
               {t("comingSoon")}
             </p>
-          </motion.div>
+          </Reveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {placeholderImages.map((_, index) => (
-              <motion.div
+              <Reveal
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
               >
                 <Card
@@ -71,7 +133,7 @@ export default function Gallery() {
                     </p>
                   </div>
                 </Card>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>
