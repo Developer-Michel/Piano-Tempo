@@ -73,6 +73,7 @@ export function GroupProgramCard({ index }: { index: number }) {
               }}
               className="p-3 text-left border rounded text-sm text-gray-700 hover:bg-gray-100"
               data-testid={`group-item-${i}`}
+              aria-label="select a course"
             >
               {courseName}
             </button>

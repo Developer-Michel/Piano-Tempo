@@ -18,7 +18,7 @@ export async function About() {
           >
             <div className="overflow-hidden rounded-xl shadow-lg h-64 md:h-80 lg:h-96">
               <Image
-                src="/concert.jpg"
+                src="/concert.webp"
                 alt="Concert performance"
                 width={520}
                 height={693}
@@ -34,12 +34,7 @@ export async function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-4 self-center"
           >
-            <Reveal
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
+            <div className="text-center">
               <h2
                 className="font-serif text-4xl md:text-5xl text-black mb-4"
                 data-testid="text-about-title"
@@ -52,7 +47,7 @@ export async function About() {
               >
                 {t("subtitle")}
               </p>
-            </Reveal>
+            </div>
             <Reveal
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}

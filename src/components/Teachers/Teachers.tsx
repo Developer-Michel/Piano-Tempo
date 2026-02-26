@@ -15,7 +15,7 @@ export function Teachers() {
     background?: string[];
   }[];
 
-  const teacherImages = ["/angelina.jpg", "/inessa.jpg"];
+  const teacherImages = ["/angelina.webp", "/inessa.webp"];
 
   return (
     <section
@@ -85,11 +85,7 @@ function TeacherCard({
       data-testid={`card-teacher-${index}`}
     >
       <div className="relative group overflow-hidden">
-        <Reveal
-          className="aspect-[3/4] overflow-hidden"
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.4 }}
-        >
+        <div className="aspect-[3/4] overflow-hidden">
           <Image
             width={520}
             height={693}
@@ -98,7 +94,7 @@ function TeacherCard({
             alt={teacher.name}
             className="w-full h-auto object-cover transition-all duration-500"
           />
-        </Reveal>
+        </div>
       </div>
 
       <div className="p-8">

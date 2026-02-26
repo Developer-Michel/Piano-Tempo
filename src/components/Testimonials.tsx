@@ -110,6 +110,7 @@ export function Testimonials() {
               onClick={goToPrev}
               className="text-white/70 hover:text-gold hover:bg-white/10"
               data-testid="button-testimonial-prev"
+              aria-label="back"
             >
               <ChevronLeft className="w-6 h-6" />
             </Button>
@@ -125,6 +126,7 @@ export function Testimonials() {
                       : "bg-white/30 hover:bg-white/50"
                   }`}
                   data-testid={`button-testimonial-dot-${index}`}
+                  aria-label="selection testimonial"
                 />
               ))}
             </div>
@@ -135,6 +137,7 @@ export function Testimonials() {
               onClick={goToNext}
               className="text-white/70 hover:text-gold hover:bg-white/10"
               data-testid="button-testimonial-next"
+              aria-label="next"
             >
               <ChevronRight className="w-6 h-6" />
             </Button>

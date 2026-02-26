@@ -162,14 +162,3 @@ body {
     pointer-events: none;
   }
 }
-
-@font-face {
-  font-family: "Playfair Display";
-  src: url("/fonts/playfair-display.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-h1 {
-  font-family: "Playfair Display", serif;
-}

@@ -2,12 +2,9 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { HeroCta } from "./HeroCta";
 import { HeroBottom } from "./HeroBottom";
-import { Playfair_Display } from "next/font/google";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-});
+import { playfair } from "@/app/[lang]/layout";
+
 export async function Hero() {
   const t = await getTranslations("home.hero");
 
@@ -30,7 +27,7 @@ export async function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="font-bold">
+        <div>
           <h1
             className={`${playfair.className} text-5xl sm:text-6xl md:text-7xl text-white mb-2 tracking-wide`}
             data-testid="text-school-name"
@@ -41,7 +38,7 @@ export async function Hero() {
 
         <div>
           <p
-            className={`${playfair.className} text-xl sm:text-2xl md:text-3xl text-white/90  mt-6 mb-10`}
+            className={` text-xl sm:text-2xl md:text-3xl text-white/90  mt-6 mb-10`}
             data-testid="text-tagline"
           >
             {t("tagline")}

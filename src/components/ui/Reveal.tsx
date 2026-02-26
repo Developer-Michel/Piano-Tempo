@@ -27,7 +27,7 @@ export function Reveal({
   children?: React.ReactNode;
 }) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2 });
+  const inView = useInView(ref, { once: true, amount: 0.0 });
 
   return (
     <motion.div

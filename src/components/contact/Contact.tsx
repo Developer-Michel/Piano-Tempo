@@ -301,6 +301,7 @@ export function Contact() {
                               <SelectTrigger
                                 className="border-gray-300 focus:border-gold focus:ring-gold"
                                 data-testid="select-course"
+                                aria-label="select course"
                               >
                                 <SelectValue
                                   placeholder={tContact(

@@ -20,7 +20,7 @@ const lato = Lato({
 
 export const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["700"],
   display: "swap",
 });
 export const dynamicParams = false;
@@ -38,8 +38,8 @@ export async function generateMetadata({
   const isFrench = lang === "fr";
   return {
     title: isFrench
-      ? "Piano a Tempo | Cours de piano à Gatineau et Ottawa"
-      : "Piano a Tempo | Piano Lessons in Gatineau and Ottawa",
+      ? "Cours de piano à Gatineau et Ottawa | Piano a Tempo "
+      : "Piano Lessons in Gatineau and Ottawa | Piano a Tempo",
     description: isFrench
       ? "Cours de piano pour enfants et adultes à Gatineau et Ottawa. Cours privés et en groupe en anglais et en français. Apprenez le piano à votre rythme."
       : "Piano lessons for children and adults in Gatineau and Ottawa. Private and group classes in English and French. Learn piano at your tempo.",
@@ -75,7 +75,7 @@ export async function generateMetadata({
           "piano lessons for kids in Ottawa",
         ],
     alternates: {
-      canonical: "https://pianoatempo.ca/${lang}",
+      canonical: `https://pianoatempo.ca/${lang}`,
       languages: {
         "en-CA": "https://pianoatempo.ca/en",
         "fr-CA": "https://pianoatempo.ca/fr",
@@ -107,26 +107,23 @@ export async function generateMetadata({
 }
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": ["MusicSchool", "LocalBusiness"],
+  "@type": "MusicSchool",
+  "@id": "https://pianoatempo.ca/#music-school",
   name: "Piano à Tempo",
   url: "https://pianoatempo.ca",
   description:
     "Cours de piano à Gatineau et Ottawa : leçons pour enfants, adolescents et adultes, en personne et/ou en ligne.",
-  email: "TODO:info.pianoatempo@gmail.com",
-  priceRange: "25-60$",
-  image: [
-    "https://pianoatempo.ca/concert.jpg", // TODO optionnel
-  ],
+  email: "info.pianoatempo@gmail.com",
+  priceRange: "$25-$60",
+  image: ["https://pianoatempo.ca/concert.jpg"],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Rue Champagne", // TODO idéal: "123 Rue Champagne"
     addressLocality: "Gatineau",
     addressRegion: "QC",
-    postalCode: "TODO:J8Y 1B3", // optionnel mais recommandé
+    postalCode: "J8Y 1B3", // optionnel mais recommandé
     addressCountry: "CA",
   },
   areaServed: [
-    { "@type": "City", name: "Gatineau" },
     { "@type": "City", name: "Ottawa" },
     { "@type": "AdministrativeArea", name: "Gatineau" },
   ],
@@ -142,10 +139,10 @@ const structuredData = {
   hasMap: "https://www.google.com/maps?q=Rue%20Champagne%20Gatineau%20QC", // OK sans lat/lng
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "TODO:45.46152714550786",
-    longitude: "TODO:-75.74642768797247",
+    latitude: "45.46152714550786",
+    longitude: "-75.74642768797247",
   },
-  sameAs: ["TODO:https://www.facebook.com/profile.php?id=61550469422765"],
+  sameAs: ["https://www.facebook.com/profile.php?id=61550469422765"],
 };
 export default async function LocaleLayout({
   children,
@@ -166,10 +163,12 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className={lato.className}>
+      <body>
         <NextIntlClientProvider locale={lang} messages={messages}>
           <Header />
-          <TooltipProvider>{children}</TooltipProvider>
+          <TooltipProvider>
+            <div className={lato.className}>{children}</div>
+          </TooltipProvider>
           <Toaster />
           <Footer />
         </NextIntlClientProvider>
