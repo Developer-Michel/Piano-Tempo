@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, Suspense } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { getPublicEnv } from "@/lib/env";
 import { motion, useInView } from "framer-motion";
@@ -37,9 +37,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useFullLocation } from "@/hooks/useFullLocation";
 import { MapEmbedOnView } from "./GoogleMap";
-import { useParams, useSearchParams } from "next/navigation";
+import { ContactCourseFromQuery } from "./ContactCourseFromQuery";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -74,15 +73,6 @@ export function Contact() {
       message: "",
     },
   });
-  const location = useFullLocation();
-  const searchParams = useSearchParams();
-  useEffect(() => {
-    console.log("Setting course from URL:", searchParams.get("course"));
-    if (searchParams.get("course")) {
-      form.setValue("course", searchParams.get("course") || "");
-      return;
-    }
-  }, [searchParams, location]);
 
   const onSubmit = async (data: ContactFormData) => {
     try {
@@ -184,6 +174,9 @@ export function Contact() {
                 </motion.div>
               ) : (
                 <Form {...form}>
+                  <Suspense fallback={null}>
+                    <ContactCourseFromQuery form={form} />
+                  </Suspense>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-6"

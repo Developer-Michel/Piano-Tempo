@@ -18,8 +18,6 @@ export function GroupProgramCard({ index }: { index: number }) {
   const price = t("groups.price");
   const feeNote = t("feeNote");
   const [open, setOpen] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname() || "/";
   return (
     <Card
       onClick={() => setOpen((v) => !v)}

@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           fr: urlFor("fr", path),
           en: urlFor("en", path),
-          "x-default": urlFor("fr", path), // par défaut = français (Gatineau)
+          "x-default": `${baseUrl}${path === "" ? "/" : path}`,
         },
       },
     }));

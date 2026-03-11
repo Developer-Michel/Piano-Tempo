@@ -1,10 +1,9 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export function useNavScroll() {
   const router = useRouter();
-  const pathname = usePathname();
   return ({
     href,
     id,
@@ -18,9 +17,7 @@ export function useNavScroll() {
     const targetQuery = params ?? "";
     const targetHash = id ? `#${id}` : "";
     const targetUrl = `${targetPath}${targetQuery}${targetHash}`;
-    if (id && pathname === targetPath) {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    }
+
     router.push(targetUrl);
   };
 }

@@ -6,14 +6,13 @@ import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/contact/Contact";
 import { Teachers } from "@/components/Teachers/Teachers";
 import { Metadata } from "next";
-
+import { setRequestLocale } from "next-intl/server";
 export async function generateMetadata({
   params,
 }: {
   params: { lang: string };
 }): Promise<Metadata> {
   const { lang } = await params;
-  console.log("Generating metadata for lang:", lang);
   const isFrench = lang === "fr";
   return {
     title: isFrench
@@ -104,7 +103,9 @@ export type HomeSection =
   | "testimonials"
   | "contact";
 
-export default function Home() {
+export default async function Home({ params }: { params: { lang: string } }) {
+  const { lang } = await params;
+  setRequestLocale(lang);
   return (
     <div className="min-h-screen bg-white" data-testid="page-home">
       <Hero />
