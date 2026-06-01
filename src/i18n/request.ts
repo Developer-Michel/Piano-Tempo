@@ -13,6 +13,15 @@ export default getRequestConfig(async ({ requestLocale }) => {
       faq: await loadMessages(locale, "faq"),
       gallery: await loadMessages(locale, "gallery"),
       home: await loadMessages(locale, "home"),
+      pianoLessonsGatineau: await loadMessages(
+        locale,
+        "piano-lessons-gatineau",
+      ),
+      pianoLessonsOttawa: await loadMessages(locale, "piano-lessons-ottawa"),
+      pianoLessonsPrivateGatineau: await loadMessages(
+        locale,
+        "piano-lessons-private-gatineau",
+      ),
       policy: await loadMessages(locale, "policy"),
       resources: await loadMessages(locale, "resources"),
       methodology: await loadMessages(locale, "methodology"),

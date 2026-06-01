@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "title": "Cours de piano privés à Gatineau | Piano a Tempo",
+    "description": "Chaque leçon est adaptée au niveau, au style d’apprentissage, au rythme de progression, aux goûts musicaux et aux objectifs de l’élève. "
+  },
+  "hero": {
+    "tagline": "Enseignement personnalisé",
+    "title": "Cours de piano privés à Gatineau",
+    "description": "Chaque leçon est adaptée au niveau, au style d’apprentissage, au rythme de progression, aux goûts musicaux et aux objectifs de l’élève."
+  },
+  "audience": {
+    "title": "Pour les enfants, les ados et les adultes",
+    "description": "Nous offrons un enseignement adapté aux niveaux débutant, intermédiaire et intermédiaire avancé. Que votre objectif soit d’apprendre pour le plaisir, de développer vos compétences musicales, de vous préparer à des examens, des auditions ou des prestations, nos enseignants vous accompagnent à chaque étape de votre parcours."
+  },
+  "images": {
+    "lessonAlt": "Élève en pratique de piano pendant un cours privé",
+    "lessonCaption": "Un environnement accueillant conçu pour rendre l’apprentissage de la musique agréable et motivant. ",
+    "instrumentAlt": "Notre mission est de faire naître un amour de la musique qui accompagnera nos élèves toute leur vie",
+    "instrumentCaption": "Un apprentissage musical à la fois structuré et plaisant."
+  },
+  "approach": {
+    "title": "Notre approche pédagogique - Comment nous structurons nos cours privés",
+    "description": "Où la technique et l'expression se rencontrent.",
+    "cards": [
+      "Attention à la position des mains et du corps :  essentielles pour jouer confortablement et avec la bonne technique.",
+      "Exercices techniques variés : visant à développer la force des doigts, l’agilité, la coordination et l’indépendance des mains.",
+      "Répertoire : recommandations de l’enseignant et chansons au choix de l’élève. Les pièces sont choisies pour cibler des objectifs techniques et musicaux précis, tels que les phrasés, les nuances, le rythme et les articulations. Que ce soit de la musique classique, pop, jazz, contemporaine ou de film, nous encourageons les élèves à choisir des morceaux qu’ils aiment pour rendre les cours inspirants et motivants. L’enseignant trouve une version adaptée au niveau de l’élève.",
+      "Théorie musicale, formation auditive et lecture à vue : ce segment du cours vise à apprendre à lire les notations, comprendre le rythme, les armures, les motifs musicaux, le vocabulaire, les intervalles, etc. ",
+      "Notes détaillées pour les devoirs et exercices : chaque leçon est accompagnée de notes détaillées afin de guider la pratique à la maison, assurant une progression constante et le renforcement des concepts appris en classe.  ",
+      "Des occasions de briller sur scène : nos élèves ont la possibilité de participer jusqu’à trois concerts par année, afin de développer leur confiance, leur aisance sur scène et de célébrer leur progrès."
+    ]
+  },
+  "fees": {
+    "title": "Tarifs",
+    "description": "Sachez exactement à quoi vous attendre. Une présentation claire et transparente de nos tarifs.",
+    "timeframes": [
+      {
+        "duration": "30 min",
+        "price": "$30",
+        "details": "Un format plus court, idéal pour les jeunes enfants (4 à 7 ans) ou les élèves qui préfèrent un rythme d’apprentissage plus doux. La progression est généralement plus graduelle et demande davantage de pratique autonome à la maison."
+      },
+      {
+        "duration": "45 min",
+        "price": "$45",
+        "details": "Notre format le plus populaire. Une durée de cours équilibrée qui offre suffisamment de temps pour travailler la technique, le répertoire et les notions théoriques. Convient parfaitement aux enfants de 8 ans et plus, aux adolescents ainsi qu’aux adultes."
+      },
+      {
+        "duration": "60 min",
+        "price": "$60",
+        "details": "Notre format le plus complet, offrant le temps nécessaire pour approfondir l’apprentissage musical. Idéal pour les élèves intermédiaires et avancés souhaitant perfectionner leur technique, explorer un répertoire plus complexe et enrichir leurs connaissances théoriques, ainsi que pour les débutants motivés désirant progresser plus rapidement."
+      }
+    ],
+    "points": [
+      "Cours individuels avec suivi personnalisé à chaque étape",
+      "Formule adaptée aux enfants, aux ados et aux adultes",
+      "Détails tarifaires expliqués clairement avant l'inscription"
+    ]
+  },
+  "teaching": {
+    "title": "Calendrier et horaires",
+    "description": "Découvrez nos sessions",
+    "points": [
+      "L’année scolaire est divisée en deux trimestres et suit le calendrier de la province de Québec. 1ère session : commence la deuxième semaine de septembre et se termine la troisième semaine de décembre. 2ème session : commence la première semaine de janvier et se termine la troisième semaine de juin.",
+      "Des cours d’été sont offerts aux élèves désirant poursuivre leur apprentissage durant la saison estivale. Les horaires sont flexibles afin de s’adapter aux vacances et aux engagements familiaux. ",
+      "Pour obtenir de l’information concernant les congés et jours fériés, veuillez consulter notre politique. "
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Pourquoi nous choisir",
+    "description": "Chez Piano à Tempo, nous croyons qu'un apprentissage musical de qualité repose avant tout sur une relation authentique entre l'élève et son enseignant. Au-delà de l'apprentissage des notes et de la technique, nous souhaitons offrir un environnement où les élèves se sentent écoutés, encouragés et libres de s'exprimer à travers la musique. Nous croyons que la confiance qui se construit entre l'enseignant et l'élève lui permet de développer la confiance en soi, les compétences musicales et une véritable passion pour la musique.",
+    "points": [
+      "Une approche humaine basée sur la confiance, le respect et l'encouragement",
+      "Des enseignants qui rendent l'apprentissage agréable et motivant",
+      "Des enseignants qui ont à cœur le développement et la réussite de chaque élève ",
+      "Un accompagnement personnalisé adapté au rythme et aux objectifs de chacun",
+      "Des occasions de performance dans une atmosphère positive et encourageante permettant de célébrer les progrès accomplis "
+    ]
+  },
+  "cta": {
+    "title": "Prêt à commencer ou poursuivre votre parcours au piano?",
+    "description": "Partagez votre niveau, votre âge et vos disponibilités. Nous vous proposerons la formule de cours privé la plus adaptée. Comme les places sont limitées, nous vous conseillons de réserver à l'avance.",
+    "button": "Nous contacter"
+  }
+}

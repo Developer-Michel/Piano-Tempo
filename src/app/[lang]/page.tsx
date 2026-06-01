@@ -6,7 +6,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/contact/Contact";
 import { Teachers } from "@/components/Teachers/Teachers";
 import { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 export async function generateMetadata({
   params,
 }: {
@@ -106,9 +106,12 @@ export type HomeSection =
 export default async function Home({ params }: { params: { lang: string } }) {
   const { lang } = await params;
   setRequestLocale(lang);
+  const t = await getTranslations("home.hero");
+  const tagline = t("tagline");
+
   return (
-    <div className="min-h-screen bg-white" data-testid="page-home">
-      <Hero />
+    <main className="min-h-screen bg-white" data-testid="page-home">
+      <Hero tagline={tagline} />
 
       <div className="belowFold">
         <About />
@@ -117,6 +120,6 @@ export default async function Home({ params }: { params: { lang: string } }) {
         <Testimonials />
         <Contact />
       </div>
-    </div>
+    </main>
   );
 }

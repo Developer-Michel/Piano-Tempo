@@ -5,6 +5,7 @@ interface ContactPayload {
   name?: string;
   email?: string;
   message?: string;
+  age?: string;
   phone?: string;
   language?: string;
   course?: string;
@@ -29,7 +30,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const { name, email, message, phone, language, course } = body || {};
+  const { name, email, message, age, phone, language, course } = body || {};
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
@@ -41,13 +42,14 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: "Website Contact <noreply@pianoatempo.ca>",
       to: "info.pianoatempo@gmail.com",
-      subject: "New contact form message",
+      subject: `New contact form message for ${name}`,
       text: `
 Name: ${name}
 Email: ${email}
 Language Preference: ${language}
 Phone: ${phone || "N/A"}
-course: ${course || "N/A"}
+Age: ${age || "N/A"}
+Course: ${course || "N/A"}
 Message:
 ${message}
       `,

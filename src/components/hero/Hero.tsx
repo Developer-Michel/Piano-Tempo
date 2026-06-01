@@ -5,7 +5,7 @@ import { HeroBottom } from "./HeroBottom";
 
 import { playfair } from "@/app/[lang]/layout";
 
-export async function Hero() {
+export async function Hero({tagline}: { tagline: string }) {
   const t = await getTranslations("home.hero");
 
   return (
@@ -41,7 +41,7 @@ export async function Hero() {
             className={` text-xl sm:text-2xl md:text-3xl text-white/90  mt-6 mb-10`}
             data-testid="text-tagline"
           >
-            {t("tagline")}
+            {tagline}
           </p>
         </div>
         <HeroCta label={t("cta")} />

@@ -13,6 +13,9 @@ const routes = [
   "/gallery",
   "/resources",
   "/policy",
+  "/cours-piano-gatineau",
+  "/piano-lessons-gatineau",
+  "/piano-lessons-ottawa",
   // "/blog", "/blog/slug-1", etc.
 ];
 
@@ -35,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           fr: urlFor("fr", path),
           en: urlFor("en", path),
-          "x-default": `${baseUrl}${path === "" ? "/" : path}`,
+          "x-default": urlFor("fr", path),
         },
       },
     }));

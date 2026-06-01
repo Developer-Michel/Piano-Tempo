@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "title": "Piano Lessons for Ottawa | Private and Group | Piano a Tempo",
+    "description": "Live in Ottawa? Our school is in Gatineau with flexible options: private lessons, group classes, and online learning.",
+    "keywords": [
+      "piano lessons ottawa",
+      "private piano lessons ottawa",
+      "group piano lessons ottawa",
+      "piano lessons gatineau",
+      "online piano lessons ottawa"
+    ],
+    "openGraphTitle": "Piano Lessons for Ottawa",
+    "openGraphDescription": "Private lessons, group classes, and online options for Ottawa families."
+  },
+  "hero": {
+    "title": "Piano Lessons for Ottawa Families",
+    "description": "Our school is located in Gatineau and already welcomes students from Ottawa in both private and group formats."
+  },
+  "options": {
+    "title": "Flexible options",
+    "items": [
+      "Personalized private lessons",
+      "Motivating group classes",
+      "Online lessons available"
+    ]
+  },
+  "why": {
+    "title": "Why choose Piano a Tempo",
+    "description": "Many clients already travel to Gatineau to benefit from consistent, supportive teaching tailored to their musical goals."
+  },
+  "cta": {
+    "title": "We help you pick the right format",
+    "description": "Share your Ottawa area, level, and schedule and we will suggest the most practical in-person or online option.",
+    "button": "Discuss options"
+  }
+}

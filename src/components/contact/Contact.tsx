@@ -43,13 +43,14 @@ import { ContactCourseFromQuery } from "./ContactCourseFromQuery";
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Valid email required"),
-  phone: z.string().optional(),
+  phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Valid phone number required"),
   language: z.string(),
-  course: z.string().optional(),
+  age: z.string().trim().min(1, "Age is required"),
+  course: z.string().min(1, "Course is required"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
-type ContactFormData = z.infer<typeof contactSchema>;
+export type ContactFormData = z.infer<typeof contactSchema>;
 
 export function Contact() {
   const lang = useLocale();
@@ -69,6 +70,7 @@ export function Contact() {
       email: "",
       phone: "",
       language: lang,
+      age: "",
       course: "",
       message: "",
     },
@@ -327,7 +329,25 @@ export function Contact() {
                         </FormItem>
                       )}
                     />
-
+                    <FormField
+                      control={form.control}
+                      name="age"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-sans text-gray-700">
+                            {tContact("form.age")}
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              className="border-gray-300 focus:border-gold focus:ring-gold"
+                              data-testid="input-age"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
                     <FormField
                       control={form.control}
                       name="message"
@@ -351,7 +371,7 @@ export function Contact() {
 
                     <Button
                       type="submit"
-                      className="w-full bg-gold hover:bg-gold-dark text-white font-sans py-6 transition-all duration-300 hover:shadow-lg"
+                      className="w-full bg-gold hover:bg-gold-dark text-white font-sans text-md py-4 transition-all duration-300 hover:shadow-lg"
                       // disabled={contactMutation.isPending}
                       data-testid="button-submit-contact"
                     >

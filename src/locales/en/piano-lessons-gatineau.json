@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "title": "Group Piano Lessons in Gatineau | Piano a Tempo",
+    "description": "Group piano lessons in Gatineau: dynamic learning, shared repertoire, and motivated progress for kids, teens, and adults.",
+    "keywords": [
+      "group piano lessons gatineau",
+      "piano lessons gatineau",
+      "piano classes gatineau",
+      "music school gatineau"
+    ],
+    "openGraphTitle": "Group Piano Lessons in Gatineau",
+    "openGraphDescription": "A motivating environment to learn piano in a group in Gatineau."
+  },
+  "hero": {
+    "tagline": "Group piano lessons for every age",
+    "title": "Group Piano Lessons in Gatineau",
+    "description": "A comprehensive learning experience that combines piano technique, music theory, ear training, rhythm exercises, and ensemble playing."
+  },
+  "images": {
+    "title": "Inside our group classes",
+    "classroomAlt": "Students learning piano together in a group class",
+    "classroomCaption": "With a dedicated piano station for every student, lessons balance individual practice with collaborative learning.",
+    "teacherAlt": "Teacher interacting with a piano student during a group lesson",
+    "teacherCaption": "Collaborative learning allows students to gain valuable experience in ensemble playing."
+  },
+  "benefits": {
+    "title": "Benefits of group classes",
+    "items": [
+      "Gain experience playing in an ensemble setting",
+      "Develop better timing when playing together ",
+      "Improve listening and concentration skills",
+      "Learn from questions asked by other students ",
+      "Build friendships through a shared interest in music",
+      "Stay motivated by progressing alongside other students"
+    ]
+  },
+  "teaching": {
+    "title": "How we teach group lessons",
+    "description": "Through a balance of theory, practical application, listening exercises, ensemble playing, and personalized feedback, students develop both the skills and habits needed for long-term musical success.",
+    "points": [
+      "Explanation of music theory concepts using the whiteboard",
+      "Application of newly learned concepts on individual mini whiteboards or printed worksheets",
+      "Analysis of the main score, including note identification and rhythm recognition",
+      "Group activities focused on rhythm, listening skills, and ensemble playing",
+      "Demonstration and explanation of proper hand movements and technique",
+      "Dedicated practice time using headphones",
+      "Personalized feedback from the teacher for each student",
+      "Clear weekly goals with practical guidance for effective home practice"
+    ]
+  },
+  "organization": {
+    "title": "How it works",
+    "description": "Groups are organized by age and level, with clear goals for each session.",
+    "points": [
+      "Each student has their own keyboard station with headphones, so everyone can focus while still being part of the group.",
+      "The teacher introduces the concept to the whole class, then walks between students to coach each one individually.",
+      "Activities alternate between individual practice with headphones and short group moments for rhythm, listening, and ensemble work.",
+      "Students receive personalized corrections during class, then leave with a clear practice target for the week."
+    ]
+  },
+  "options": {
+    "title": "All available group lesson options",
+    "description": "Choose the option that best matches age and schedule. You can select one below and contact us to reserve a spot."
+  },
+  "cta": {
+    "title": "Find your group",
+    "description": "Reach out to check availability based on age, level, and schedule.",
+    "button": "Check availability"
+  }
+}

@@ -1,5 +1,6 @@
 import { Locale, useLocale } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { useParams } from "next/navigation";
 
 export const LanguageSelector = ({
   isScrolled,
@@ -9,12 +10,23 @@ export const LanguageSelector = ({
   activeExtra: boolean;
 }) => {
   const locale = useLocale();
-  const pathname = usePathname() || "";
-  const currentLang = pathname.split("/")[1] || "en";
   const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams<{ city?: string }>();
+
   const handleLanguageChange = (target: Locale) => {
-    const path = pathname.split("/").slice(2);
-    router.push(`/${target}/${path.join("/")}`);
+    if (pathname === "/lessons/piano/groups/[city]") {
+      router.push(
+        {
+          pathname,
+          params: { city: params.city ?? "" },
+        },
+        { locale: target },
+      );
+      return;
+    }
+
+    router.push(pathname, { locale: target });
   };
   return (
     <div

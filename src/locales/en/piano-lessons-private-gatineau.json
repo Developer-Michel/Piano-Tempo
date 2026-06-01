@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "title": "Private Piano Lessons in Gatineau | Piano a Tempo",
+    "description": "Each lesson is tailored to the student’s level, learning style, learning pace, music taste, and goals."
+  },
+  "hero": {
+    "tagline": "Personalized instruction",
+    "title": "Private Piano Lessons in Gatineau",
+    "description": "Each lesson is designed around the student: level, learning style, musical taste, and goals."
+  },
+  "audience": {
+    "title": "We welcome kids, teens, and adults",
+    "description": "We offer instruction for beginner, intermediate and late intermediate levels supporting goals that range from recreational learning and personal enrichment to preparation for examinations, auditions and performances. "
+  },
+  "images": {
+    "lessonAlt": "Student practicing piano during a private lesson",
+    "lessonCaption": "A comfortable space designed to make learning music enjoyable and encouraging",
+    "instrumentAlt": "Our goal is to encourage a lifelong appreciation for music.",
+    "instrumentCaption": "Learning music in a way that is both structured and enjoyable. "
+  },
+  "approach": {
+    "title": "Our pedagogical approach - How we structure our private lessons",
+    "description": "Where technique meets expression.",
+    "cards": [
+      "Attention to proper hand and overall body position : crucial for playing comfortably and with the right technique.  ",
+      "A variety of technical exercises : to develop finger dexterity, agility, coordination, and hand independence.  ",
+      "Repertoire: pieces are chosen to target specific technical and musical goals such as phrasing, dynamics, rhythm and articulations. Whether it’s classical, pop, jazz, contemporary or film music, we encourage students to choose a piece they love to keep the lessons inspiring and motivating. The teacher finds an adapted version of the chosen music for the student’s level.",
+      "Music theory, ear training, and sight reading : this part of the lesson focuses on learning how to read musical notation, understand rhythm, key signatures, musical patterns, terminology, intervals, and other essential elements of music literacy. ",
+      "Detailed assignments and exercises : each lesson is accompanied by detailed notes to guide at-home practice, ensuring steady progress and reinforcement of the concepts learned in class.",
+      "Opportunities to shine on stage : our students have the opportunity to participate in up to three concerts per year, allowing them to build confidence, develop stage presence, and celebrate their musical progress."
+    ]
+  },
+  "fees": {
+    "title": "Fees",
+    "description": "Know exactly what to expect. A transparent breakdown of prices.",
+    "timeframes": [
+      {
+        "duration": "30 min",
+        "price": "$30",
+        "details": "A shorter format ideal for young children (ages 4-7) or learners who prefer a gentler pace. Progress is more gradual and requires more independent practice at home."
+      },
+      {
+        "duration": "45 min",
+        "price": "$45",
+        "details": "Our most popular option. A balanced lesson length that provides ample time for technique, repertoire, and theory concepts. Well suited for children ages 8 +, teens and adults. "
+      },
+      {
+        "duration": "60 min",
+        "price": "$60",
+        "details": "Our most comprehensive format, offering the time needed for deeper musical exploration. Ideal for intermediate and late intermediate students working on more advanced repertoire, technical refinement, and theory concepts, as well as motivated beginners seeking accelerated progress."
+      }
+    ],
+    "points": [
+      "One-on-one lessons with personalized progress tracking",
+      "A format adapted for kids, teens, and adults",
+      "Pricing details explained clearly before registration"
+    ]
+  },
+  "teaching": {
+    "title": "Calendar and Scheduling",
+    "description": "Find out about our sessions",
+    "points": [
+      "The school year is divided into two terms and follows the Quebec School Provincial calendar. First term starts the second week of September and ends the third week of December. Second term starts the first week of January and ends the third week of June.",
+      "Summer lessons are available for students who wish to continue their progress during the summer break. These lessons are offered with flexible scheduling to accommodate family vacations and other activities.",
+      "Your selected lesson day and time are reserved for the full term or academic year (September–June)",
+      "For information regarding holidays, please see the policy"
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Why choose us",
+    "description": "At Piano a Tempo, we believe great music education starts with a meaningful teacher-student connection. Beyond teaching notes and technique, we strive to create an environment where students feel comfortable asking questions, taking risks, and expressing themselves through music. The trust built between teacher and student creates a foundation where confidence can grow, skills can develop, and a lifelong appreciation for music can take root.",
+    "points": [
+      "Meaningful teacher-student relationships built on kindness, trust and encouragement",
+      "Teachers who make learning fun and engaging",
+      "Teachers who genuinely care about each student's growth and success",
+      "Individualized guidance adapted to each student's rhythm and goals",
+      "Performance opportunities in a supportive and warm environment"
+    ]
+  },
+  "cta": {
+    "title": "Ready to start or continue your piano journey?",
+    "description": "Tell us your level, age, and availability. We will recommend the most suitable private lesson format and schedule. As spots are limited, we recommend reserving early.",
+    "button": "Contact us"
+  }
+}

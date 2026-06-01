@@ -1,18 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
-import type { UseFormReturn } from "react-hook-form";
-import { useNavScroll } from "@/hooks/use-nav";
 
-type ContactFormData = {
-  name: string;
-  email: string;
-  phone?: string;
-  language: string;
-  course?: string;
-  message: string;
-};
+import type { UseFormReturn } from "react-hook-form";
+import { useSearchParams } from "next/navigation";
+import { ContactFormData } from "./Contact";
 
 export function ContactCourseFromQuery({
   form,
@@ -20,8 +12,6 @@ export function ContactCourseFromQuery({
   form: UseFormReturn<ContactFormData>;
 }) {
   const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const nav = useNavScroll();
   useEffect(() => {
     const course = searchParams.get("course");
     if (course) {

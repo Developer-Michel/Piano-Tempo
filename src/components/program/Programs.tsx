@@ -1,10 +1,11 @@
 "use client";
 import { Card } from "@/components/ui/card";
-import { Users } from "lucide-react";
+import { ChevronDown, ChevronUp, Users } from "lucide-react";
 import { GroupProgramCard } from "./GroupProgramCard";
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
-import { useNavScroll } from "@/hooks/use-nav";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { Button } from "../ui/button";
 
 export function Programs() {
   const t = useTranslations("home.programs");
@@ -53,25 +54,15 @@ export function Programs() {
 
 function ProgramCard({ index }: { index: number }) {
   const t = useTranslations("home.programs");
-  const nav = useNavScroll();
   const title = t(`private.title`);
   const description = t(`private.description`);
   const ages = t(`private.ages`);
   const price = t(`private.price`);
   const feeNote = t(`feeNote`);
-  const pathName = usePathname();
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Card
-      onClick={() => {
-        if (title) {
-          nav({
-            href: "",
-            id: "contact",
-            params: `?course=${encodeURIComponent(title)}`,
-          });
-        }
-      }}
       className="group p-6 border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
       data-testid={`card-program-${index}`}
     >
@@ -100,12 +91,42 @@ function ProgramCard({ index }: { index: number }) {
           {price && (
             <p className="font-sans text-xs text-gray-500 mb-2">{feeNote}</p>
           )}
-          <p
-            className="font-sans text-gray-600 text-sm leading-relaxed"
-            data-testid={`text-program-desc-${index}`}
+
+          {isOpen && (
+            <>
+              <p
+                className="font-sans text-gray-600 text-sm "
+                data-testid={`text-program-desc-${index}`}
+              >
+                {description}
+              </p>
+              <Button
+                variant="outline"
+                className="mt-4 text-gold hover:text-gold-dark block hover:bg-gold/10 p-4 float-end font-sans font-bold y"
+                onClick={() => {
+                  router.push(`?course=${encodeURIComponent(title)}#contact`);
+                }}
+              >
+                Inquire
+              </Button>
+            </>
+          )}
+          <Button
+            variant="ghost"
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-gold hover:text-gold-dark hover:bg-gold/10 p-0 h-auto font-sans"
+            data-testid={`button-teacher-expand-${index}`}
           >
-            {description}
-          </p>
+            {isOpen ? (
+              <>
+                {t("learnLess")} <ChevronUp className="ml-1 w-4 h-4" />
+              </>
+            ) : (
+              <>
+                {t("learnMore")} <ChevronDown className="ml-1 w-4 h-4" />
+              </>
+            )}
+          </Button>
         </div>
       </div>
     </Card>

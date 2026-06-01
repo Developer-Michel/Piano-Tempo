@@ -4,7 +4,7 @@
     "cta": "Inquire Now"
   },
   "about": {
-    "title": "About Piano a Tempo",
+    "title": "About us",
     "subtitle": "Rooted in tradition, Passion and Pedagogy",
     "singleText": "At Piano à Tempo, mother and daughter share the same passion: teaching piano with care, musicality, and lasting technical foundations. The love of music has been passed down in our family for generations. Today, it’s our turn to share it with you!",
     "p1": {
@@ -57,16 +57,17 @@
   "programs": {
     "title": "Our Programs",
     "subtitle": "Tailored Instruction for Every Age and Level",
-    "feeNote": " A $10 registration fee applies every session.",
+    "feeNote": " A $10 registration fee applies every session. There are two session per year.",
     "learnMore": "Learn More",
+    "learnLess": "See Less",
     "private": {
       "title": "Private Lessons",
       "description": "Tailored to each student’s individual needs, learning pace and goals, these classes develop technique, musical interpretation and theoretical understanding of music. They also offer the possibility to prepare for the preparatory-level auditions at the Conservatoire de musique de Gatineau and for the RCM examinations in Toronto.",
       "ages": "All ages",
-      "price": "Pricing: 30 min — $30 | 45 min — $45 | 60 min — $60"
+      "price": "30 min $30 | 45 min $45 | 60 min $60"
     },
     "groups": {
-      "title": "Group lesson",
+      "title": "Group Lessons",
       "description": " In this collaborative setting, students learn everything they need to read and play music, while also creating new friendships, building ensemble skills, improving their listening, and staying in rhythm.",
       "ages": "Multiple Options",
       "price": "60-minute group class — $25 (per hour)",
@@ -75,14 +76,15 @@
         "Group Lessons \n(Ages 7-10)",
         "Group Lessons \n(Ages 10-13)",
         "Group Lessons \n(Ages 13-17)",
-        "Adult Group Lessons \n(18+)",
+        "Adult Group Lessons",
         "Daytime Adult & Retired"
       ]
     }
   },
   "testimonials": {
-    "title": "What Clients Say",
+    "title": "What Our Clients Say",
     "subtitle": "Trusted by Families Across Gatineau and Ottawa",
+    "reviews": "⭐ {rating} / 5 ({count} Google reviews)",
     "items": [
       {
         "quote": "To be added",
@@ -99,6 +101,7 @@
       "email": "Email Address",
       "phone": "Phone Number",
       "message": "Your Message",
+      "age": "Age",
       "language": "Preferred Language",
       "submit": "Send Inquiry",
       "success": "Thank you! We will be in touch soon.",

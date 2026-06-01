@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "title": "Cours de Piano pour Ottawa | Prive et Groupe | Piano a Tempo",
+    "description": "Vous habitez Ottawa? Notre ecole est a Gatineau avec des options flexibles: cours prives, cours de groupe et cours a distance.",
+    "keywords": [
+      "cours de piano ottawa",
+      "cours piano ottawa",
+      "cours de piano gatineau",
+      "cours prives piano ottawa",
+      "cours groupe piano ottawa",
+      "cours piano a distance"
+    ],
+    "openGraphTitle": "Cours de Piano pour Ottawa",
+    "openGraphDescription": "Cours prives, cours de groupe et options a distance pour les familles d'Ottawa."
+  },
+  "hero": {
+    "title": "Cours de piano pour les familles d'Ottawa",
+    "description": "Notre ecole est situee a Gatineau et accueille deja des eleves venant d'Ottawa, en cours prives comme en cours de groupe."
+  },
+  "options": {
+    "title": "Options flexibles",
+    "items": [
+      "Cours prives personnalises",
+      "Cours de groupe motivants",
+      "Cours a distance disponibles"
+    ]
+  },
+  "why": {
+    "title": "Pourquoi choisir Piano a Tempo",
+    "description": "Plusieurs clients font deja le trajet vers Gatineau pour profiter d'un enseignement stable, humain et adapte a leurs objectifs musicaux."
+  },
+  "cta": {
+    "title": "On vous aide a choisir la meilleure formule",
+    "description": "Dites-nous votre secteur a Ottawa, votre niveau et vos disponibilites: nous proposerons une option realiste entre presentiel et distance.",
+    "button": "Discuter des options"
+  }
+}

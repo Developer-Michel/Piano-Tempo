@@ -4,9 +4,9 @@
     "cta": "Renseignez-vous"
   },
   "about": {
-    "title": "À propos de Piano a Tempo",
+    "title": "À propos de nous",
     "subtitle": "Ancré dans la tradition, la passion et la pédagogie",
-    "singleText": "Chez Piano a tempo, mère et fille partagent une même passion: celle d’enseigner le piano avec soin, musicalité et bases techniques durables. L’amour de la musique se transmet dans notre famille depuis plusieurs générations. Aujourd’hui, c’est à notre tour de le partager avec vous!",
+    "singleText": "Chez Piano a Tempo, mère et fille partagent une même passion: celle d’enseigner le piano avec soin, musicalité et bases techniques durables. L’amour de la musique se transmet dans notre famille depuis plusieurs générations. Aujourd’hui, c’est à notre tour de le partager avec vous!",
     "p1": {
       "title": "Qui nous sommes",
       "text": "Piano a Tempo est un studio familial qui vise à rendre l’apprentissage du piano agréable et progressif. C’est un lieu de bienveillance, de patience et d’attention sincère au rythme et aux besoins de chaque élève."
@@ -57,13 +57,14 @@
   "programs": {
     "title": "Nos Programmes",
     "subtitle": "Un enseignement adapté à chaque âge et niveau",
-    "feeNote": "Des frais d’inscription de 10 $ s’appliquent à chaque session.",
+    "feeNote": "Des frais d’inscription de 10 $ s’appliquent à chaque session. Il y a deux sessions par année.",
     "learnMore": "En savoir plus",
+    "learnLess": "Réduire",
     "private": {
       "title": "Cours privés",
       "description": "Adaptés aux besoins individuels, au rythme d’apprentissage et aux objectifs de chaque élève, ces cours permettent de développer la technique, l’interprétation musicale ainsi que la compréhension théorique de la musique. Ils offrent également la possibilité de se préparer aux auditions de niveau préparatoire du Conservatoire de musique de Gatineau ainsi qu’aux examens du Royal Conservatory of Music (RCM).",
       "ages": "Tous âges",
-      "price": "Tarifs : 30 min — 30 $ | 45 min — 45 $ | 60 min — 60 $"
+      "price": "30 min 30 $ | 45 min 45 $ | 60 min 60 $"
     },
     "groups": {
       "title": "Cours de groupe",
@@ -75,14 +76,15 @@
         "Cours de groupe \n(7-10 ans)",
         "Cours de groupe \n(10-13 ans)",
         "Cours de groupe \n(13-17 ans)",
-        "Cours de groupe adultes \n(18+)",
+        "Cours de groupe adultes",
         "Cours de jour adultes et retraités"
       ]
     }
   },
   "testimonials": {
-    "title": "Ce que disent les clients",
+    "title": "Ce que disent nos clients",
     "subtitle": "La confiance des familles de Gatineau et d'Ottawa",
+    "reviews": "⭐ {rating} / 5 ({count} avis Google)",
     "items": [
       {
         "quote": "À venir",
@@ -99,6 +101,7 @@
       "email": "Adresse courriel",
       "phone": "Numéro de téléphone",
       "message": "Votre message",
+      "age": "Âge",
       "language": "Langue préférée",
       "submit": "Envoyer la demande",
       "success": "Merci! Nous vous contacterons bientôt.",

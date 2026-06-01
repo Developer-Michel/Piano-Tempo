@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "title": "Cours de Groupe de Piano à Gatineau | Piano à Tempo",
+    "description": "Cours de groupe de piano à Gatineau: apprentissage dynamique, répertoire partagé et progression motivée pour enfants, ados et adultes.",
+    "keywords": [
+      "cours de groupe piano gatineau",
+      "cours piano gatineau",
+      "cours piano enfants gatineau",
+      "ecole de piano gatineau"
+    ],
+    "openGraphTitle": "Cours de Groupe de Piano à Gatineau",
+    "openGraphDescription": "Un environnement chaleureux pour apprendre en groupe à Gatineau."
+  },
+  "hero": {
+    "tagline": "Cours de piano en groupe pour tous les âges",
+    "title": "Cours de groupe de piano à Gatineau",
+    "description": "Une expérience d'apprentissage complète qui allie technique pianistique, théorie musicale, exercices d'écoute, activités rythmiques et jeu d'ensemble."
+  },
+  "images": {
+    "title": "Aperçu de nos cours en groupe",
+    "classroomAlt": "Élèves apprenant le piano ensemble dans un cours de groupe",
+    "classroomCaption": "Chaque élève disposant d’un piano en classe, les cours offrent un équilibre entre la pratique individuelle et l'apprentissage collaboratif.",
+    "teacherAlt": "Professeure en interaction avec un élève pendant un cours de groupe",
+    "teacherCaption": "L'apprentissage collaboratif permet aux élèves d'acquérir de l'expérience dans le jeu d'ensemble."
+  },
+  "benefits": {
+    "title": "Avantages des cours de groupe",
+    "items": [
+      "Développer les compétences nécessaires au jeu d'ensemble ",
+      "Développer une meilleure précision rythmique en jouant avec d'autres élèves",
+      "Améliorer les capacités d'écoute et de concentration",
+      "Apprendre des questions posées par d'autres élèves",
+      "Créer des amitiés grâce à un intérêt commun pour la musique",
+      "Maintenir sa motivation en progressant aux côtés d'autres élèves"
+    ]
+  },
+  "teaching": {
+    "title": "Notre approche pédagogique en groupe",
+    "description": "En alliant théorie, application pratique, écoute active, jeu d'ensemble et commentaires personnalisés, les élèves développent des bases solides ainsi que de bonnes habitudes de travail qui les accompagneront tout au long de leur parcours musical.",
+    "points": [
+      "Explication des concepts théoriques au tableau blanc ",
+      "Application des concepts appris sur des petits tableaux blancs individuels ou sur des documents imprimés",
+      "Analyse de la partition principale, repérage des notes et du rythme ",
+      "Activités collectives pour travailler le rythme, l’écoute et le jeu d’ensemble ",
+      "Explication des mouvements des mains ",
+      "Petit moment de pratique avec les écouteurs",
+      "Retour personnalisé de la professeure pour chaque élève, ",
+      "Objectifs hebdomadaires clairs avec conseils concrets pour la pratique à la maison"
+    ]
+  },
+  "organization": {
+    "title": "Organisation",
+    "description": "Groupes adaptés par âge et niveau, avec des objectifs clairs à chaque session.",
+    "points": [
+      "Chaque élève dispose de son propre clavier avec casque, ce qui permet de rester concentré tout en évoluant en groupe.",
+      "La professeure présente la notion à toute la classe, puis circule entre les élèves pour accompagner chacun individuellement.",
+      "Les activités alternent entre pratique individuelle au casque et courtes séquences collectives pour le rythme, l'écoute et le jeu d'ensemble.",
+      "Les élèves repartent avec des corrections personnalisées et un objectif de pratique clair pour la semaine."
+    ]
+  },
+  "options": {
+    "title": "Toutes les options de cours de groupe",
+    "description": "Choisissez l'option qui correspond le mieux à l'âge et à l'horaire. Vous pouvez en sélectionner une ci-dessous et nous contacter pour réserver une place."
+  },
+  "cta": {
+    "title": "Trouver votre groupe",
+    "description": "Écrivez-nous pour connaître les disponibilités selon votre âge, votre niveau et vos horaires.",
+    "button": "Voir les disponibilités"
+  }
+}

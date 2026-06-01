@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
-
-import "../../index.css";
+import "@/index.css";
 import { Locale, NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 
@@ -124,21 +123,11 @@ export default async function LocaleLayout({
         },
       ],
     },
-
-    // aggregateRating: {
-    //   "@type": "AggregateRating",
-    //   ratingValue: "4.9",
-    //   reviewCount: "38",
-    // },
-    // // Optionnel: quelques reviews (si elles existent vraiment et sont visibles sur ton site)
-    // review: [
-    //   {
-    //     "@type": "Review",
-    //     author: { "@type": "Person", name: "Prénom N." },
-    //     reviewRating: { "@type": "Rating", ratingValue: "5" },
-    //     reviewBody: "Super expérience, prof très pédagogue.",
-    //   },
-    // ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "16",
+    },
   };
   return (
     <html lang={lang}>

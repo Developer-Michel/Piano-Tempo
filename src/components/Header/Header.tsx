@@ -2,16 +2,17 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
+
 import { getPublicEnv } from "@/lib/env";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { SiFacebook } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "./Language-Selector";
-import { useNavScroll } from "@/hooks/use-nav";
+import { useLocale, useTranslations } from "next-intl";
 
-type NavItem = { key: string; href: string; sectionId?: string };
+type NavItem = { key: string; href: string };
+type CourseItem = { key: string; href: string; label: string };
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,9 +20,9 @@ export function Header() {
 
   const pathname = usePathname() || "";
   const locale = useLocale();
-  const basePath = `/${locale}`;
+  const basePath = `/` + locale;
   const tNav = useTranslations("common.nav");
-  const nav = useNavScroll();
+  const tPrograms = useTranslations("home.programs");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -32,32 +33,42 @@ export function Header() {
 
   const navItems: NavItem[] = useMemo(
     () => [
-      { key: "home", href: `${basePath}`, sectionId: "home" },
-      { key: "about", href: `${basePath}`, sectionId: "about" },
-      { key: "teachers", href: `${basePath}`, sectionId: "teachers" },
-      { key: "programs", href: `${basePath}`, sectionId: "programs" },
-      { key: "contact", href: `${basePath}`, sectionId: "contact" },
+      { key: "home", href: `/${locale}#home` },
+      { key: "about", href: `/${locale}#about` },
+      { key: "teachers", href: `/${locale}#teachers` },
+      { key: "contact", href: `/${locale}#contact` },
     ],
-    [basePath],
+    [locale],
+  );
+
+  const courseItems: CourseItem[] = useMemo(
+    () => [
+      {
+        key: "private",
+        href: `/${locale}/lessons/piano/private/gatineau`,
+        label: tPrograms("private.title"),
+      },
+      {
+        key: "groups",
+        href: `/${locale}/lessons/piano/groups/gatineau`,
+        label: tPrograms("groups.title"),
+      },
+    ],
+    [locale, tPrograms],
   );
 
   const additionalNavItems: NavItem[] = useMemo(
     () => [
-      { key: "methodology", href: `${basePath}/methodology` },
-      { key: "policy", href: `${basePath}/policy` },
-      { key: "information", href: `${basePath}/faq` },
-      { key: "gallery", href: `${basePath}/gallery` },
-      { key: "resources", href: `${basePath}/resources` },
+      { key: "methodology", href: "/methodology" },
+      { key: "policy", href: "/policy" },
+      { key: "information", href: "/faq" },
+      { key: "gallery", href: "/gallery" },
+      { key: "resources", href: "/resources" },
     ],
-    [basePath],
+    [],
   );
 
-  const activeExtra = additionalNavItems.some((item) => item.href === pathname);
-
-  const handleNavClick = (href: string, sectionId?: string) => {
-    setIsMobileMenuOpen(false);
-    nav({ href, id: sectionId || "" });
-  };
+  const activeExtra = pathname !== "/";
 
   const isDarkText = isScrolled || activeExtra;
 
@@ -97,16 +108,21 @@ export function Header() {
                 key={item.key}
                 label={tNav(item.key)}
                 isDarkText={isDarkText}
-                onClick={() => handleNavClick(item.href, item.sectionId)}
+                item={item}
                 testId={`nav-${item.key}`}
               />
             ))}
+
+            <CoursesDropdown
+              label={tNav("programs")}
+              courseItems={courseItems}
+              isDarkText={isDarkText}
+            />
 
             {/* Lightweight dropdown using <details> */}
             <MoreDrowdown
               additionalNavItems={additionalNavItems}
               tNav={tNav}
-              handleNavClick={handleNavClick}
               isDarkText={isDarkText}
             />
           </nav>
@@ -161,25 +177,39 @@ export function Header() {
       >
         <nav className="flex flex-col py-4 px-4">
           {navItems.map((item) => (
-            <button
+            <Link
               key={item.key}
-              onClick={() => handleNavClick(item.href, item.sectionId)}
+              href={item.href}
               className="py-3 text-left text-lg text-black hover:text-gold"
               data-testid={`nav-mobile-${item.key}`}
             >
               {tNav(item.key)}
-            </button>
+            </Link>
+          ))}
+
+          <p className="pt-2 pb-1 text-sm uppercase tracking-wide text-gray-500">
+            {tNav("programs")}
+          </p>
+          {courseItems.map((item) => (
+            <Link
+              key={item.key}
+              href={item.href}
+              className="py-2 pl-3 text-left text-base text-black hover:text-gold"
+              data-testid={`nav-mobile-course-${item.key}`}
+            >
+              {item.label}
+            </Link>
           ))}
 
           {additionalNavItems.map((item) => (
-            <button
+            <Link
               key={item.key}
-              onClick={() => handleNavClick(item.href)}
+              href={item.href}
               className="py-3 text-left text-lg text-black hover:text-gold"
               data-testid={`nav-mobile-${item.key}`}
             >
               {tNav(item.key)}
-            </button>
+            </Link>
           ))}
 
           <div className="mt-4 flex items-center gap-3">
@@ -199,15 +229,80 @@ export function Header() {
     </header>
   );
 }
+function CoursesDropdown({
+  label,
+  courseItems,
+  isDarkText,
+}: {
+  label: string;
+  courseItems: CourseItem[];
+  isDarkText: boolean;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        detailsRef.current &&
+        !detailsRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <details ref={detailsRef} open={isOpen} className="relative group">
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setIsOpen((prev) => !prev);
+        }}
+        className={[
+          "list-none cursor-pointer select-none text-sm tracking-wide flex items-center gap-1",
+          isDarkText ? "text-black" : "text-white",
+        ].join(" ")}
+        aria-label={label}
+      >
+        {label}
+        <ChevronDown className="h-4 w-4 transition-transform duration-200 group-open:rotate-180" />
+      </summary>
+
+      <div className="absolute right-0 mt-3 w-60 rounded-xl border bg-white shadow-lg overflow-hidden">
+        {courseItems.map((item) => (
+          <div
+            key={item.key}
+            className="w-full text-left text-sm hover:bg-black/5 hover:text-gold"
+          >
+            <Link
+              href={item.href}
+              onClick={() => {
+                setIsOpen(false);
+              }}
+              data-testid={`nav-course-${item.key}`}
+              className="w-full h-full block px-4 py-3"
+            >
+              {item.label}
+            </Link>
+          </div>
+        ))}
+      </div>
+    </details>
+  );
+}
 function MoreDrowdown({
   additionalNavItems,
   tNav,
-  handleNavClick,
   isDarkText,
 }: {
   additionalNavItems: NavItem[];
   tNav: (key: string) => string;
-  handleNavClick: (href: string, sectionId?: string) => void;
   isDarkText: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -249,17 +344,21 @@ function MoreDrowdown({
 
       <div className="absolute right-0 mt-3 w-60 rounded-xl border bg-white shadow-lg overflow-hidden">
         {additionalNavItems.map((item) => (
-          <button
+          <div
             key={item.key}
-            onClick={() => {
-              handleNavClick(item.href);
-              setIsOpen(false); // ferme au clic
-            }}
-            className="w-full text-left px-4 py-3 text-sm hover:bg-black/5 hover:text-gold"
-            data-testid={`nav-${item.key}`}
+            className="w-full text-left  text-sm hover:bg-black/5 hover:text-gold"
           >
-            {tNav(item.key)}
-          </button>
+            <Link
+              href={item.href}
+              onClick={() => {
+                setIsOpen(false); // ferme au clic
+              }}
+              data-testid={`nav-${item.key}`}
+              className="w-full h-full block px-4 py-3"
+            >
+              {tNav(item.key)}
+            </Link>
+          </div>
         ))}
       </div>
     </details>
@@ -268,25 +367,27 @@ function MoreDrowdown({
 function NavLink({
   label,
   isDarkText,
-  onClick,
+  item,
   testId,
 }: {
   label: string;
+  item: NavItem;
   isDarkText: boolean;
-  onClick: () => void;
   testId: string;
 }) {
   return (
-    <button
-      onClick={onClick}
+    <Link
+      href={item.href}
       className={[
         "relative text-sm tracking-wide group ",
         isDarkText ? "text-black" : "text-white",
       ].join(" ")}
+      aria-label={label}
       data-testid={testId}
     >
       {label}
+
       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" />
-    </button>
+    </Link>
   );
 }

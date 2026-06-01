@@ -1,9 +1,9 @@
 "use client";
-import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { getPublicEnv } from "@/lib/env";
 import { SiFacebook } from "react-icons/si";
 import { motion } from "framer-motion";
+import { Link } from "@/i18n/navigation";
 
 export function Footer() {
   const lang = useLocale();
@@ -30,11 +30,7 @@ export function Footer() {
   const programLinks = [
     {
       label: tPrograms("private.title"),
-      href: `${basePath}/programs`,
-    },
-    {
-      label: tPrograms("groups.title"),
-      href: `${basePath}/programs`,
+      href: `#programs`,
     },
   ];
 
@@ -86,7 +82,7 @@ export function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.key}>
-                  <Link href={link.href}>
+                  <Link href={("/" + "#" + link.key) as "/"}>
                     <span
                       className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer"
                       data-testid={`link-footer-${link.key}`}
@@ -98,7 +94,7 @@ export function Footer() {
               ))}
               {additionalLinks.map((link) => (
                 <li key={link.key}>
-                  <Link href={link.href}>
+                  <Link href={link.key}>
                     <span
                       className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer"
                       data-testid={`link-footer-${link.key}`}
