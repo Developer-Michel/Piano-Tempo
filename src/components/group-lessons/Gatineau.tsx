@@ -51,9 +51,9 @@ export default async function GroupPianoLessonsGatineauPage() {
         >
           <div className="w-full md:w-[360px]">
             <Image
-              src="/studio.webp"
+              src="/piano_group.png"
               alt={t("images.classroomAlt")}
-              width={1920}
+              width={1080}
               height={1080}
               className="w-full rounded h-72 md:h-80 object-cover transition-transform duration-700 group-hover:scale-[1.02]"
             />
@@ -105,7 +105,7 @@ export default async function GroupPianoLessonsGatineauPage() {
         >
           <figure className="group">
             <Image
-              src="/happy_hand.jpg"
+              src="/hands_piano.png"
               alt={t("images.classroomAlt")}
               width={1200}
               height={800}

@@ -137,7 +137,7 @@ export default async function PrivatePianoLessonsGatineau() {
         >
           <figure className="group">
             <Image
-              src="/happy_hand.jpg"
+              src="/hands_piano.png"
               alt={t("images.instrumentAlt")}
               width={1200}
               height={900}

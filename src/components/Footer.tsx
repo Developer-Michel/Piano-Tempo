@@ -20,11 +20,14 @@ export function Footer() {
     { key: "contact", href: `${basePath}#contact` },
   ];
 
-  const additionalLinks = [
-    { key: "policy", href: `${basePath}/policy` },
-    { key: "information", href: `${basePath}/faq` },
-    { key: "gallery", href: `${basePath}/gallery` },
-    { key: "resources", href: `${basePath}/resources` },
+  const additionalLinks: ReadonlyArray<{
+    key: "policy" | "information" | "gallery" | "resources";
+    href: "/policy" | "/faq" | "/gallery" | "/resources";
+  }> = [
+    { key: "policy", href: "/policy" },
+    { key: "information", href: "/faq" },
+    { key: "gallery", href: "/gallery" },
+    { key: "resources", href: "/resources" },
   ];
 
   const programLinks = [
@@ -82,19 +85,19 @@ export function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.key}>
-                  <Link href={("/" + "#" + link.key) as "/"}>
+                  <a href={link.href}>
                     <span
                       className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer"
                       data-testid={`link-footer-${link.key}`}
                     >
                       {tNav(link.key)}
                     </span>
-                  </Link>
+                  </a>
                 </li>
               ))}
               {additionalLinks.map((link) => (
                 <li key={link.key}>
-                  <Link href={link.key}>
+                  <Link href={link.href}>
                     <span
                       className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer"
                       data-testid={`link-footer-${link.key}`}
@@ -114,14 +117,14 @@ export function Footer() {
             <ul className="space-y-3">
               {programLinks.map((link, index) => (
                 <li key={index}>
-                  <Link href={link.href}>
+                  <a href={link.href}>
                     <span
                       className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer"
                       data-testid={`link-footer-program-${index}`}
                     >
                       {link.label}
                     </span>
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
