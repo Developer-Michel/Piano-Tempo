@@ -48,7 +48,10 @@ export async function GET(request: Request) {
       },
       next: { revalidate: 60 * 60 },
     });
-
+    console.log({
+      keyStart: process.env.GOOGLE_MAPS_API_KEY?.slice(0, 10),
+      placeId: process.env.GOOGLE_PLACE_ID,
+    });
     if (!response.ok) {
       const errorText = await response.text();
       return NextResponse.json(
@@ -62,10 +65,7 @@ export async function GET(request: Request) {
     }
 
     const data = (await response.json()) as PlaceDetailsNewResponse;
-    console.log({
-      keyStart: process.env.GOOGLE_MAPS_API_KEY?.slice(0, 10),
-      placeId: process.env.GOOGLE_PLACE_ID,
-    });
+
     const allReviews = data.reviews ?? [];
     return NextResponse.json(
       {
