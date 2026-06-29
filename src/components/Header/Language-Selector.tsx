@@ -15,11 +15,14 @@ export const LanguageSelector = ({
   const params = useParams<{ city?: string }>();
 
   const handleLanguageChange = (target: Locale) => {
-    if (pathname === "/lessons/piano/groups/[city]") {
+    if (
+      pathname === "/lessons/piano/groups/[city]" ||
+      pathname === "/lessons/piano/private/[city]"
+    ) {
       router.push(
         {
           pathname,
-          params: { city: params.city ?? "" },
+          params: { city: params.city ?? "gatineau" },
         },
         { locale: target },
       );
