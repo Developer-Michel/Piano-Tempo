@@ -174,38 +174,6 @@ export default async function PrivatePianoLessonsGatineau() {
         />
       </section>
 
-      <section className={`${sectionContainer} py-10 grid  gap-6`}>
-        <Reveal
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
-        ></Reveal>
-
-        <Reveal
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
-        >
-          <article>
-            <figure className="group mt-6">
-              <Image
-                alt="Piano teacher giving feedback to a student during a private lesson"
-                src="/true_potential.png"
-                width={1536}
-                height={1024}
-                className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              />
-            </figure>
-          </article>
-        </Reveal>
-        <Reveal
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="col-span-full mt-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent"
-        />
-      </section>
-
       <section className={`${sectionContainer} py-10`}>
         <Reveal
           initial={{ opacity: 0, y: 20 }}

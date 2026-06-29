@@ -4,6 +4,7 @@ export type AppHref =
   | "/"
   | "/gallery"
   | "/lessons/piano/groups/[city]"
+  | "/lessons/piano/private/[city]"
   | "/methodology"
   | "/faq"
   | "/resources"
@@ -22,6 +23,10 @@ export const routing = defineRouting({
     "/lessons/piano/groups/[city]": {
       fr: "/cours-de-piano-groupes/[city]",
       en: "/groups-piano-lessons/[city]",
+    },
+    "/lessons/piano/private/[city]": {
+      fr: "/cours-de-piano/[city]",
+      en: "/piano-lessons/[city]",
     },
     "/methodology": {
       fr: "/methodologie",

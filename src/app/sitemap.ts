@@ -1,44 +1,53 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://pianoatempo.ca"; // <-- change si besoin
+const baseUrl = "https://pianoatempo.ca";
 const locales = ["fr", "en"] as const;
 
 type Locale = (typeof locales)[number];
 
-// Liste tes routes “canoniques” (sans /fr ou /en) ici
-const routes = [
-  "", // home
-  "/methodology",
-  "/faq",
-  "/gallery",
-  "/resources",
-  "/policy",
-  "/cours-piano-gatineau",
-  "/piano-lessons-gatineau",
-  "/piano-lessons-ottawa",
-  // "/blog", "/blog/slug-1", etc.
-];
+const localizedPaths: Record<Locale, string[]> = {
+  fr: [
+    "",
+    "/methodologie",
+    "/faq",
+    "/galerie",
+    "/resources",
+    "/policy",
+    "/cours-de-piano-groupes/gatineau",
+    "/cours-de-piano-groupes/ottawa",
+    "/cours-de-piano/gatineau",
+  ],
+  en: [
+    "",
+    "/methodology",
+    "/faq",
+    "/gallery",
+    "/resources",
+    "/policy",
+    "/groups-piano-lessons/gatineau",
+    "/groups-piano-lessons/ottawa",
+    "/piano-lessons/gatineau",
+  ],
+};
 
 function urlFor(locale: Locale, path: string) {
-  // Si ton site est préfixé /fr et /en:
   return `${baseUrl}/${locale}${path}`;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  return routes.flatMap((path) => {
-    // On crée une entrée par locale + alternates pour hreflang
-    return locales.map((locale) => ({
+  return locales.flatMap((locale) => {
+    return localizedPaths[locale].map((path, index) => ({
       url: urlFor(locale, path),
       lastModified: now,
-      changeFrequency: path === "" ? "weekly" : "monthly",
-      priority: path === "" ? 1 : 0.7,
+      changeFrequency: index === 0 ? "weekly" : "monthly",
+      priority: index === 0 ? 1 : 0.7,
       alternates: {
         languages: {
-          fr: urlFor("fr", path),
-          en: urlFor("en", path),
-          "x-default": urlFor("fr", path),
+          fr: urlFor("fr", localizedPaths.fr[index]),
+          en: urlFor("en", localizedPaths.en[index]),
+          "x-default": urlFor("fr", localizedPaths.fr[index]),
         },
       },
     }));

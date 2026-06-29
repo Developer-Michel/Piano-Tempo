@@ -31,6 +31,10 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
   const navItems: NavItem[] = useMemo(
     () => [
       { key: "home", href: `/${locale}#home` },
@@ -45,7 +49,10 @@ export function Header() {
     () => [
       {
         key: "private",
-        href: `/${locale}/lessons/piano/private/gatineau`,
+        href:
+          locale === "fr"
+            ? `/${locale}/cours-de-piano/gatineau`
+            : `/${locale}/piano-lessons/gatineau`,
         label: tPrograms("private.title"),
       },
       {
@@ -71,6 +78,7 @@ export function Header() {
   const activeExtra = pathname !== "/";
 
   const isDarkText = isScrolled || activeExtra;
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <header
@@ -180,6 +188,7 @@ export function Header() {
             <Link
               key={item.key}
               href={item.href}
+              onClick={closeMobileMenu}
               className="py-3 text-left text-lg text-black hover:text-gold"
               data-testid={`nav-mobile-${item.key}`}
             >
@@ -194,6 +203,7 @@ export function Header() {
             <Link
               key={item.key}
               href={item.href}
+              onClick={closeMobileMenu}
               className="py-2 pl-3 text-left text-base text-black hover:text-gold"
               data-testid={`nav-mobile-course-${item.key}`}
             >
@@ -205,6 +215,7 @@ export function Header() {
             <Link
               key={item.key}
               href={item.href}
+              onClick={closeMobileMenu}
               className="py-3 text-left text-lg text-black hover:text-gold"
               data-testid={`nav-mobile-${item.key}`}
             >

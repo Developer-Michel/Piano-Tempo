@@ -39,7 +39,8 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "MusicSchool",
+    "@type": "LocalBusiness",
+    additionalType: "https://schema.org/MusicSchool",
     "@id": `https://pianoatempo.ca/${lang}/#music-school`,
     name: "Piano à Tempo",
     url: `https://pianoatempo.ca/${lang}`,
@@ -125,8 +126,8 @@ export default async function LocaleLayout({
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "16",
+      ratingValue: 5,
+      reviewCount: 16,
     },
   };
   return (
