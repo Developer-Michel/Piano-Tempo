@@ -37,6 +37,53 @@ export default async function LocaleLayout({
   const { lang } = await params;
   setRequestLocale(lang);
   const messages = await getMessages();
+
+  const privateLessonsPath =
+    lang === "fr" ? "/cours-de-piano/gatineau" : "/piano-lessons/gatineau";
+  const groupsLessonsPath =
+    lang === "fr"
+      ? "/cours-de-piano-groupes/gatineau"
+      : "/groups-piano-lessons/gatineau";
+
+  const serviceOffers = [
+    {
+      "@type": "Offer",
+      name: lang === "fr" ? "Cours prive (30 min)" : "Private lesson (30 min)",
+      price: "30",
+      priceCurrency: "CAD",
+      url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
+      description:
+        lang === "fr"
+          ? "Cours adaptes au rythme et aux objectifs de l'eleve."
+          : "Tailored lessons based on the student's pace and goals.",
+    },
+    {
+      "@type": "Offer",
+      name: lang === "fr" ? "Cours prive (45 min)" : "Private lesson (45 min)",
+      price: "45",
+      priceCurrency: "CAD",
+      url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
+    },
+    {
+      "@type": "Offer",
+      name: lang === "fr" ? "Cours prive (60 min)" : "Private lesson (60 min)",
+      price: "60",
+      priceCurrency: "CAD",
+      url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
+    },
+    {
+      "@type": "Offer",
+      name: lang === "fr" ? "Cours de groupe (60 min)" : "Group class (60 min)",
+      price: "25",
+      priceCurrency: "CAD",
+      url: `https://pianoatempo.ca/${lang}${groupsLessonsPath}`,
+      description:
+        lang === "fr"
+          ? "Cours collaboratif pour apprendre a lire et jouer la musique."
+          : "Collaborative setting to learn reading and playing music.",
+    },
+  ];
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -78,51 +125,11 @@ export default async function LocaleLayout({
       longitude: -75.74642768797247,
     },
     sameAs: ["https://www.facebook.com/profile.php?id=61550469422765"],
+    offers: serviceOffers,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: lang === "fr" ? "Cours privés" : "Private Lessons",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          name:
-            lang === "fr" ? "Cours privé (30 min)" : "Private lesson (30 min)",
-          price: "30",
-          priceCurrency: "CAD",
-          url: `https://pianoatempo.ca/${lang}/programs#private`,
-          description:
-            lang === "fr"
-              ? "Cours adaptés au rythme et aux objectifs de l’élève."
-              : "Tailored lessons based on the student’s pace and goals.",
-        },
-        {
-          "@type": "Offer",
-          name:
-            lang === "fr" ? "Cours privé (45 min)" : "Private lesson (45 min)",
-          price: "45",
-          priceCurrency: "CAD",
-          url: `https://pianoatempo.ca/${lang}/programs#private`,
-        },
-        {
-          "@type": "Offer",
-          name:
-            lang === "fr" ? "Cours privé (60 min)" : "Private lesson (60 min)",
-          price: "60",
-          priceCurrency: "CAD",
-          url: `https://pianoatempo.ca/${lang}/programs#private`,
-        },
-        {
-          "@type": "Offer",
-          name:
-            lang === "fr" ? "Cours de groupe (60 min)" : "Group class (60 min)",
-          price: "25",
-          priceCurrency: "CAD",
-          url: `https://pianoatempo.ca/${lang}/programs#groups`,
-          description:
-            lang === "fr"
-              ? "Cours collaboratif pour apprendre à lire et jouer la musique."
-              : "Collaborative setting to learn reading and playing music.",
-        },
-      ],
+      itemListElement: serviceOffers,
     },
     aggregateRating: {
       "@type": "AggregateRating",
@@ -133,6 +140,8 @@ export default async function LocaleLayout({
   return (
     <html lang={lang}>
       <head>
+        <link rel="icon" href="/logo.ico" sizes="any" />
+        <link rel="shortcut icon" href="/logo.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
