@@ -134,7 +134,9 @@ export default async function LocaleLayout({
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: 5,
-      reviewCount: 16,
+      reviewCount: 17,
+      bestRating: 5,
+      worstRating: 5,
     },
   };
   return (

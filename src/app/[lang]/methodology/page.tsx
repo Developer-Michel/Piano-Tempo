@@ -11,7 +11,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
 
-  const path = "methodology";
+  const path = lang === "fr" ? "methodologie" : "methodology";
   const isFrench = lang === "fr";
   return {
     title: isFrench

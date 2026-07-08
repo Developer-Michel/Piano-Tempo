@@ -3,22 +3,89 @@ import { Metadata } from "next";
 import PrivatePianoLessonsGatineau from "@/components/private-lessons/Gatineau";
 
 type Props = {
-  params: Promise<{ locale: string; city: string }>;
+  params: { lang: string; city: string };
 };
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+  const { lang, city } = params;
+  const isFrench = lang === "fr";
+  const cityLabel =
+    city === "ottawa" ? (isFrench ? "Ottawa" : "Ottawa") : "Gatineau";
+  const path = `lessons/piano/private/${city}`;
+
   const t = await getTranslations({
-    locale,
+    locale: lang,
     namespace: "pianoLessonsPrivateGatineau.metadata",
   });
+
+  const defaultTitle = isFrench
+    ? `Cours de piano privés à ${cityLabel} | Piano a Tempo`
+    : `Private Piano Lessons in ${cityLabel} | Piano a Tempo`;
+  const defaultDescription = isFrench
+    ? "Cours de piano privés pour enfants, ados et adultes. Enseignement personnalisé adapté à votre niveau et à vos objectifs."
+    : "Private piano lessons for children, teens, and adults. Personalized instruction adapted to your level and goals.";
+
+  const title = city === "gatineau" ? t("title") : defaultTitle;
+  const description =
+    city === "gatineau" ? t("description") : defaultDescription;
+
   return {
-    title: t("title"),
-    description: t("description"),
+    title,
+    description,
+    keywords: isFrench
+      ? [
+          "cours de piano privés",
+          "cours de piano gatineau",
+          "cours de piano ottawa",
+          "professeur de piano",
+          "cours de piano pour enfants",
+          "cours de piano pour adultes",
+        ]
+      : [
+          "private piano lessons",
+          "piano lessons gatineau",
+          "piano lessons ottawa",
+          "piano teacher",
+          "piano lessons for kids",
+          "piano lessons for adults",
+        ],
+    alternates: {
+      canonical: `https://pianoatempo.ca/${lang}/${path}`,
+      languages: {
+        "en-CA": `https://pianoatempo.ca/en/${path}`,
+        "fr-CA": `https://pianoatempo.ca/fr/${path}`,
+        "x-default": `https://pianoatempo.ca/fr/${path}`,
+      },
+    },
+    authors: [
+      {
+        name: "Michel Racicot-Nguyen",
+      },
+    ],
+    publisher: "Michel Racicot-Nguyen",
+    twitter: {
+      card: "summary_large_image",
+      images: ["https://pianoatempo.ca/concert.jpg"],
+      title,
+      description,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://pianoatempo.ca/${lang}/${path}`,
+      alternateLocale: lang === "fr" ? ["en_CA"] : ["fr_CA"],
+      locale: lang === "fr" ? "fr_CA" : "en_CA",
+      siteName: "Piano a Tempo",
+      type: "website",
+      images: [
+        { url: "https://pianoatempo.ca/concert.jpg", width: 800, height: 600 },
+      ],
+    },
   };
 }
 
 export default async function Page({ params }: Props) {
-  const { city } = await params;
+  const { city } = params;
 
   if (city !== "gatineau") {
     return (
