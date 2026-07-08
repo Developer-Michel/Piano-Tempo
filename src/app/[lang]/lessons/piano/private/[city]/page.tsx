@@ -3,11 +3,11 @@ import { Metadata } from "next";
 import PrivatePianoLessonsGatineau from "@/components/private-lessons/Gatineau";
 
 type Props = {
-  params: { lang: string; city: string };
+  params: Promise<{ lang: string; city: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang, city } = params;
+  const { lang, city } = await params;
   const isFrench = lang === "fr";
   const cityLabel =
     city === "ottawa" ? (isFrench ? "Ottawa" : "Ottawa") : "Gatineau";
@@ -85,7 +85,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page({ params }: Props) {
-  const { city } = params;
+  const { city } = await params;
 
   if (city !== "gatineau") {
     return (

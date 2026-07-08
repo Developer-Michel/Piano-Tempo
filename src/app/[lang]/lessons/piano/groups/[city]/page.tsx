@@ -1,13 +1,14 @@
 import GroupPianoLessonsGatineauPage from "@/components/group-lessons/Gatineau";
+import GroupPianoLessonsOttawaPage from "@/components/group-lessons/Ottawa";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 
 type Props = {
-  params: { lang: string; city: string };
+  params: Promise<{ lang: string; city: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang, city } = params;
+  const { lang, city } = await params;
   const isFrench = lang === "fr";
   const citySlug = city === "ottawa" ? "ottawa" : "gatineau";
   const path = `lessons/piano/groups/${citySlug}`;
@@ -68,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page({ params }: Props) {
-  const { city } = params;
+  const { city, lang } = await params;
 
   return (
     <main className="h-100">
@@ -77,7 +78,7 @@ export default async function Page({ params }: Props) {
           case "gatineau":
             return <GroupPianoLessonsGatineauPage />;
           case "ottawa":
-            return <div>Ottawa content</div>;
+            return <GroupPianoLessonsOttawaPage params={{ lang }} />;
           default:
             return <div>Default content</div>;
         }

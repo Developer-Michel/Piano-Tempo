@@ -48,39 +48,72 @@ export default async function LocaleLayout({
   const serviceOffers = [
     {
       "@type": "Offer",
-      name: lang === "fr" ? "Cours prive (30 min)" : "Private lesson (30 min)",
+      name:
+        lang === "fr"
+          ? "Cours privé de piano (30 min)"
+          : "Private piano lesson (30 min)",
       price: "30",
       priceCurrency: "CAD",
       url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
-      description:
-        lang === "fr"
-          ? "Cours adaptes au rythme et aux objectifs de l'eleve."
-          : "Tailored lessons based on the student's pace and goals.",
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name: lang === "fr" ? "Cours privé de piano" : "Private piano lessons",
+        serviceType: "Piano lessons",
+        areaServed: ["Gatineau", "Ottawa"],
+      },
     },
     {
       "@type": "Offer",
-      name: lang === "fr" ? "Cours prive (45 min)" : "Private lesson (45 min)",
+      name:
+        lang === "fr"
+          ? "Cours privé de piano (45 min)"
+          : "Private piano lesson (45 min)",
       price: "45",
       priceCurrency: "CAD",
       url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name: lang === "fr" ? "Cours privé de piano" : "Private piano lessons",
+        serviceType: "Piano lessons",
+        areaServed: ["Gatineau", "Ottawa"],
+      },
     },
     {
       "@type": "Offer",
-      name: lang === "fr" ? "Cours prive (60 min)" : "Private lesson (60 min)",
+      name:
+        lang === "fr"
+          ? "Cours privé de piano (60 min)"
+          : "Private piano lesson (60 min)",
       price: "60",
       priceCurrency: "CAD",
       url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name: lang === "fr" ? "Cours privé de piano" : "Private piano lessons",
+        serviceType: "Piano lessons",
+        areaServed: ["Gatineau", "Ottawa"],
+      },
     },
     {
       "@type": "Offer",
-      name: lang === "fr" ? "Cours de groupe (60 min)" : "Group class (60 min)",
+      name:
+        lang === "fr"
+          ? "Cours de groupe de piano (60 min)"
+          : "Group piano class (60 min)",
       price: "25",
       priceCurrency: "CAD",
       url: `https://pianoatempo.ca/${lang}${groupsLessonsPath}`,
-      description:
-        lang === "fr"
-          ? "Cours collaboratif pour apprendre a lire et jouer la musique."
-          : "Collaborative setting to learn reading and playing music.",
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name:
+          lang === "fr" ? "Cours de groupe de piano" : "Group piano classes",
+        serviceType: "Group piano lessons",
+        areaServed: ["Gatineau", "Ottawa"],
+      },
     },
   ];
 
@@ -125,10 +158,9 @@ export default async function LocaleLayout({
       longitude: -75.74642768797247,
     },
     sameAs: ["https://www.facebook.com/profile.php?id=61550469422765"],
-    offers: serviceOffers,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: lang === "fr" ? "Cours privés" : "Private Lessons",
+      name: lang === "fr" ? "Cours de piano" : "Piano Lessons",
       itemListElement: serviceOffers,
     },
     aggregateRating: {
@@ -139,6 +171,31 @@ export default async function LocaleLayout({
       worstRating: 5,
     },
   };
+
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://pianoatempo.ca/#organization",
+    name: "Piano a Tempo",
+    url: "https://pianoatempo.ca",
+    logo: "https://pianoatempo.ca/concert.jpg",
+    image: "https://pianoatempo.ca/concert.jpg",
+    sameAs: [
+      "https://www.instagram.com/pianoatempo/",
+      "https://www.facebook.com/pianoatempo/",
+    ],
+    areaServed: ["Gatineau", "Ottawa"],
+    knowsLanguage: ["fr", "en"],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        areaServed: "CA",
+        availableLanguage: ["French", "English"],
+      },
+    ],
+  };
+
   return (
     <html lang={lang}>
       <head>
@@ -146,7 +203,9 @@ export default async function LocaleLayout({
         <link rel="shortcut icon" href="/logo.ico" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([structuredData, organizationJsonLd]),
+          }}
         />
       </head>
       <body>

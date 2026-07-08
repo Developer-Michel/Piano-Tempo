@@ -108,9 +108,25 @@ export default async function Home({ params }: { params: { lang: string } }) {
   setRequestLocale(lang);
   const t = await getTranslations("home.hero");
   const tagline = t("tagline");
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: lang === "fr" ? "Accueil" : "Home",
+        item: `https://pianoatempo.ca/${lang}`,
+      },
+    ],
+  };
 
   return (
     <main className="min-h-screen bg-white" data-testid="page-home">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Hero tagline={tagline} />
 
       <div className="belowFold">
