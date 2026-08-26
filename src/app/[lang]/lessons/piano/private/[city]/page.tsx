@@ -11,7 +11,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isFrench = lang === "fr";
   const cityLabel =
     city === "ottawa" ? (isFrench ? "Ottawa" : "Ottawa") : "Gatineau";
-  const path = `lessons/piano/private/${city}`;
+  const citySlug = city === "ottawa" ? "ottawa" : "gatineau";
+  const localizedPath =
+    lang === "fr" ? `cours-de-piano/${citySlug}` : `piano-lessons/${citySlug}`;
 
   const t = await getTranslations({
     locale: lang,
@@ -50,11 +52,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           "piano lessons for adults",
         ],
     alternates: {
-      canonical: `https://pianoatempo.ca/${lang}/${path}`,
+      canonical: `https://pianoatempo.ca/${lang}/${localizedPath}`,
       languages: {
-        "en-CA": `https://pianoatempo.ca/en/${path}`,
-        "fr-CA": `https://pianoatempo.ca/fr/${path}`,
-        "x-default": `https://pianoatempo.ca/fr/${path}`,
+        "en-CA": `https://pianoatempo.ca/en/piano-lessons/${citySlug}`,
+        "fr-CA": `https://pianoatempo.ca/fr/cours-de-piano/${citySlug}`,
+        "x-default": `https://pianoatempo.ca/fr/cours-de-piano/${citySlug}`,
       },
     },
     authors: [
@@ -72,7 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: `https://pianoatempo.ca/${lang}/${path}`,
+      url: `https://pianoatempo.ca/${lang}/${localizedPath}`,
       alternateLocale: lang === "fr" ? ["en_CA"] : ["fr_CA"],
       locale: lang === "fr" ? "fr_CA" : "en_CA",
       siteName: "Piano a Tempo",

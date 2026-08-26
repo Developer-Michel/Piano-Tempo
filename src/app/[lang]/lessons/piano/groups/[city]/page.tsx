@@ -11,7 +11,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, city } = await params;
   const isFrench = lang === "fr";
   const citySlug = city === "ottawa" ? "ottawa" : "gatineau";
-  const path = `lessons/piano/groups/${citySlug}`;
+  const localizedPath =
+    lang === "fr"
+      ? `cours-de-piano-groupes/${citySlug}`
+      : `groups-piano-lessons/${citySlug}`;
 
   const namespaceByCity: Record<string, string> = {
     gatineau: "pianoLessonsGatineau",
@@ -34,11 +37,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     keywords: t.raw("keywords") as string[],
     alternates: {
-      canonical: `https://pianoatempo.ca/${lang}/${path}`,
+      canonical: `https://pianoatempo.ca/${lang}/${localizedPath}`,
       languages: {
-        "en-CA": `https://pianoatempo.ca/en/${path}`,
-        "fr-CA": `https://pianoatempo.ca/fr/${path}`,
-        "x-default": `https://pianoatempo.ca/fr/${path}`,
+        "en-CA": `https://pianoatempo.ca/en/groups-piano-lessons/${citySlug}`,
+        "fr-CA": `https://pianoatempo.ca/fr/cours-de-piano-groupes/${citySlug}`,
+        "x-default": `https://pianoatempo.ca/fr/cours-de-piano-groupes/${citySlug}`,
       },
     },
     authors: [
@@ -56,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: openGraphTitle,
       description: openGraphDescription,
-      url: `https://pianoatempo.ca/${lang}/${path}`,
+      url: `https://pianoatempo.ca/${lang}/${localizedPath}`,
       alternateLocale: isFrench ? ["en_CA"] : ["fr_CA"],
       locale: isFrench ? "fr_CA" : "en_CA",
       siteName: "Piano a Tempo",
