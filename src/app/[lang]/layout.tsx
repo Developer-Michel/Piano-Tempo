@@ -52,7 +52,7 @@ export default async function LocaleLayout({
         lang === "fr"
           ? "Cours privé de piano (30 min)"
           : "Private piano lesson (30 min)",
-      price: "30",
+      price: "35",
       priceCurrency: "CAD",
       url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
       availability: "https://schema.org/InStock",
@@ -69,7 +69,7 @@ export default async function LocaleLayout({
         lang === "fr"
           ? "Cours privé de piano (45 min)"
           : "Private piano lesson (45 min)",
-      price: "45",
+      price: "50",
       priceCurrency: "CAD",
       url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
       availability: "https://schema.org/InStock",
@@ -86,7 +86,7 @@ export default async function LocaleLayout({
         lang === "fr"
           ? "Cours privé de piano (60 min)"
           : "Private piano lesson (60 min)",
-      price: "60",
+      price: "65",
       priceCurrency: "CAD",
       url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
       availability: "https://schema.org/InStock",
@@ -129,7 +129,7 @@ export default async function LocaleLayout({
         ? "Cours de piano à Gatineau et Ottawa : leçons pour enfants, adolescents et adultes, en personne et/ou en ligne."
         : "Piano lessons in Gatineau and Ottawa: lessons for children, teenagers, and adults, in person and/or online.",
     email: "info.pianoatempo@gmail.com",
-    priceRange: "$25-$60",
+    priceRange: "$25-$65",
     image: ["https://pianoatempo.ca/concert.jpg"],
     address: {
       "@type": "PostalAddress",
