@@ -108,6 +108,12 @@ export default async function Home({ params }: { params: { lang: string } }) {
   setRequestLocale(lang);
   const t = await getTranslations("home.hero");
   const tagline = t("tagline");
+  const privateLessonsPath =
+    lang === "fr" ? "/cours-de-piano/gatineau" : "/piano-lessons/gatineau";
+  const groupLessonsPath =
+    lang === "fr"
+      ? "/cours-de-piano-groupes/gatineau"
+      : "/groups-piano-lessons/gatineau";
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -117,6 +123,18 @@ export default async function Home({ params }: { params: { lang: string } }) {
         position: 1,
         name: lang === "fr" ? "Accueil" : "Home",
         item: `https://pianoatempo.ca/${lang}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: lang === "fr" ? "Cours prives" : "Private Lessons",
+        item: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: lang === "fr" ? "Cours de groupe" : "Group Lessons",
+        item: `https://pianoatempo.ca/${lang}${groupLessonsPath}`,
       },
     ],
   };

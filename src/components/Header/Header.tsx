@@ -22,7 +22,9 @@ export function Header() {
   const locale = useLocale();
   const basePath = `/` + locale;
   const studentPortalPath =
-    locale === "fr" ? `/${locale}/portail-etudiant` : `/${locale}/student-portal`;
+    locale === "fr"
+      ? `/${locale}/portail-etudiant`
+      : `/${locale}/student-portal`;
   const tNav = useTranslations("common.nav");
   const tPrograms = useTranslations("home.programs");
 
