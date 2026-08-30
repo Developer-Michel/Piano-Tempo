@@ -8,7 +8,8 @@ export type AppHref =
   | "/methodology"
   | "/faq"
   | "/resources"
-  | "/policy";
+  | "/policy"
+  | "/student-portal";
 
 export const routing = defineRouting({
   locales,
@@ -42,6 +43,10 @@ export const routing = defineRouting({
     "/policy": {
       fr: "/policy",
       en: "/policy",
+    },
+    "/student-portal": {
+      fr: "/portail-etudiant",
+      en: "/student-portal",
     },
   },
 });

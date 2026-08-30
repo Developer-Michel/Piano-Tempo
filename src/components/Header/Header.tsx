@@ -21,6 +21,8 @@ export function Header() {
   const pathname = usePathname() || "";
   const locale = useLocale();
   const basePath = `/` + locale;
+  const studentPortalPath =
+    locale === "fr" ? `/${locale}/portail-etudiant` : `/${locale}/student-portal`;
   const tNav = useTranslations("common.nav");
   const tPrograms = useTranslations("home.programs");
 
@@ -136,6 +138,19 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
+            <Link
+              href={studentPortalPath}
+              className="hidden lg:block"
+              data-testid="link-student-portal"
+            >
+              <Button
+                variant="outline"
+                className="border-gold text-gold hover:bg-gold hover:text-white"
+              >
+                {tNav("studentPortal")}
+              </Button>
+            </Link>
+
             {/* Social links (desktop) */}
             <div className="hidden lg:flex items-center gap-3">
               <a
@@ -184,6 +199,17 @@ export function Header() {
         data-testid="nav-mobile"
       >
         <nav className="flex flex-col py-4 px-4">
+          <Link
+            href={studentPortalPath}
+            onClick={closeMobileMenu}
+            className="mb-2"
+            data-testid="nav-mobile-student-portal"
+          >
+            <Button className="w-full bg-gold text-white hover:bg-[#b8932f]">
+              {tNav("studentPortal")}
+            </Button>
+          </Link>
+
           {navItems.map((item) => (
             <Link
               key={item.key}
