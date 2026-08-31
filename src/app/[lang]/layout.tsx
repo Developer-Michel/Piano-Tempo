@@ -52,7 +52,7 @@ export default async function LocaleLayout({
         lang === "fr"
           ? "Cours privé de piano (30 min)"
           : "Private piano lesson (30 min)",
-      price: "35",
+      price: "30",
       priceCurrency: "CAD",
       url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
       availability: "https://schema.org/InStock",
@@ -69,7 +69,7 @@ export default async function LocaleLayout({
         lang === "fr"
           ? "Cours privé de piano (45 min)"
           : "Private piano lesson (45 min)",
-      price: "50",
+      price: "45",
       priceCurrency: "CAD",
       url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
       availability: "https://schema.org/InStock",
@@ -86,7 +86,7 @@ export default async function LocaleLayout({
         lang === "fr"
           ? "Cours privé de piano (60 min)"
           : "Private piano lesson (60 min)",
-      price: "65",
+      price: "60",
       priceCurrency: "CAD",
       url: `https://pianoatempo.ca/${lang}${privateLessonsPath}`,
       availability: "https://schema.org/InStock",

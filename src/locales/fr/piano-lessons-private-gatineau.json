@@ -36,17 +36,17 @@
     "timeframes": [
       {
         "duration": "30 min",
-        "price": "$35",
+        "price": "$30",
         "details": "Un format plus court, idéal pour les jeunes enfants (4 à 7 ans) ou les élèves qui préfèrent un rythme d’apprentissage plus doux. La progression est généralement plus graduelle et demande davantage de pratique autonome à la maison."
       },
       {
         "duration": "45 min",
-        "price": "$50",
+        "price": "$45",
         "details": "Notre format le plus populaire. Une durée de cours équilibrée qui offre suffisamment de temps pour travailler la technique, le répertoire et les notions théoriques. Convient parfaitement aux enfants de 8 ans et plus, aux adolescents ainsi qu’aux adultes."
       },
       {
         "duration": "60 min",
-        "price": "$65",
+        "price": "$60",
         "details": "Notre format le plus complet, offrant le temps nécessaire pour approfondir l’apprentissage musical. Idéal pour les élèves intermédiaires et avancés souhaitant perfectionner leur technique, explorer un répertoire plus complexe et enrichir leurs connaissances théoriques, ainsi que pour les débutants motivés désirant progresser plus rapidement."
       }
     ],

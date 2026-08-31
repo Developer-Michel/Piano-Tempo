@@ -57,14 +57,14 @@
   "programs": {
     "title": "Our Programs",
     "subtitle": "Tailored Instruction for Every Age and Level",
-    "feeNote": " A $20 registration fee applies at enrollement.",
+    "feeNote": "A $10 registration fee applies. A monthly studio fee of $12 applies for adults and children under 7, and $16 per month for students ages 7+.",
     "learnMore": "Learn More",
     "learnLess": "See Less",
     "private": {
       "title": "Private Lessons",
       "description": "Tailored to each student’s individual needs, learning pace and goals, these classes develop technique, musical interpretation and theoretical understanding of music. They also offer the possibility to prepare for the preparatory-level auditions at the Conservatoire de musique de Gatineau and for the RCM examinations in Toronto.",
       "ages": "All ages",
-      "price": "30 min $35 | 45 min $50 | 60 min $65"
+      "price": "30 min $30 | 45 min $50 | 60 min $60"
     },
     "groups": {
       "title": "Group Lessons",

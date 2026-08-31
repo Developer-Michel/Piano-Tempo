@@ -36,17 +36,17 @@
     "timeframes": [
       {
         "duration": "30 min",
-        "price": "$35",
+        "price": "$30",
         "details": "A shorter format ideal for young children (ages 4-7) or learners who prefer a gentler pace. Progress is more gradual and requires more independent practice at home."
       },
       {
         "duration": "45 min",
-        "price": "$50",
+        "price": "$45",
         "details": "Our most popular option. A balanced lesson length that provides ample time for technique, repertoire, and theory concepts. Well suited for children ages 8 +, teens and adults. "
       },
       {
         "duration": "60 min",
-        "price": "$65",
+        "price": "$60",
         "details": "Our most comprehensive format, offering the time needed for deeper musical exploration. Ideal for intermediate and late intermediate students working on more advanced repertoire, technical refinement, and theory concepts, as well as motivated beginners seeking accelerated progress."
       }
     ],

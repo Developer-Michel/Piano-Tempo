@@ -57,14 +57,14 @@
   "programs": {
     "title": "Nos Programmes",
     "subtitle": "Un enseignement adapté à chaque âge et niveau",
-    "feeNote": "Des frais d’inscription de 20 $ s’appliquent à l'inscription.",
+    "feeNote": "Des frais d’inscription de 10 $ s’appliquent. Des frais mensuels de studio de 12 $ s’appliquent aux adultes et aux enfants de moins de 7 ans, et des frais de 16 $ par mois s’appliquent aux élèves de 7 ans et plus.",
     "learnMore": "En savoir plus",
     "learnLess": "Réduire",
     "private": {
       "title": "Cours privés",
       "description": "Adaptés aux besoins individuels, au rythme d’apprentissage et aux objectifs de chaque élève, ces cours permettent de développer la technique, l’interprétation musicale ainsi que la compréhension théorique de la musique. Ils offrent également la possibilité de se préparer aux auditions de niveau préparatoire du Conservatoire de musique de Gatineau ainsi qu’aux examens du Royal Conservatory of Music (RCM).",
       "ages": "Tous âges",
-      "price": "30 min 35 $ | 45 min 50 $ | 60 min 65 $"
+      "price": "30 min 30 $ | 45 min 45 $ | 60 min 60 $"
     },
     "groups": {
       "title": "Cours de groupe",

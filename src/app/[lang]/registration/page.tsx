@@ -23,7 +23,7 @@ export default function Registration() {
 
   return (
     <main className="min-h-screen">
-      <div id="wbb_zccBNJR" className="mt-40 block" />
+      <div id="wbb_zccBNJR" className="mt-40 mb-20 block" />
     </main>
   );
 }
