@@ -1,22 +1,22 @@
 {
   "title": "Registration",
-  "subtitle": "Choose who you are registering",
+  "subtitle": "Choose your lesson type",
   "back": "Choose another option",
   "options": {
     "parents": {
       "title": "Private Lessons: Child/Parent",
       "description": "For parents enrolling one or more children, with the option to include themselves.",
-      "cta": "Register as Parent"
+      "cta": "Register..."
     },
     "adult": {
       "title": "Private Lessons: Adult",
       "description": "For adults enrolling themselves in private piano lessons.",
-      "cta": "Register as Adult"
+      "cta": "Register..."
     },
     "group": {
       "title": "Group Lessons",
       "description": "For group lesson enrollment.",
-      "cta": "Register for Group Lessons"
+      "cta": "Register..."
     }
   },
   "selected": {

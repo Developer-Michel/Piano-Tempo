@@ -1,22 +1,22 @@
 {
   "title": "Inscription",
-  "subtitle": "Choisissez qui vous souhaitez inscrire",
+  "subtitle": "Choisissez votre type de cours",
   "back": "Choisir une autre option",
   "options": {
     "parents": {
       "title": "Cours privés : enfant/parent",
       "description": "Pour les parents qui inscrivent un ou plusieurs enfants, avec la possibilité de s'inscrire eux-mêmes.",
-      "cta": "Inscrire un parent"
+      "cta": "Inscrire..."
     },
     "adult": {
       "title": "Cours privés : adulte",
       "description": "Pour les adultes qui s'inscrivent eux-mêmes aux cours privés de piano.",
-      "cta": "Inscrire un adulte"
+      "cta": "Inscrire..."
     },
     "group": {
       "title": "Cours de groupe",
       "description": "Pour les inscriptions aux cours de groupe.",
-      "cta": "Inscription de groupe"
+      "cta": "Inscription..."
     }
   },
   "selected": {
