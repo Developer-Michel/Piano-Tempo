@@ -1,0 +1,32 @@
+{
+  "title": "Registration",
+  "subtitle": "Choose who you are registering",
+  "back": "Choose another option",
+  "options": {
+    "parents": {
+      "title": "Parent Registration",
+      "description": "For parents enrolling one or more children, with the option to include themselves.",
+      "cta": "Register as Parent"
+    },
+    "adult": {
+      "title": "Adult Registration",
+      "description": "For adults enrolling themselves in private piano lessons.",
+      "cta": "Register as Adult"
+    },
+    "group": {
+      "title": "Group Registration",
+      "description": "For group lesson enrollment.",
+      "cta": "Group Registration"
+    }
+  },
+  "selected": {
+    "parents": "Parent Registration Form",
+    "adult": "Adult Registration Form",
+    "group": "Group Registration"
+  },
+  "loading": {
+    "title": "Loading form...",
+    "subtitle": "Please wait a few seconds."
+  },
+  "comingSoon": "Group registration is not available yet. Please check back soon."
+}

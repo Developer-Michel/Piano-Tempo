@@ -1,0 +1,32 @@
+{
+  "title": "Inscription",
+  "subtitle": "Choisissez qui vous souhaitez inscrire",
+  "back": "Choisir une autre option",
+  "options": {
+    "parents": {
+      "title": "Inscription Parent",
+      "description": "Pour les parents qui inscrivent un ou plusieurs enfants, avec la possibilite de s'inscrire eux-memes.",
+      "cta": "Inscrire un parent"
+    },
+    "adult": {
+      "title": "Inscription Adulte",
+      "description": "Pour les adultes qui s'inscrivent eux-memes aux cours prives de piano.",
+      "cta": "Inscrire un adulte"
+    },
+    "group": {
+      "title": "Inscription de Groupe",
+      "description": "Pour les inscriptions aux cours de groupe.",
+      "cta": "Inscription de groupe"
+    }
+  },
+  "selected": {
+    "parents": "Formulaire d'inscription Parent",
+    "adult": "Formulaire d'inscription Adulte",
+    "group": "Inscription de Groupe"
+  },
+  "loading": {
+    "title": "Chargement du formulaire...",
+    "subtitle": "Veuillez patienter quelques secondes."
+  },
+  "comingSoon": "L'inscription de groupe n'est pas disponible pour le moment. Revenez bientot."
+}
