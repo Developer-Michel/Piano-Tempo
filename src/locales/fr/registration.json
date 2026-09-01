@@ -4,13 +4,13 @@
   "back": "Choisir une autre option",
   "options": {
     "parents": {
-      "title": "Inscription Parent",
-      "description": "Pour les parents qui inscrivent un ou plusieurs enfants, avec la possibilite de s'inscrire eux-memes.",
+      "title": "Cours privés : Enfant/Parent",
+      "description": "Pour les parents qui inscrivent un ou plusieurs enfants, avec la possibilité de s'inscrire eux-mêmes.",
       "cta": "Inscrire un parent"
     },
     "adult": {
-      "title": "Inscription Adulte",
-      "description": "Pour les adultes qui s'inscrivent eux-memes aux cours prives de piano.",
+      "title": "Cours privés : adulte",
+      "description": "Pour les adultes qui s'inscrivent eux-mêmes aux cours privés de piano.",
       "cta": "Inscrire un adulte"
     },
     "group": {
@@ -20,8 +20,8 @@
     }
   },
   "selected": {
-    "parents": "Formulaire d'inscription Parent",
-    "adult": "Formulaire d'inscription Adulte",
+    "parents": "Cours privés : Enfant/Parent",
+    "adult": "Cours privés : adulte",
     "group": "Inscription de Groupe"
   },
   "loading": {

@@ -4,12 +4,12 @@
   "back": "Choose another option",
   "options": {
     "parents": {
-      "title": "Parent Registration",
+      "title": "Private Lessons: Child/Parent",
       "description": "For parents enrolling one or more children, with the option to include themselves.",
       "cta": "Register as Parent"
     },
     "adult": {
-      "title": "Adult Registration",
+      "title": "Private Lessons: Adult",
       "description": "For adults enrolling themselves in private piano lessons.",
       "cta": "Register as Adult"
     },
@@ -20,8 +20,8 @@
     }
   },
   "selected": {
-    "parents": "Parent Registration Form",
-    "adult": "Adult Registration Form",
+    "parents": "Private Lessons: Child/Parent",
+    "adult": "Private Lessons: Adult",
     "group": "Group Registration"
   },
   "loading": {
