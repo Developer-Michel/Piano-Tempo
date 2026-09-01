@@ -6,10 +6,13 @@ import { useTranslations } from "next-intl";
 type RegistrationType = "parents" | "adult" | "group";
 
 const PARENTS_FORM_SCRIPT =
-  "https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9HNDRKRCIsIldlYnNpdGVJRCI6Indic190WTJKMCIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pjY0JOSlIifQ==";
+  "https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9HNDRKRCIsIldlYnNpdGVJRCI6Indic190WTJKMCIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pjakdTSjcifQ==";
 
 const ADULT_FORM_SCRIPT =
   "https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9HNDRKRCIsIldlYnNpdGVJRCI6Indic190WTJKMCIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pjY0JOSlIifQ==";
+
+const GROUP_FORM_SCRIPT =
+  "https://app.mymusicstaff.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF9HNDRKRCIsIldlYnNpdGVJRCI6Indic190WTJKMCIsIldlYnNpdGVCbG9ja0lEIjoid2JiX3pjbDRkSmoifQ==";
 
 const WIDGET_CONTAINER_ID = "wbb_zccBNJR";
 
@@ -25,12 +28,13 @@ export default function Registration() {
     () => ({
       parents: PARENTS_FORM_SCRIPT,
       adult: ADULT_FORM_SCRIPT,
+      group: GROUP_FORM_SCRIPT,
     }),
     [],
   );
 
   useEffect(() => {
-    if (!selectedType || selectedType === "group") return;
+    if (!selectedType) return;
 
     const container = document.getElementById(WIDGET_CONTAINER_ID);
     if (!container) return;
@@ -64,12 +68,6 @@ export default function Registration() {
 
   const handleSelectType = (type: RegistrationType) => {
     setSelectedType(type);
-
-    if (type === "group") {
-      clearLoadingTimer();
-      setIsLoadingForm(false);
-      return;
-    }
 
     clearLoadingTimer();
     setIsLoadingForm(true);
@@ -176,13 +174,7 @@ export default function Registration() {
           </button>
         </div>
 
-        {selectedType === "group" ? (
-          <div className="rounded-xl border border-gray-200 bg-gray-50 p-8">
-            <p className="font-sans text-gray-700">{t("comingSoon")}</p>
-          </div>
-        ) : (
-          <div id={WIDGET_CONTAINER_ID} className="block" />
-        )}
+        <div id={WIDGET_CONTAINER_ID} className="block" />
       </div>
 
       {isLoadingForm ? (
