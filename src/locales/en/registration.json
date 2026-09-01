@@ -14,15 +14,15 @@
       "cta": "Register as Adult"
     },
     "group": {
-      "title": "Group Registration",
+      "title": "Group Lessons",
       "description": "For group lesson enrollment.",
-      "cta": "Group Registration"
+      "cta": "Register for Group Lessons"
     }
   },
   "selected": {
     "parents": "Private Lessons: Child/Parent",
     "adult": "Private Lessons: Adult",
-    "group": "Group Registration"
+    "group": "Group Lessons"
   },
   "loading": {
     "title": "Loading form...",

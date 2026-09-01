@@ -4,7 +4,7 @@
   "back": "Choisir une autre option",
   "options": {
     "parents": {
-      "title": "Cours privés : Enfant/Parent",
+      "title": "Cours privés : enfant/parent",
       "description": "Pour les parents qui inscrivent un ou plusieurs enfants, avec la possibilité de s'inscrire eux-mêmes.",
       "cta": "Inscrire un parent"
     },
@@ -14,15 +14,15 @@
       "cta": "Inscrire un adulte"
     },
     "group": {
-      "title": "Inscription de Groupe",
+      "title": "Cours de groupe",
       "description": "Pour les inscriptions aux cours de groupe.",
       "cta": "Inscription de groupe"
     }
   },
   "selected": {
-    "parents": "Cours privés : Enfant/Parent",
+    "parents": "Cours privés : enfant/parent",
     "adult": "Cours privés : adulte",
-    "group": "Inscription de Groupe"
+    "group": "Cours de groupe"
   },
   "loading": {
     "title": "Chargement du formulaire...",
