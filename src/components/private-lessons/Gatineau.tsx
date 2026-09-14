@@ -19,7 +19,7 @@ export default async function PrivatePianoLessonsGatineau() {
   }>;
   const approachCards = t.raw("approach.cards") as string[];
   const privateAges = programsT("private.ages");
-  const feeNote = programsT("feeNote");
+  const feeNote = programsT("privateFeeNote");
   const sectionContainer = "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8";
 
   return (

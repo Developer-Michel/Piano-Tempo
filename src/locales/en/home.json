@@ -57,7 +57,8 @@
   "programs": {
     "title": "Our Programs",
     "subtitle": "Tailored Instruction for Every Age and Level",
-    "feeNote": "A $10 registration fee applies. \nA monthly studio fee of $12 applies for adults and children under 6, and $16 per month for students ages 7+.",
+    "privateFeeNote": "A $10 registration fee applies. \nA monthly studio fee of $12 applies for adults and children under 6, and $16 per month for students ages 7+.",
+    "groupFeeNote": "A one-time $10 registration fee applies. No monthly fees after that.",
     "learnMore": "Learn More",
     "learnLess": "See Less",
     "private": {

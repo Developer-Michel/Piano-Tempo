@@ -58,7 +58,7 @@ function ProgramCard({ index }: { index: number }) {
   const description = t(`private.description`);
   const ages = t(`private.ages`);
   const price = t(`private.price`);
-  const feeNote = t(`feeNote`);
+  const feeNote = t(`privateFeeNote`);
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   return (

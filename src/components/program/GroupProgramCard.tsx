@@ -15,7 +15,7 @@ export function GroupProgramCard({ index }: { index: number }) {
   const description = t("groups.description");
   const ages = t("groups.ages");
   const price = t("groups.price");
-  const feeNote = t("feeNote");
+  const feeNote = t("groupFeeNote");
   const [open, setOpen] = useState(false);
   return (
     <Card className="group h-full p-6 border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">

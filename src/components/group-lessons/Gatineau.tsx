@@ -16,7 +16,7 @@ export default async function GroupPianoLessonsGatineauPage() {
   const groupOptions = programsT.raw("groups.items") as string[];
   const groupPrice = programsT("groups.price");
   const groupAges = programsT("groups.ages");
-  const feeNote = programsT("feeNote");
+  const feeNote = programsT("groupFeeNote");
   const sectionContainer = "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8";
 
   return (
