@@ -127,6 +127,21 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link
+                  href={{
+                    pathname: "/lessons/piano/groups/[city]",
+                    params: { city: "gatineau" },
+                  }}
+                >
+                  <span
+                    className="font-sans text-white/70 hover:text-gold transition-colors duration-300 cursor-pointer"
+                    data-testid="link-footer-program-group"
+                  >
+                    {tPrograms("groups.title")}
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
 

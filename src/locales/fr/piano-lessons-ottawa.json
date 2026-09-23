@@ -1,37 +1,39 @@
 {
   "metadata": {
-    "title": "Cours de Piano pour Ottawa | Prive et Groupe | Piano a Tempo",
-    "description": "Vous habitez Ottawa? Notre ecole est a Gatineau avec des options flexibles: cours prives, cours de groupe et cours a distance.",
+    "title": "Cours de piano pour Ottawa | Privés et groupe | Piano à Tempo",
+    "description": "Vous habitez Ottawa? Notre école est à Gatineau avec des options flexibles: cours privés, cours de groupe et cours à distance.",
     "keywords": [
       "cours de piano ottawa",
       "cours piano ottawa",
       "cours de piano gatineau",
-      "cours prives piano ottawa",
+      "cours privés piano ottawa",
       "cours groupe piano ottawa",
-      "cours piano a distance"
+      "cours piano à distance"
     ],
     "openGraphTitle": "Cours de Piano pour Ottawa",
-    "openGraphDescription": "Cours prives, cours de groupe et options a distance pour les familles d'Ottawa."
+    "openGraphDescription": "Cours privés, cours de groupe et options à distance pour les familles d'Ottawa."
   },
   "hero": {
     "title": "Cours de piano pour les familles d'Ottawa",
-    "description": "Notre ecole est situee a Gatineau et accueille deja des eleves venant d'Ottawa, en cours prives comme en cours de groupe."
+    "description": "Notre école est située à Gatineau et accueille déjà des élèves venant d'Ottawa, en cours privés comme en cours de groupe."
   },
   "options": {
     "title": "Options flexibles",
     "items": [
-      "Cours prives personnalises",
+      "Cours privés personnalisés",
       "Cours de groupe motivants",
-      "Cours a distance disponibles"
+      "Cours à distance disponibles"
     ]
   },
   "why": {
-    "title": "Pourquoi choisir Piano a Tempo",
-    "description": "Plusieurs clients font deja le trajet vers Gatineau pour profiter d'un enseignement stable, humain et adapte a leurs objectifs musicaux."
+    "title": "Pourquoi choisir Piano à Tempo",
+    "description": "Plusieurs clients font déjà le trajet vers Gatineau pour profiter d'un enseignement stable, humain et adapté à leurs objectifs musicaux."
   },
   "cta": {
-    "title": "On vous aide a choisir la meilleure formule",
-    "description": "Dites-nous votre secteur a Ottawa, votre niveau et vos disponibilites: nous proposerons une option realiste entre presentiel et distance.",
+    "title": "On vous aide à choisir la meilleure formule",
+    "description": "Dites-nous votre secteur à Ottawa, votre niveau et vos disponibilités: nous proposerons une option réaliste entre présentiel et distance.",
+    "affordabilityTitle": "Tarif de groupe abordable",
+    "affordabilityNote": "Le coût de la vie augmente, mais le développement musical doit rester accessible. Les cours de groupe sont à seulement 25 $ par cours. La plupart des cours durent 60 minutes; le groupe 5-7 ans dure 45 minutes avec un parent présent. Les places sont limitées à chaque session.",
     "button": "Discuter des options"
   }
 }

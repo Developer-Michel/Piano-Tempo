@@ -5,6 +5,13 @@
     "email": "Adresse courriel",
     "phone": "Numéro de téléphone",
     "parentName": "Nom du parent (optionnel)",
+    "language": "Langue du cours préférée",
+    "languagePlaceholder": "Choisir une langue",
+    "languageOptions": {
+      "fr": "Français",
+      "en": "English",
+      "none": "Aucune préférence"
+    },
     "startSessionInterest": "Quand souhaitez-vous commencer ?",
     "startSessionPlaceholder": "Sélectionnez une option",
     "startSessionOptions": {

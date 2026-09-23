@@ -65,6 +65,8 @@
   "cta": {
     "title": "Find your group",
     "description": "Reach out to check availability based on age, level, and schedule.",
+    "affordabilityTitle": "Affordable Group Pricing",
+    "affordabilityNote": "Life is expensive, but music development should stay accessible. Group classes are only $25 per class. Most classes are 60 minutes; ages 5-7 are 45 minutes with a parent present. Spots are limited each session.",
     "button": "Check availability"
   }
 }

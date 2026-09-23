@@ -117,6 +117,7 @@ const leadsSchema = z.object({
   email: z.string().email("Valid email required"),
   parentName: z.string().trim().optional(),
   phoneNumber: z.string().trim().optional(),
+  language: z.string().trim().min(1, "Preferred language is required"),
   startSessionInterest: z.string().trim().min(1, "Start date is required"),
   children: z.array(childSchema).min(1, "At least one student is required"),
 });
@@ -231,6 +232,7 @@ export function LeadsFormSection({
       email: "",
       parentName: "",
       phoneNumber: "",
+      language: lang,
       startSessionInterest: "",
       children: [
         {
@@ -336,6 +338,7 @@ export function LeadsFormSection({
         email: "",
         parentName: "",
         phoneNumber: "",
+        language: lang,
         startSessionInterest: "",
         children: [
           {
@@ -448,6 +451,40 @@ export function LeadsFormSection({
                           <FormLabel>{t("form.parentName")}</FormLabel>
                           <FormControl>
                             <Input {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="language"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>{t("form.language")}</FormLabel>
+                          <FormControl>
+                            <Select
+                              value={field.value}
+                              onValueChange={field.onChange}
+                            >
+                              <SelectTrigger>
+                                <SelectValue
+                                  placeholder={t("form.languagePlaceholder")}
+                                />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="fr">
+                                  {t("form.languageOptions.fr")}
+                                </SelectItem>
+                                <SelectItem value="en">
+                                  {t("form.languageOptions.en")}
+                                </SelectItem>
+                                <SelectItem value="none">
+                                  {t("form.languageOptions.none")}
+                                </SelectItem>
+                              </SelectContent>
+                            </Select>
                           </FormControl>
                           <FormMessage />
                         </FormItem>

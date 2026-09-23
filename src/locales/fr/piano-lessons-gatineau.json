@@ -65,6 +65,8 @@
   "cta": {
     "title": "Trouver votre groupe",
     "description": "Écrivez-nous pour connaître les disponibilités selon votre âge, votre niveau et vos horaires.",
+    "affordabilityTitle": "Tarif de groupe abordable",
+    "affordabilityNote": "Le coût de la vie augmente, mais le développement musical doit rester accessible. Les cours de groupe sont à seulement 25 $ par cours. La plupart des cours durent 60 minutes; le groupe 5-7 ans dure 45 minutes avec un parent présent. Les places sont limitées à chaque session.",
     "button": "Voir les disponibilités"
   }
 }

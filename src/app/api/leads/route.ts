@@ -29,6 +29,7 @@ const leadBodySchema = z.object({
   email: z.string().email(),
   parentName: z.string().optional(),
   phoneNumber: z.string().optional(),
+  language: z.string().min(1),
   startSessionInterest: z.string().min(1),
   children: z
     .array(
@@ -145,9 +146,11 @@ export async function POST(request: Request) {
 
   const parentName = parsed.parentName?.trim() || null;
   const phoneNumber = parsed.phoneNumber?.trim() || null;
+  const language = parsed.language.trim();
 
   const rows = parsed.children.map((student) => ({
     email: parsed.email,
+    language,
     student_name: student.studentName,
     student_age: student.studentAge,
     lesson_type: student.lessonType,
@@ -213,6 +216,7 @@ export async function POST(request: Request) {
             `Email: ${parsed.email}`,
             `Phone: ${phoneNumber ?? "N/A"}`,
             `Parent Name: ${parentName ?? "N/A"}`,
+            `Preferred Language: ${language}`,
             `Preferred Start: ${formatSessionValue(parsed.startSessionInterest)}`,
             "",
             studentsText,
