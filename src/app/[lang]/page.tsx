@@ -6,6 +6,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { LeadsFormSection } from "@/components/leads/LeadsFormSection";
 import { Teachers } from "@/components/Teachers/Teachers";
 import { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 export async function generateMetadata({
   params,
@@ -152,7 +153,9 @@ export default async function Home({ params }: { params: { lang: string } }) {
         <Teachers />
         <Programs />
         <Testimonials />
-        <LeadsFormSection />
+        <Suspense fallback={null}>
+          <LeadsFormSection />
+        </Suspense>
       </div>
     </main>
   );

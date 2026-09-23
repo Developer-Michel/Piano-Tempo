@@ -1,5 +1,6 @@
 import { LeadsFormSection } from "@/components/leads/LeadsFormSection";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export async function generateMetadata({
   params,
@@ -47,7 +48,9 @@ export async function generateMetadata({
 export default function LeadsPage() {
   return (
     <main className="min-h-screen bg-white pt-28" data-testid="page-leads">
-      <LeadsFormSection compact showContactPanel={false} />
+      <Suspense fallback={null}>
+        <LeadsFormSection compact showContactPanel={false} />
+      </Suspense>
     </main>
   );
 }
