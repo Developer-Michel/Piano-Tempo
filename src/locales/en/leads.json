@@ -1,5 +1,5 @@
 {
-  "title": "Lead Form",
+  "title": "Lesson Inquiry Form",
   "subtitle": "Tell us about your student and your availability",
   "form": {
     "email": "Email Address",
@@ -10,7 +10,7 @@
     "startSessionOptions": {
       "earliest": "As soon as possible"
     },
-    "submit": "Submit Lead",
+    "submit": "Submit Inquiry",
     "submitting": "Submitting...",
     "success": "Thank you. Your request has been received."
   },
@@ -48,9 +48,9 @@
   },
   "toast": {
     "successTitle": "Success",
-    "successDescription": "Your lead was submitted successfully.",
+    "successDescription": "Your inquiry was submitted successfully.",
     "errorTitle": "Error",
-    "errorDescription": "We could not submit your lead. Please try again."
+    "errorDescription": "We could not submit your inquiry. Please try again."
   },
   "info": {
     "address": "Address",

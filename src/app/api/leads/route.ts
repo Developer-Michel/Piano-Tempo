@@ -206,9 +206,9 @@ export async function POST(request: Request) {
         await resend.emails.send({
           from: "Website Leads <noreply@pianoatempo.ca>",
           to: "info.pianoatempo@gmail.com",
-          subject: `New lead form submission (${parsed.children.length} student${parsed.children.length > 1 ? "s" : ""})`,
+          subject: `New lesson inquiry (${parsed.children.length} student${parsed.children.length > 1 ? "s" : ""})`,
           text: [
-            "A new lead was submitted:",
+            "A new lesson inquiry was submitted:",
             "",
             `Email: ${parsed.email}`,
             `Phone: ${phoneNumber ?? "N/A"}`,

@@ -32,7 +32,7 @@ export async function generateMetadata({
         : "Piano a Tempo | Lesson Inquiry",
       description: isFrench
         ? "Formulaire de demande de cours de piano pour parents et eleves."
-        : "Piano lesson lead form for parents and students.",
+        : "Piano lesson inquiry form for parents and students.",
       url: `https://pianoatempo.ca/${lang}/${path}`,
       alternateLocale: lang === "fr" ? ["en_CA"] : ["fr_CA"],
       locale: lang === "fr" ? "fr_CA" : "en_CA",
