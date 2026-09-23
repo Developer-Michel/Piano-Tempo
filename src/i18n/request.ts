@@ -26,6 +26,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       resources: await loadMessages(locale, "resources"),
       methodology: await loadMessages(locale, "methodology"),
       registration: await loadMessages(locale, "registration"),
+      leads: await loadMessages(locale, "leads"),
     },
   };
 });

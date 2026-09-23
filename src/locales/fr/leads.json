@@ -1,0 +1,61 @@
+{
+  "title": "Formulaire de demande",
+  "subtitle": "Parlez-nous de vos élèves et de vos disponibilités",
+  "form": {
+    "email": "Adresse courriel",
+    "phone": "Numéro de téléphone",
+    "parentName": "Nom du parent (optionnel)",
+    "startSessionInterest": "Quand souhaitez-vous commencer ?",
+    "startSessionPlaceholder": "Sélectionnez une option",
+    "startSessionOptions": {
+      "earliest": "Le plus tôt possible"
+    },
+    "submit": "Envoyer la demande",
+    "submitting": "Envoi en cours...",
+    "success": "Merci. Votre demande a bien été reçue."
+  },
+  "students": {
+    "title": "Élèves",
+    "add": "Ajouter un autre élève",
+    "remove": "Retirer",
+    "studentLabel": "Élève {number}",
+    "name": "Nom de l'élève",
+    "age": "Âge de l'élève",
+    "lessonType": "Type de cours",
+    "lessonTypePlaceholder": "Choisir un type de cours",
+    "lessonLength": "Durée du cours",
+    "lessonLengthPlaceholder": "Choisir la durée",
+    "notes": "Notes"
+  },
+  "availability": {
+    "title": "Disponibilités hebdomadaires",
+    "subtitle": "Choisissez les jours disponibles et les plages horaires",
+    "note": "P.-S. La liste d'attente est tout de même élevée. Pour augmenter vos chances d'être accepté à la prochaine session, veuillez indiquer le plus de disponibilités possible.",
+    "available": "Disponible",
+    "unavailable": "Indisponible",
+    "from": "De",
+    "to": "À",
+    "addRange": "Ajouter une autre plage horaire",
+    "days": {
+      "monday": "Lundi",
+      "tuesday": "Mardi",
+      "wednesday": "Mercredi",
+      "thursday": "Jeudi",
+      "friday": "Vendredi",
+      "saturday": "Samedi",
+      "sunday": "Dimanche"
+    }
+  },
+  "toast": {
+    "successTitle": "Succès",
+    "successDescription": "Votre demande a été envoyée.",
+    "errorTitle": "Erreur",
+    "errorDescription": "Impossible d'envoyer la demande. Veuillez réessayer."
+  },
+  "info": {
+    "address": "Adresse",
+    "email": "Courriel",
+    "hours": "Heures",
+    "hoursDetail": "Lun-Ven: 10h-20h30"
+  }
+}

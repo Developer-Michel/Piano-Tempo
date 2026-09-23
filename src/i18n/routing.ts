@@ -2,6 +2,7 @@ import { defineRouting } from "next-intl/routing";
 import { locales } from "./request";
 export type AppHref =
   | "/"
+  | "/leads"
   | "/gallery"
   | "/lessons/piano/groups/[city]"
   | "/lessons/piano/private/[city]"
@@ -17,6 +18,10 @@ export const routing = defineRouting({
   defaultLocale: "fr",
   pathnames: {
     "/": "/",
+    "/leads": {
+      fr: "/demandes",
+      en: "/leads",
+    },
     "/gallery": {
       fr: "/galerie",
       en: "/gallery",

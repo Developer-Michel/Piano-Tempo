@@ -3,7 +3,7 @@ import { About } from "@/components/About";
 
 import { Programs } from "@/components/program/Programs";
 import { Testimonials } from "@/components/Testimonials";
-import { Contact } from "@/components/contact/Contact";
+import { LeadsFormSection } from "@/components/leads/LeadsFormSection";
 import { Teachers } from "@/components/Teachers/Teachers";
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -152,7 +152,7 @@ export default async function Home({ params }: { params: { lang: string } }) {
         <Teachers />
         <Programs />
         <Testimonials />
-        <Contact />
+        <LeadsFormSection />
       </div>
     </main>
   );

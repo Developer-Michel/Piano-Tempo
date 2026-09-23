@@ -1,0 +1,61 @@
+{
+  "title": "Lead Form",
+  "subtitle": "Tell us about your student and your availability",
+  "form": {
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "parentName": "Parent Name (optional)",
+    "startSessionInterest": "When would you like to start?",
+    "startSessionPlaceholder": "Select an option",
+    "startSessionOptions": {
+      "earliest": "As soon as possible"
+    },
+    "submit": "Submit Lead",
+    "submitting": "Submitting...",
+    "success": "Thank you. Your request has been received."
+  },
+  "students": {
+    "title": "Students",
+    "add": "Add another student",
+    "remove": "Remove",
+    "studentLabel": "Student {number}",
+    "name": "Student Name",
+    "age": "Student Age",
+    "lessonType": "Lesson Type",
+    "lessonTypePlaceholder": "Select a lesson type",
+    "lessonLength": "Lesson Length",
+    "lessonLengthPlaceholder": "Select lesson length",
+    "notes": "Notes"
+  },
+  "availability": {
+    "title": "Weekly Availability",
+    "subtitle": "Set available days and time ranges",
+    "note": "P.S. Waitlists are often high. To improve your chances of getting a spot in upcoming sessions, please provide as much availability as possible.",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "from": "From",
+    "to": "To",
+    "addRange": "Add another time range",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
+  },
+  "toast": {
+    "successTitle": "Success",
+    "successDescription": "Your lead was submitted successfully.",
+    "errorTitle": "Error",
+    "errorDescription": "We could not submit your lead. Please try again."
+  },
+  "info": {
+    "address": "Address",
+    "email": "Email",
+    "hours": "Hours",
+    "hoursDetail": "Mon-Fri: 10am-8:30pm"
+  }
+}
