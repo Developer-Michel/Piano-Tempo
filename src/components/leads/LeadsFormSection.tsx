@@ -378,7 +378,7 @@ export function LeadsFormSection({
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
@@ -396,7 +396,7 @@ export function LeadsFormSection({
         >
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
           >
             <Card className="p-6 md:p-8 bg-white">
@@ -532,7 +532,7 @@ export function LeadsFormSection({
                     />
 
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
                         <h2 className="font-serif text-2xl text-black">
                           {t("students.title")}
                         </h2>
@@ -560,7 +560,7 @@ export function LeadsFormSection({
                           key={field.id}
                           className="p-4 border border-gray-200"
                         >
-                          <div className="flex items-center justify-between mb-4">
+                          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                             <h3 className="font-sans font-semibold text-gray-800">
                               {t("students.studentLabel", {
                                 number: index + 1,
@@ -729,7 +729,7 @@ export function LeadsFormSection({
                                       {t(`availability.days.${day}`)}
                                     </span>
 
-                                    <div className="flex items-center gap-3">
+                                    <div className="grid w-full max-w-[360px] grid-cols-2 gap-1 rounded-xl border border-gray-200 bg-gray-50 p-1">
                                       <Button
                                         type="button"
                                         variant={
@@ -739,8 +739,8 @@ export function LeadsFormSection({
                                         }
                                         className={
                                           dayValue.available
-                                            ? "bg-black text-white"
-                                            : ""
+                                            ? "h-11 rounded-lg border border-black bg-black text-white font-semibold shadow-[0_0_0_2px_rgba(212,175,55,0.38)] transition-all duration-200"
+                                            : "h-11 rounded-lg border border-transparent bg-white text-gray-600 hover:bg-white/90 transition-all duration-200"
                                         }
                                         onClick={() =>
                                           form.setValue(
@@ -753,7 +753,9 @@ export function LeadsFormSection({
                                           )
                                         }
                                       >
-                                        <span className="mr-2 h-2 w-2 rounded-full bg-current" />
+                                        <span className="mr-2 text-base leading-none">
+                                          {dayValue.available ? "●" : "○"}
+                                        </span>
                                         {t("availability.available")}
                                       </Button>
                                       <Button
@@ -765,8 +767,8 @@ export function LeadsFormSection({
                                         }
                                         className={
                                           !dayValue.available
-                                            ? "bg-gray-700 text-white"
-                                            : ""
+                                            ? "h-11 rounded-lg border border-gray-700 bg-gray-700 text-white font-semibold shadow-[0_0_0_2px_rgba(212,175,55,0.38)] transition-all duration-200"
+                                            : "h-11 rounded-lg border border-transparent bg-white text-gray-600 hover:bg-white/90 transition-all duration-200"
                                         }
                                         onClick={() =>
                                           form.setValue(
@@ -779,7 +781,9 @@ export function LeadsFormSection({
                                           )
                                         }
                                       >
-                                        <span className="mr-2 h-2 w-2 rounded-full border border-current" />
+                                        <span className="mr-2 text-base leading-none">
+                                          {!dayValue.available ? "●" : "○"}
+                                        </span>
                                         {t("availability.unavailable")}
                                       </Button>
                                     </div>
@@ -958,7 +962,7 @@ export function LeadsFormSection({
           {showContactPanel ? (
             <motion.div
               initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="space-y-8"
             >
