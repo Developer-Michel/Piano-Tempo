@@ -171,33 +171,33 @@ function buildUpcomingSessionOptions(
   const month = now.getMonth();
   const year = now.getFullYear();
 
-  let firstSession: { season: "winter" | "summer"; year: number };
-  let secondSession: { season: "winter" | "summer"; year: number };
+  let firstSession: { season: "winter" | "fall"; year: number };
+  let secondSession: { season: "winter" | "fall"; year: number };
 
   if (month <= 5) {
     // Jan-Jun: currently in winter session
-    firstSession = { season: "summer", year };
+    firstSession = { season: "fall", year };
     secondSession = { season: "winter", year: year + 1 };
   } else if (month <= 7) {
     // Jul-Aug: between sessions
-    firstSession = { season: "summer", year };
+    firstSession = { season: "fall", year };
     secondSession = { season: "winter", year: year + 1 };
   } else {
-    // Sep-Dec: currently in summer session
+    // Sep-Dec: currently in fall session
     firstSession = { season: "winter", year: year + 1 };
-    secondSession = { season: "summer", year: year + 1 };
+    secondSession = { season: "fall", year: year + 1 };
   }
 
-  const toLabel = (session: { season: "winter" | "summer"; year: number }) => {
+  const toLabel = (session: { season: "winter" | "fall"; year: number }) => {
     if (locale === "fr") {
       return session.season === "winter"
         ? `Hiver ${session.year} (janvier à juin)`
-        : `Été ${session.year} (septembre à décembre)`;
+        : `automne ${session.year} (septembre à décembre)`;
     }
 
     return session.season === "winter"
       ? `Winter ${session.year} (January to June)`
-      : `Summer ${session.year} (September to December)`;
+      : `fall ${session.year} (September to December)`;
   };
 
   return [firstSession, secondSession].map((session) => ({
@@ -413,6 +413,9 @@ export function LeadsFormSection({
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="space-y-6"
                   >
+                    <h2 className="font-serif text-2xl text-black">
+                      {t("form.contact")}
+                    </h2>
                     <div className="grid md:grid-cols-2 gap-4">
                       <FormField
                         control={form.control}

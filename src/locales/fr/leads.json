@@ -1,10 +1,11 @@
 {
   "title": "Formulaire de demande",
-  "subtitle": "Parlez-nous de vos élèves et de vos disponibilités",
+  "subtitle": "Parlez-nous de l'élève(s) et de ses disponibilités",
   "form": {
+    "contact": "Informations de contact",
     "email": "Adresse courriel",
     "phone": "Numéro de téléphone",
-    "parentName": "Nom du parent (optionnel)",
+    "parentName": "Nom du parent (si le un élève est mineur)",
     "language": "Langue du cours préférée",
     "languagePlaceholder": "Choisir une langue",
     "languageOptions": {

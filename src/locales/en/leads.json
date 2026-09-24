@@ -1,10 +1,11 @@
 {
   "title": "Lesson Inquiry Form",
-  "subtitle": "Tell us about your student and your availability",
+  "subtitle": "Tell us about the student(s) and their availabilities",
   "form": {
+    "contact": "Contact Information",
     "email": "Email Address",
     "phone": "Phone Number",
-    "parentName": "Parent Name (optional)",
+    "parentName": "Parent Name (only is a student is a minor)",
     "language": "Preferred Course Language",
     "languagePlaceholder": "Select a language",
     "languageOptions": {
